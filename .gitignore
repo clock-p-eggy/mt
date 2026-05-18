@@ -1,0 +1,18 @@
+node_modules/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# SVN working copy lives here; never track in git.
+project/
+
+# Logs / temp
+*.log
+tmp/
+
+# Temporary fetched docs (never commit)
+doc/doc-files-tmp/
+
+# Eggitor local flush cache (generated)
+.eggitor/
