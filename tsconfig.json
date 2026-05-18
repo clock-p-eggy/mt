@@ -1,0 +1,43 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "lib": ["ESNext"],
+    "moduleResolution": "node",
+
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictPropertyInitialization": false,
+
+    "experimentalDecorators": true,
+
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+
+    "baseUrl": ".",
+    "rootDir": "..",
+    "outDir": "./project/ts_out",
+    "paths": {
+      "@common/*": ["../platform/ts-src/*"],
+      "@eggitor_ts_api/*": ["../platform/eggitor_ts_api/src/@types/eggy-official/*"]
+    },
+    "typeRoots": ["../platform/eggitor_ts_api/src/@types"]
+  },
+  "tstl": {
+    "luaTarget": "5.4",
+    "luaLibImport": "require",
+    "noImplicitSelf": true,
+    "luaPlugins": [
+      { "name": "../platform/tstl-plugin.js" }
+    ]
+  },
+  "include": [
+    "./ts_src/**/*.ts",
+    "../platform/ts-src/**/*.ts",
+    "../platform/eggitor_ts_api/src/@types/eggy-official/**/*.d.ts"
+  ],
+  "exclude": ["node_modules", "project/ts_out"]
+}

@@ -1,0 +1,41 @@
+{
+  "$schema": "https://raw.githubusercontent.com/LuaLS/vscode-lua/master/setting/schema.json",
+  "runtime": {
+    "version": "Lua 5.4",
+    "path": ["?.lua", "?/init.lua"]
+  },
+  "diagnostics": {
+    "globals": [
+      "GameAPI",
+      "LuaAPI",
+      "GlobalAPI",
+      "UI",
+      "AnimalRarity",
+      "EggRarity"
+    ],
+    "disable": [
+      "lowercase-global",
+      "undefined-field",
+      "unused-local",
+      "deprecated",
+      "inject-field"
+    ],
+    "neededFileStatus": {
+      "codestyle-check": "None"
+    }
+  },
+  "workspace": {
+    "library": [
+      "ts_out/common"
+    ],
+    "checkThirdParty": false,
+    "ignoreDir": [
+      ".git",
+      "node_modules",
+      "lualib_bundle.lua"
+    ]
+  },
+  "hint": {
+    "enable": true
+  }
+}
