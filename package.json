@@ -1,0 +1,18 @@
+{
+  "name": "mt",
+  "version": "1.0.0",
+  "description": "mt Eggitor game workspace",
+  "engines": {
+    "node": ">=16.10.0"
+  },
+  "scripts": {
+    "build": "tstl && cp .luarc.json project/ts_out/",
+    "watch": "tstl --watch",
+    "lint": "lua-language-server --check project/ts_out --checklevel=Error",
+    "lint:warn": "lua-language-server --check project/ts_out --checklevel=Warning"
+  },
+  "devDependencies": {
+    "typescript": "5.9.3",
+    "typescript-to-lua": "1.33.2"
+  }
+}

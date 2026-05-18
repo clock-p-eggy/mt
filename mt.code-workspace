@@ -1,0 +1,15 @@
+{
+  "folders": [
+    {
+      "name": "game",
+      "path": "."
+    },
+    {
+      "name": "platform",
+      "path": "../platform"
+    }
+  ],
+  "settings": {
+    "typescript.tsdk": "node_modules/typescript/lib"
+  }
+}

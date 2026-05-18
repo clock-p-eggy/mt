@@ -1,0 +1,162 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6ecbff"/>
+      <stop offset="100%" stop-color="#dff4ff"/>
+    </linearGradient>
+    <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#cddc7a"/>
+      <stop offset="100%" stop-color="#a8c45a"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000000" flood-opacity="0.2"/>
+    </filter>
+    <style>
+      text { font-family: Arial, "PingFang SC", "Microsoft YaHei", sans-serif; }
+      .label { font-size: 22px; font-weight: 700; fill: #2c2c2c; }
+      .note { font-size: 18px; fill: #38424a; }
+      .small { font-size: 16px; fill: #4d5a63; }
+      .chip { fill: #fff6d9; stroke: #d88f1d; stroke-width: 2; }
+      .arrow { stroke: #ff9f1a; stroke-width: 4; fill: none; marker-end: url(#arrowhead); }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#ff9f1a"/>
+    </marker>
+  </defs>
+
+  <rect width="1280" height="720" fill="url(#sky)"/>
+  <rect y="380" width="1280" height="340" fill="url(#ground)"/>
+
+  <path d="M0 330 C120 280, 180 300, 270 255 C350 215, 420 260, 520 225 C610 195, 680 245, 760 205 C860 155, 930 225, 1030 180 C1110 145, 1180 185, 1280 140 L1280 430 L0 430 Z" fill="#778796" opacity="0.88"/>
+  <path d="M0 350 C120 315, 210 320, 295 285 C370 255, 440 290, 530 255 C620 220, 700 280, 790 240 C885 200, 980 250, 1060 220 C1135 195, 1200 210, 1280 175 L1280 445 L0 445 Z" fill="#95a6b3" opacity="0.65"/>
+
+  <ellipse cx="660" cy="580" rx="420" ry="120" fill="#8aa14a" opacity="0.35"/>
+
+  <g opacity="0.95">
+    <path d="M585 388 Q640 315 695 388" stroke="#8b5b3a" stroke-width="16" fill="none"/>
+    <path d="M600 388 Q640 338 680 388" stroke="#d3c18b" stroke-width="8" fill="none"/>
+    <circle cx="603" cy="352" r="6" fill="#d84c5b"/>
+    <circle cx="625" cy="336" r="6" fill="#d84c5b"/>
+    <circle cx="654" cy="334" r="6" fill="#d84c5b"/>
+    <circle cx="678" cy="349" r="6" fill="#d84c5b"/>
+  </g>
+
+  <path d="M520 720 Q600 530 640 390 Q685 530 760 720" fill="#cbb87a" opacity="0.75"/>
+  <path d="M540 720 Q608 560 640 420 Q672 560 740 720" fill="#e0d094" opacity="0.95"/>
+
+  <g filter="url(#shadow)">
+    <g transform="translate(290 410) scale(1.0)">
+      <ellipse cx="0" cy="118" rx="44" ry="12" fill="#6f8a3e" opacity="0.35"/>
+      <rect x="-18" y="18" width="36" height="94" rx="18" fill="#66bf3a"/>
+      <rect x="-42" y="48" width="20" height="48" rx="10" fill="#66bf3a"/>
+      <rect x="22" y="54" width="18" height="42" rx="9" fill="#66bf3a"/>
+    </g>
+    <g transform="translate(370 470) scale(0.85)">
+      <ellipse cx="0" cy="118" rx="44" ry="12" fill="#6f8a3e" opacity="0.35"/>
+      <rect x="-18" y="18" width="36" height="94" rx="18" fill="#70c842"/>
+      <rect x="-42" y="48" width="20" height="48" rx="10" fill="#70c842"/>
+      <rect x="22" y="54" width="18" height="42" rx="9" fill="#70c842"/>
+    </g>
+    <g transform="translate(465 420) scale(0.92)">
+      <ellipse cx="0" cy="118" rx="44" ry="12" fill="#6f8a3e" opacity="0.35"/>
+      <rect x="-18" y="18" width="36" height="94" rx="18" fill="#6ac13c"/>
+      <rect x="-42" y="48" width="20" height="48" rx="10" fill="#6ac13c"/>
+      <rect x="22" y="54" width="18" height="42" rx="9" fill="#6ac13c"/>
+    </g>
+    <g transform="translate(830 415) scale(0.95)">
+      <ellipse cx="0" cy="118" rx="44" ry="12" fill="#6f8a3e" opacity="0.35"/>
+      <rect x="-18" y="18" width="36" height="94" rx="18" fill="#6ac13c"/>
+      <rect x="-42" y="48" width="20" height="48" rx="10" fill="#6ac13c"/>
+      <rect x="22" y="54" width="18" height="42" rx="9" fill="#6ac13c"/>
+    </g>
+    <g transform="translate(930 470) scale(0.83)">
+      <ellipse cx="0" cy="118" rx="44" ry="12" fill="#6f8a3e" opacity="0.35"/>
+      <rect x="-18" y="18" width="36" height="94" rx="18" fill="#71c94a"/>
+      <rect x="-42" y="48" width="20" height="48" rx="10" fill="#71c94a"/>
+      <rect x="22" y="54" width="18" height="42" rx="9" fill="#71c94a"/>
+    </g>
+    <g transform="translate(1005 425) scale(0.9)">
+      <ellipse cx="0" cy="118" rx="44" ry="12" fill="#6f8a3e" opacity="0.35"/>
+      <rect x="-18" y="18" width="36" height="94" rx="18" fill="#67be3c"/>
+      <rect x="-42" y="48" width="20" height="48" rx="10" fill="#67be3c"/>
+      <rect x="22" y="54" width="18" height="42" rx="9" fill="#67be3c"/>
+    </g>
+  </g>
+
+  <g opacity="0.95">
+    <rect x="280" y="430" width="120" height="64" rx="10" fill="#a9b554" stroke="#7e8c2f" stroke-width="3" transform="rotate(-8 340 462)"/>
+    <rect x="410" y="505" width="132" height="70" rx="10" fill="#b3bf61" stroke="#7e8c2f" stroke-width="3" transform="rotate(-10 476 540)"/>
+    <rect x="750" y="502" width="128" height="68" rx="10" fill="#b4bf61" stroke="#7e8c2f" stroke-width="3" transform="rotate(9 814 536)"/>
+    <rect x="875" y="430" width="120" height="64" rx="10" fill="#aab85b" stroke="#7e8c2f" stroke-width="3" transform="rotate(7 935 462)"/>
+  </g>
+
+  <g filter="url(#shadow)">
+    <ellipse cx="640" cy="630" rx="90" ry="24" fill="#69814a" opacity="0.35"/>
+    <circle cx="640" cy="560" r="44" fill="#ffcf2b"/>
+    <rect x="598" y="594" width="84" height="38" rx="18" fill="#ffffff" opacity="0.92"/>
+    <text x="640" y="619" text-anchor="middle" class="label">主操作区</text>
+  </g>
+
+  <g opacity="0.85">
+    <rect x="735" y="34" width="365" height="105" rx="22" fill="#8b5f3f"/>
+    <text x="918" y="83" text-anchor="middle" font-size="28" font-weight="700" fill="#f7ecd2">建议缩短顶部条并减弱存在感</text>
+    <text x="918" y="115" text-anchor="middle" class="small" fill="#fff3db">给场景留出更多呼吸空间</text>
+  </g>
+
+  <g opacity="0.42">
+    <rect x="36" y="86" width="66" height="300" rx="30" fill="#f7f7f7"/>
+    <circle cx="69" cy="126" r="20" fill="#d6dce2"/>
+    <circle cx="69" cy="185" r="20" fill="#d6dce2"/>
+    <circle cx="69" cy="244" r="20" fill="#d6dce2"/>
+    <circle cx="69" cy="303" r="20" fill="#d6dce2"/>
+  </g>
+
+  <g opacity="0.34">
+    <circle cx="1110" cy="612" r="72" fill="#ffffff" stroke="#d7e0e7" stroke-width="6"/>
+    <circle cx="955" cy="595" r="44" fill="#ffffff" stroke="#d7e0e7" stroke-width="5"/>
+  </g>
+
+  <g>
+    <path d="M640 328 L640 210" class="arrow"/>
+    <rect x="556" y="148" width="168" height="56" rx="14" class="chip"/>
+    <text x="640" y="184" text-anchor="middle" class="note">把拱门做成唯一焦点</text>
+  </g>
+
+  <g>
+    <path d="M510 515 L360 560" class="arrow"/>
+    <rect x="180" y="558" width="230" height="68" rx="14" class="chip"/>
+    <text x="295" y="587" text-anchor="middle" class="note">减少仙人掌密度</text>
+    <text x="295" y="611" text-anchor="middle" class="small">留出操作视线与路径</text>
+  </g>
+
+  <g>
+    <path d="M805 520 L965 555" class="arrow"/>
+    <rect x="930" y="560" width="264" height="68" rx="14" class="chip"/>
+    <text x="1062" y="589" text-anchor="middle" class="note">按钮缩小并提透明度</text>
+    <text x="1062" y="613" text-anchor="middle" class="small">让场景重新成为主体</text>
+  </g>
+
+  <g>
+    <path d="M214 305 L172 172" class="arrow"/>
+    <rect x="110" y="106" width="240" height="68" rx="14" class="chip"/>
+    <text x="230" y="135" text-anchor="middle" class="note">左侧功能分组折叠</text>
+    <text x="230" y="159" text-anchor="middle" class="small">只保留当前高频操作</text>
+  </g>
+
+  <g>
+    <path d="M820 246 L1040 185" class="arrow"/>
+    <rect x="980" y="126" width="220" height="68" rx="14" class="chip"/>
+    <text x="1090" y="155" text-anchor="middle" class="note">远景改成灰蓝低饱和</text>
+    <text x="1090" y="179" text-anchor="middle" class="small">前中后景自然分层</text>
+  </g>
+
+  <g>
+    <path d="M640 635 L640 688" class="arrow"/>
+    <rect x="500" y="650" width="280" height="52" rx="14" class="chip"/>
+    <text x="640" y="683" text-anchor="middle" class="note">角色脚下补接触阴影与高亮反馈</text>
+  </g>
+
+  <rect x="24" y="24" width="430" height="94" rx="18" fill="#fff8e7" opacity="0.96"/>
+  <text x="48" y="63" class="label">场景优化示意图</text>
+  <text x="48" y="93" class="note">关键词：减密度、强焦点、拉层次、收 UI、统一色调</text>
+</svg>
