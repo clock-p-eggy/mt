@@ -10,6 +10,7 @@ import {
   PlayerSaveSystem,
   PlotActionSystem,
   DailySignInSystem,
+  CombatSystem,
 } from "../systems"
 import { InventorySystem } from "../systems"
 import { PlantingSystem } from "../systems"
@@ -70,6 +71,7 @@ export const PlayerManager = {
     PlantingSystem.initPlayer(role)
     PlotActionSystem.initPlayer(role)
     DailySignInSystem.initPlayer(role)
+    CombatSystem.initPlayer(role)
     log(`[PlayerManager] initPlayer role=${tostring(roleId)}`)
     try {
       role.set_node_visible(PrefabRegistry.shopUI.root as unknown as ENode, false)
@@ -311,6 +313,11 @@ export const PlayerManager = {
     }
     try {
       AnimalSystem.cleanupOwner(roleId)
+    } catch {
+      // ignore
+    }
+    try {
+      CombatSystem.cleanupPlayer(role)
     } catch {
       // ignore
     }

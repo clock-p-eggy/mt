@@ -17,6 +17,7 @@ import {
   PlantingSystem,
   PlayerSaveSystem,
   DailySignInSystem,
+  CombatSystem,
 } from "./systems"
 import { PlotSaveData } from "./systems/PlayerSaveSystem"
 import { PlayerManager, SceneUIManager, UICache } from "./managers"
@@ -312,6 +313,8 @@ function initGame(): void {
     PlantingSystem.init()
 
     PlotActionSystem.init()
+
+    CombatSystem.init()
 
     // Persist inventory changes into per-role island save.
     EventBus.on(GameEvents.INVENTORY_CHANGED, (role: unknown) => {
