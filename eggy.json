@@ -1,0 +1,12 @@
+{
+    "projectName": "mt", 
+    "projectID": "6a02cf4fe1c2e091b8e712e3", 
+    "serverPort": 40408, 
+    "syncEnabled": true, 
+    "excludePatterns": [
+        ".vscode", 
+        ".git", 
+        "EggyAPI.lua"
+    ], 
+    "version": "1.0.0"
+}

@@ -1,0 +1,75 @@
+{
+	["item_init_stack_num"] = 10,
+	["min_aim_radius"] = 0.35,
+	["equipment_display_unit_eid"] = 103200,
+	["default_diffusion_recovery_radio"] = 0.35,
+	["item_hold_type"] = 1,
+	["max_aim_radius"] = 0.35,
+	["gun_is_auto_aim"] = true,
+	["charge_duration"] = 0.0,
+	["is_auto_charge"] = false,
+	["shrink_enable"] = true,
+	["item_ugc_bind_models"] = {
+		["ugc_hand_r"] = {},
+		["r_weapon"] = 	{
+					{
+				["bind_relation_data"] = {},
+				["bind_model_data"] = 			{
+					[1536483829] = 				{
+						["model"] = 40594,
+						["pos"] = {0,0,0},
+						["paint_area4"] = {105,105,105},
+						["angle"] = {0,0,0},
+						["eid"] = 103318,
+						["model_id"] = 40594,
+						["paint_area3"] = {130,199,222},
+						["paint_area2"] = {92,141,215},
+						["paint_area1"] = {226,226,226},
+						["scale"] = {1,1,1},
+						["sel_skin"] = 1
+					}
+				},
+				["bind_eid"] = 103318,
+				["ugc_creature_bind_eid"] = 103318,
+				["bind_scale"] = {1.0,1.0,1.0},
+				["eid_id_dirty"] = true,
+				["bind_pos"] = {0.0,0.0,0.589999973774},
+				["bind_rot"] = {0.0,0.0,0.0},
+				["bind_name"] = "r_weapon_text",
+				["sel_skin"] = 1,
+				["unit_id_dirty"] = false,
+				["ugc_creature_bind_unit_id"] = 0
+			}
+		}
+	},
+	["gun_auto_fire_distance"] = 100.0,
+	["charge_ability_icon"] = "gui2/icon/common_skill/skillicon_b/skillicon_b_huandan.png",
+	["item_operation_type"] = 1,
+	["gun_auto_fire_keep_time"] = 3.0,
+	["icon"] = "gui2/battleui/shoot/img_shoot_gun5.png",
+	["charge_animation_id"] = 20711,
+	["item_stack_max"] = 10,
+	["item_economic_value"] = {
+			{
+			"coin_count",
+			10
+		}
+	},
+	["item_get_range_auto"] = true,
+	["show_equipped_ugc_bind_models"] = false,
+	["item_auto_stacking"] = false,
+	["item_stack_cost"] = 1,
+	["name"] = "突击步枪",
+	["gun_is_auto_fire"] = false,
+	["item_ability"] = 10030,
+	["gun_shoot_anim_group"] = 1,
+	["item_stack_type"] = 0,
+	["interact_enable"] = true,
+	["item_equipped_ugc_bind_models"] = {},
+	["gun_sight_type"] = 1,
+	["key"] = 6000026,
+	["show_charge_ability"] = false,
+	["equipment_type"] = 0,
+	["sel_skin"] = 0,
+	["item_use"] = true
+}

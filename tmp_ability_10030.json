@@ -1,0 +1,67 @@
+{
+	["affect_radius"] = {
+		["lambda"] = 	{
+					{
+				"lambda unit: Fix32(2)",
+				{}
+			}
+		},
+		["round_type"] = 2,
+		["formula_str"] = "2"
+	},
+	["enable_consume_ability_point"] = false,
+	["release_num"] = -1,
+	["pointer_type"] = 11,
+	["initial_level"] = 1,
+	["max_level"] = 1,
+	["release_consume"] = false,
+	["target_unit_type"] = 388,
+	["show_release_distance_indicator"] = false,
+	["item_box_hold_anim_index_id"] = 7,
+	["ability_desc"] = "全能武器，适应各种环境，随时准备好应对挑战！",
+	["enable_upgrade"] = false,
+	["target_type"] = 2,
+	["cd_time_fml"] = {
+		["lambda"] = 	{
+					{
+				"lambda unit: Fix32(1)",
+				{}
+			}
+		},
+		["round_type"] = 2,
+		["formula_str"] = "1"
+	},
+	["accumulate_show_ui"] = true,
+	["icon_path"] = "gui2/icon/common_skill/skillicon_b/skillicon_b_kaihuo.png",
+	["name"] = "组件组",
+	["release_type"] = 8,
+	["key"] = 10030,
+	["affect_width"] = {
+		["lambda"] = 	{
+					{
+				"lambda unit: Fix32(2)",
+				{}
+			}
+		},
+		["round_type"] = 2,
+		["formula_str"] = "2"
+	},
+	["max_release_distance"] = {
+		["lambda"] = 	{
+					{
+				"lambda unit: Fix32(162)",
+				{}
+			}
+		},
+		["round_type"] = 2,
+		["formula_str"] = "162"
+	},
+	["ugc_ability_type"] = 2,
+	["ability_channel_time"] = 0.13,
+	["ability_usable_status"] = 7,
+	["upgrade_owner_level"] = {1},
+	["custom_formula_str_dict"] = {
+		["cd_time_fml"] = "0",
+		["max_release_distance"] = "162"
+	}
+}
