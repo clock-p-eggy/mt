@@ -4,15 +4,17 @@ import * as MonsterManager from "./MonsterManager"
 import * as PlayerSkillManager from "./PlayerSkillManager"
 import * as PlayerStats from "./PlayerStats"
 import * as PlayerWeaponManager from "./PlayerWeaponManager"
+import * as Stage7GateSystem from "./Stage7GateSystem"
+import * as Stage8To12System from "./Stage8To12System"
 
-log("[mt] TypeScript entry loaded")
+log("[mt] TypeScript entry loaded build=20260519_attack_damage_ai_v4")
 
 function initStage1Players(): void {
-  log("[Stage1] player base stats init begin")
+  log("[Stage1] player runtime init begin")
 
   PlayerStats.InitAllPlayers()
 
-  log("[Stage1] player base stats init end")
+  log("[Stage1] player runtime init end")
 }
 
 function initStage2Monsters(): void {
@@ -47,10 +49,28 @@ function initStage7PlayerSkill(): void {
   log("[Stage7] player preset skill init end")
 }
 
+function initStage7LevelGates(): void {
+  log("[Stage7] level gate init begin")
+
+  Stage7GateSystem.Init()
+
+  log("[Stage7] level gate init end")
+}
+
+function initStage8To12(): void {
+  log("[Stage8To12] system init begin")
+
+  Stage8To12System.Init()
+
+  log("[Stage8To12] system init end")
+}
+
 LuaAPI.global_register_trigger_event([EVENT.GAME_INIT], () => {
   initStage1Players()
   initStage2Monsters()
   initStage3ItemAttacks()
   initStage6PlayerWeapon()
   initStage7PlayerSkill()
+  initStage7LevelGates()
+  initStage8To12()
 })

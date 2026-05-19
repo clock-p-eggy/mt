@@ -1,6 +1,5 @@
 import * as MonsterManager from "./MonsterManager"
 import * as PlayerStats from "./PlayerStats"
-import * as PlayerWeaponManager from "./PlayerWeaponManager"
 
 type AttackItemKind = "fish" | "rifle" | "bomb"
 
@@ -10,7 +9,6 @@ interface AttackItemConfig {
   kind: AttackItemKind
   name: string
   maxEffectiveHits?: number
-  activeSeconds?: Fixed
   range?: Fixed
 }
 
@@ -21,12 +19,11 @@ interface AttackItemState {
   role: Role
   equipment: Equipment
   effectiveHits: number
-  active: boolean
 }
 
 const ATTACK_ITEMS: AttackItemConfig[] = [
   { key: 6000033, kind: "fish", name: "咸鱼", maxEffectiveHits: 3 },
-  { key: 6000026, abilityKey: 10030, kind: "rifle", name: "突击步枪", activeSeconds: math.tofixed(3) },
+  { key: 6000026, abilityKey: 10030, kind: "rifle", name: "突击步枪" },
   { key: 6000029, kind: "bomb", name: "炸弹", maxEffectiveHits: 1 },
 ]
 
@@ -45,9 +42,14 @@ const ITEM_BOX_NAMES = [
 
 const itemByKey: Record<number, AttackItemConfig> = {}
 const trackedItems: Record<string, AttackItemState> = {}
-const activeItemByRoleId: Record<number, string> = {}
 const latestItemByRoleId: Record<number, string> = {}
+const lastSwordAttackTimeByRoleId: Record<number, Fixed> = {}
 let initialized = false
+let attackClockEventId: integer | undefined
+let attackClock: Fixed = math.tofixed(0)
+
+const ATTACK_CLOCK_TICK = math.tofixed(0.02)
+const SWORD_ATTACK_INTERVAL = math.tofixed(0.2)
 
 for (const config of ATTACK_ITEMS) {
   itemByKey[config.key] = config
@@ -193,18 +195,25 @@ function attackItemName(key: EquipmentKey): string {
   return config === undefined ? tostring(key) : config.name
 }
 
-function activeSeconds(state: AttackItemState): Fixed {
-  const config = itemByKey[state.key]
-  if (config !== undefined && config.activeSeconds !== undefined) {
-    return config.activeSeconds
+function ensureAttackClock(): void {
+  if (attackClockEventId !== undefined) {
+    return
   }
-  if (state.kind === "rifle") {
-    return math.tofixed(3)
+
+  attackClockEventId = LuaAPI.global_register_trigger_event([EVENT.REPEAT_TIMEOUT, ATTACK_CLOCK_TICK], () => {
+    attackClock = attackClock + ATTACK_CLOCK_TICK
+  })
+}
+
+function canApplySwordAttack(role: Role): boolean {
+  const roleId = roleIdOf(role)
+  const lastAttackTime = lastSwordAttackTimeByRoleId[roleId]
+  if (lastAttackTime !== undefined && attackClock - lastAttackTime < SWORD_ATTACK_INTERVAL) {
+    return false
   }
-  if (state.kind === "bomb") {
-    return math.tofixed(2)
-  }
-  return math.tofixed(1)
+
+  lastSwordAttackTimeByRoleId[roleId] = attackClock
+  return true
 }
 
 function maxEffectiveHits(state: AttackItemState): number {
@@ -224,9 +233,6 @@ function destroyTrackedItem(token: string, reason: string): void {
     return
   }
 
-  if (activeItemByRoleId[state.roleId] === token) {
-    delete activeItemByRoleId[state.roleId]
-  }
   if (latestItemByRoleId[state.roleId] === token) {
     delete latestItemByRoleId[state.roleId]
   }
@@ -240,30 +246,12 @@ function destroyTrackedItem(token: string, reason: string): void {
   )
 }
 
-function deactivateItem(state: AttackItemState): void {
-  const token = equipmentToken(state.equipment)
-  if (trackedItems[token] !== state) {
-    return
-  }
-
-  if (activeItemByRoleId[state.roleId] === token) {
-    delete activeItemByRoleId[state.roleId]
-  }
-  state.active = false
-}
-
-function activateItem(state: AttackItemState): void {
-  state.active = true
-  activeItemByRoleId[state.roleId] = equipmentToken(state.equipment)
+function noteItemUsed(state: AttackItemState): void {
   print(
     `[Stage3][ItemAttack] use item=${attackItemName(state.key)}` +
       ` key=${tostring(state.key)}` +
       ` role=${tostring(state.roleId)}`
   )
-
-  LuaAPI.call_delay_time(activeSeconds(state), () => {
-    deactivateItem(state)
-  })
 }
 
 function registerEquipment(equipment: Equipment, role: Role): void {
@@ -284,7 +272,6 @@ function registerEquipment(equipment: Equipment, role: Role): void {
     role,
     equipment,
     effectiveHits: 0,
-    active: false,
   }
   trackedItems[token] = state
   latestItemByRoleId[state.roleId] = token
@@ -302,7 +289,7 @@ function registerEquipment(equipment: Equipment, role: Role): void {
         ` actor=${compactDescribe(actor)}` +
         ` equipment_user=${compactDescribe((eventData as { equipment_user?: unknown }).equipment_user)}`
     )
-    activateItem(state)
+    noteItemUsed(state)
   })
   LuaAPI.unit_register_trigger_event(equipmentUnit, [EVENT.SPEC_EQUIPMENT_USE], (_: string, actor: unknown, eventData: unknown) => {
     print(
@@ -395,23 +382,6 @@ function selectedTrackedItem(role: Role): AttackItemState | undefined {
   return state
 }
 
-function activeTrackedItem(role: Role): AttackItemState | undefined {
-  const token = activeItemByRoleId[roleIdOf(role)]
-  if (token !== undefined) {
-    const state = trackedItems[token]
-    if (state !== undefined) {
-      return state
-    }
-  }
-
-  const selected = selectedTrackedItem(role)
-  if (selected !== undefined) {
-    return selected
-  }
-
-  return undefined
-}
-
 function eventTrackedItem(role: Role | undefined, eventData: unknown): AttackItemState | undefined {
   const data = eventData as {
     ability?: unknown
@@ -437,7 +407,7 @@ function eventTrackedItem(role: Role | undefined, eventData: unknown): AttackIte
   }
 
   if (role !== undefined) {
-    return activeTrackedItem(role)
+    return selectedTrackedItem(role)
   }
 
   return undefined
@@ -505,11 +475,16 @@ function handleMonsterEngineHit(monster: unknown, eventData: unknown, reason: st
   }
 
   if (state === undefined) {
-    if (!PlayerWeaponManager.HasStartingWeapon(role)) {
-      return false
+    if (!canApplySwordAttack(role)) {
+      print(
+        `[Stage3][ItemAttack] weapon hit interval blocked` +
+          ` role=${tostring(role.get_roleid())}` +
+          ` interval=${tostring(SWORD_ATTACK_INTERVAL)}`
+      )
+      return true
     }
 
-    applyRoleAttackToMonster(typedMonster, role, "sword")
+    applyRoleAttackToMonster(typedMonster, role, "weapon")
     return true
   }
 
@@ -564,7 +539,7 @@ export function DebugUseLatestAttackItem(role: Role): void {
     return
   }
 
-  activateItem(state)
+  noteItemUsed(state)
 }
 
 export function Init(): void {
@@ -573,6 +548,7 @@ export function Init(): void {
   }
   initialized = true
 
+  ensureAttackClock()
   configureItemBoxes()
   for (const role of GameAPI.get_all_valid_roles()) {
     registerRole(role)
