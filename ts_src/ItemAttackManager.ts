@@ -161,6 +161,15 @@ function roleFromEquipment(equipment: Equipment): Role | undefined {
   return roleFromAny(equipment)
 }
 
+function onlyValidRole(): Role | undefined {
+  const roles = GameAPI.get_all_valid_roles()
+  if (roles.length === 1 && !roles[0].is_lost()) {
+    return roles[0]
+  }
+
+  return undefined
+}
+
 function equipmentFromAny(value: unknown): Equipment | undefined {
   if (value === undefined) {
     return undefined
@@ -445,13 +454,18 @@ function handleMonsterEngineHit(monster: unknown, eventData: unknown, reason: st
   if (role === undefined && data.equipment !== undefined) {
     role = roleFromEquipment(data.equipment)
   }
+  const roleFromFallback = role === undefined ? onlyValidRole() : undefined
+  if (role === undefined) {
+    role = roleFromFallback
+  }
   print(
     `[Stage3][Probe] monster damaged monster=${typedMonster.name}` +
       ` src=${compactDescribe(data._src)}` +
       ` dst=${compactDescribe(data._dst)}` +
       ` ability=${compactDescribe(data.ability)}` +
       ` equipment=${compactDescribe(data.equipment)}` +
-      ` role=${role === undefined ? "nil" : tostring(role.get_roleid())}`
+      ` role=${role === undefined ? "nil" : tostring(role.get_roleid())}` +
+      ` fallbackRole=${roleFromFallback === undefined ? "nil" : tostring(roleFromFallback.get_roleid())}`
   )
   if (role === undefined) {
     return false
@@ -460,17 +474,6 @@ function handleMonsterEngineHit(monster: unknown, eventData: unknown, reason: st
   const state = eventTrackedItem(role, eventData)
   const character = role.get_ctrl_unit()
   if (character === undefined) {
-    return false
-  }
-
-  if (MonsterManager.IsLineBlockedBySceneObstacle(character.get_position(), typedMonster.unit.get_position())) {
-    print(
-      `[Stage3][Probe] engine hit blocked by scene obstacle` +
-        ` reason=${reason}` +
-        ` item=${state === undefined ? "nil" : attackItemName(state.key)}` +
-        ` key=${state === undefined ? "nil" : tostring(state.key)}` +
-        ` monster=${typedMonster.name}`
-    )
     return false
   }
 

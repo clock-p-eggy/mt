@@ -1,13 +1,66 @@
 import { log } from "@common/utils"
-import * as ItemAttackManager from "./ItemAttackManager"
-import * as MonsterManager from "./MonsterManager"
-import * as PlayerSkillManager from "./PlayerSkillManager"
-import * as PlayerStats from "./PlayerStats"
-import * as PlayerWeaponManager from "./PlayerWeaponManager"
-import * as Stage7GateSystem from "./Stage7GateSystem"
-import * as Stage8To12System from "./Stage8To12System"
 
-log("[mt] TypeScript entry loaded build=20260519_attack_damage_ai_v4")
+type ItemAttackManagerModule = typeof import("./ItemAttackManager")
+type MonsterManagerModule = typeof import("./MonsterManager")
+type PlayerSkillManagerModule = typeof import("./PlayerSkillManager")
+type PlayerStatsModule = typeof import("./PlayerStats")
+type PlayerWeaponManagerModule = typeof import("./PlayerWeaponManager")
+type Stage7GateSystemModule = typeof import("./Stage7GateSystem")
+type Stage8To12SystemModule = typeof import("./Stage8To12System")
+
+declare const dofile: (path: string) => unknown
+declare const _G: Record<string, unknown>
+
+interface LuaPackage {
+  loaded?: Record<string, unknown>
+}
+
+const GAME_MODULES = [
+  "project/ts_out/game/PlayerStats",
+  "project/ts_out/game/MonsterManager",
+  "project/ts_out/game/ItemAttackManager",
+  "project/ts_out/game/PlayerWeaponManager",
+  "project/ts_out/game/PlayerSkillManager",
+  "project/ts_out/game/Stage7GateSystem",
+  "project/ts_out/game/Stage8To12System",
+]
+
+function clearGameModuleCache(): void {
+  const luaPackage = _G["package"] as LuaPackage | undefined
+  if (luaPackage === undefined || luaPackage.loaded === undefined) {
+    return
+  }
+
+  for (const moduleName of GAME_MODULES) {
+    luaPackage.loaded[moduleName] = undefined
+  }
+}
+
+function loadGameModule<T>(moduleName: string): T {
+  const luaPackage = _G["package"] as LuaPackage | undefined
+  if (luaPackage !== undefined && luaPackage.loaded !== undefined) {
+    luaPackage.loaded[moduleName] = undefined
+  }
+
+  const moduleExports = dofile(`${moduleName}.lua`) as T
+  if (luaPackage !== undefined && luaPackage.loaded !== undefined) {
+    luaPackage.loaded[moduleName] = moduleExports
+  }
+
+  return moduleExports
+}
+
+clearGameModuleCache()
+
+const PlayerStats = loadGameModule<PlayerStatsModule>("project/ts_out/game/PlayerStats")
+const MonsterManager = loadGameModule<MonsterManagerModule>("project/ts_out/game/MonsterManager")
+const ItemAttackManager = loadGameModule<ItemAttackManagerModule>("project/ts_out/game/ItemAttackManager")
+const PlayerWeaponManager = loadGameModule<PlayerWeaponManagerModule>("project/ts_out/game/PlayerWeaponManager")
+const PlayerSkillManager = loadGameModule<PlayerSkillManagerModule>("project/ts_out/game/PlayerSkillManager")
+const Stage7GateSystem = loadGameModule<Stage7GateSystemModule>("project/ts_out/game/Stage7GateSystem")
+const Stage8To12System = loadGameModule<Stage8To12SystemModule>("project/ts_out/game/Stage8To12System")
+
+log("[mt] TypeScript entry loaded build=20260519_wide_ai_scene_monsters_v8")
 
 function initStage1Players(): void {
   log("[Stage1] player runtime init begin")

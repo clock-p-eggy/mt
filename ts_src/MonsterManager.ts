@@ -36,8 +36,8 @@ interface MonsterData {
 
 interface MonsterSpec {
   unitId: UnitID
-  name: string
-  kind: MonsterKind
+  name?: string
+  kind?: MonsterKind
 }
 
 interface DamageResult {
@@ -162,6 +162,10 @@ const MONSTER_KINDS: MonsterKind[] = [
   "A",
 ]
 
+const EXTRA_MONSTER_SPECS: MonsterSpec[] = [
+  { unitId: 1518591746, kind: "A" },
+]
+
 const MONSTER_SPECS: MonsterSpec[] = []
 for (let index = 0; index < MONSTER_NAMES.length; index = index + 1) {
   MONSTER_SPECS[index] = {
@@ -171,8 +175,13 @@ for (let index = 0; index < MONSTER_NAMES.length; index = index + 1) {
   }
 }
 
+for (const spec of EXTRA_MONSTER_SPECS) {
+  MONSTER_SPECS[MONSTER_SPECS.length] = spec
+}
+
 const monstersByName: Record<string, MonsterData> = {}
 const monstersByUnitId: Record<number, MonsterData> = {}
+const allMonsters: MonsterData[] = []
 let engineDamageInterceptor: EngineDamageInterceptor | undefined
 let engineDeathInterceptor: EngineDamageInterceptor | undefined
 const monsterKilledListeners: MonsterKilledListener[] = []
@@ -180,9 +189,9 @@ let aiTickEventId: integer | undefined
 let aiClock: Fixed = math.tofixed(0)
 
 const AI_TICK_SECONDS = math.tofixed(0.4)
-const AI_DETECT_RANGE = math.tofixed(10)
-const AI_LOST_RANGE = math.tofixed(14)
-const AI_ATTACK_RANGE = math.tofixed(2.4)
+const AI_DETECT_RANGE = math.tofixed(28)
+const AI_LOST_RANGE = math.tofixed(36)
+const AI_ATTACK_RANGE = math.tofixed(3)
 const AI_ATTACK_COOLDOWN = math.tofixed(2.4)
 const AI_SCRIPT_STOP_RANGE = math.tofixed(0.6)
 const AI_RETURN_THRESHOLD = math.tofixed(1.5)
@@ -200,6 +209,7 @@ const BLOCKING_OBSTACLE_PREFIXES = ["方墙"]
 const HP_PER_TICK_C = 2
 const HP_PER_TICK_B = 6
 const HP_PER_TICK_A = 12
+const ENGINE_GUARD_HP = math.tofixed(999999)
 const ABC_C_HPBAR_LAYER_KEY = 1073741933 as E3DLayerKey
 const ABC_C_HPBAR_OFFSET = math.Vector3(0, math.tofixed(0.65), 0)
 const ABC_C_HPBAR_DURATION = math.tofixed(3600)
@@ -702,7 +712,7 @@ function updateMonsterAi(data: MonsterData): void {
   }
 
   let targetRole = getChaseRole(data)
-  if (targetRole !== undefined && !canMonsterSeeRole(data, targetRole, AI_DETECT_RANGE)) {
+  if (targetRole !== undefined && !canMonsterSeeRole(data, targetRole, AI_LOST_RANGE)) {
     targetRole = undefined
   }
 
@@ -728,11 +738,8 @@ function updateMonsterAi(data: MonsterData): void {
 function updateAllMonsterAi(): void {
   aiClock = aiClock + AI_TICK_SECONDS
 
-  for (const spec of MONSTER_SPECS) {
-    const data = monstersByUnitId[spec.unitId]
-    if (data !== undefined) {
-      updateMonsterAi(data)
-    }
+  for (const data of allMonsters) {
+    updateMonsterAi(data)
   }
 }
 
@@ -845,12 +852,11 @@ function roleFromDeathEvent(eventData: unknown): Role | undefined {
 
 function syncEngineStats(data: MonsterData): void {
   const unit = data.unit
-  const maxHp = data.config.maxHp
   safeVoid(() => {
-    unit.set_hp_max(maxHp)
+    unit.set_hp_max(ENGINE_GUARD_HP)
   }, { tag: `Monster set_hp_max ${data.name}`, logger: (msg: string) => print(msg) })
   safeVoid(() => {
-    unit.set_attr_by_type(Enums.ValueType.Fixed, "hp_max", maxHp)
+    unit.set_attr_by_type(Enums.ValueType.Fixed, "hp_max", ENGINE_GUARD_HP)
   }, { tag: `Monster set hp_max attr ${data.name}`, logger: (msg: string) => print(msg) })
   safeVoid(() => {
     unit.set_attr_ratio_fixed("move_speed", data.config.moveSpeed - math.tofixed(1))
@@ -862,7 +868,7 @@ function syncEngineStats(data: MonsterData): void {
 
 function syncEngineHp(data: MonsterData): void {
   const unit = data.unit
-  const targetHp = data.dead ? math.tofixed(0) : data.hp
+  const targetHp = data.dead ? math.tofixed(0) : ENGINE_GUARD_HP
   const currentHp = safeCall(
     () => unit.get_hp(),
     { tag: `Monster get_hp ${data.name}`, fallback: undefined, logger: (msg: string) => print(msg) }
@@ -1034,23 +1040,32 @@ function hasDamageEventImmediatelyBeforeDeath(data: MonsterData): boolean {
     data.lastEngineDamageEventSeq === data.engineEventSeq - 1
 }
 
-function initMonster(spec: MonsterSpec): void {
-  if (monstersByUnitId[spec.unitId] !== undefined || monstersByName[spec.name] !== undefined) {
-    return
-  }
-
-  const unitById = GameAPI.get_unit(spec.unitId) as unknown as Creature | undefined
-  const unit = unitById === undefined ? (LuaAPI.query_unit(spec.name) as unknown as Creature | undefined) : unitById
-  if (unit === undefined) {
-    print(`[Stage2][MonsterManager] monster missing name=${spec.name} id=${tostring(spec.unitId)}`)
-    return
-  }
-
+function initMonsterUnit(unit: Creature, editorUnitId: UnitID, specName?: string, specKind?: MonsterKind): void {
   const unitId = unit.get_id()
-  const config = MONSTER_CONFIG[spec.kind]
+  if (monstersByUnitId[unitId] !== undefined || monstersByUnitId[editorUnitId] !== undefined) {
+    return
+  }
+  if (specName !== undefined && monstersByName[specName] !== undefined) {
+    return
+  }
+
+  const actualName = unit.get_name()
+  const name = specName === undefined ? actualName : specName
+  const kind = specKind === undefined ? monsterKindOfName(actualName) : specKind
+  if (kind === undefined) {
+    print(
+      `[Stage2][MonsterManager] monster kind missing` +
+        ` name=${actualName}` +
+        ` id=${tostring(unitId)}` +
+        ` editorId=${tostring(editorUnitId)}`
+    )
+    return
+  }
+
+  const config = MONSTER_CONFIG[kind]
   const data: MonsterData = {
     unitId,
-    name: spec.name,
+    name,
     unit,
     config,
     bornPos: unit.get_position(),
@@ -1062,9 +1077,14 @@ function initMonster(spec: MonsterSpec): void {
     returnMoveBlocked: false,
     engineEventSeq: 0,
   }
-  monstersByName[spec.name] = data
+  if (specName !== undefined) {
+    monstersByName[specName] = data
+  }
+  monstersByName[name] = data
+  monstersByName[actualName] = data
   monstersByUnitId[unitId] = data
-  monstersByUnitId[spec.unitId] = data
+  monstersByUnitId[editorUnitId] = data
+  allMonsters[allMonsters.length] = data
 
   syncEngineStats(data)
   syncEngineHp(data)
@@ -1105,21 +1125,49 @@ function initMonster(spec: MonsterSpec): void {
   })
 
   print(
-    `[Stage2][MonsterManager] init ${spec.name}` +
+    `[Stage2][MonsterManager] init ${name}` +
       ` id=${tostring(unitId)}` +
-      ` editorId=${tostring(spec.unitId)}` +
-      ` kind=${spec.kind}` +
+      ` editorId=${tostring(editorUnitId)}` +
+      ` kind=${kind}` +
+      ` sceneName=${actualName}` +
       ` hp=${hpText(data)}` +
       ` attack=${tostring(config.attack)}` +
       ` moveSpeed=${tostring(config.moveSpeed)}` +
-      ` killExp=${tostring(config.killExp)}`
+      ` killExp=${tostring(config.killExp)}` +
+      ` detectRange=${tostring(AI_DETECT_RANGE)}`
   )
+}
+
+function initMonster(spec: MonsterSpec): void {
+  if (monstersByUnitId[spec.unitId] !== undefined) {
+    return
+  }
+
+  const unitById = GameAPI.get_unit(spec.unitId) as unknown as Creature | undefined
+  const unit = unitById === undefined && spec.name !== undefined ? (LuaAPI.query_unit(spec.name) as unknown as Creature | undefined) : unitById
+  if (unit === undefined) {
+    print(`[Stage2][MonsterManager] monster missing name=${spec.name === undefined ? "nil" : spec.name} id=${tostring(spec.unitId)}`)
+    return
+  }
+
+  initMonsterUnit(unit, spec.unitId, spec.name, spec.kind)
+}
+
+function initSceneNamedMonsters(): void {
+  const units = GameAPI.get_all_lifientities()
+  for (const unit of units) {
+    const kind = monsterKindOfName(unit.get_name())
+    if (kind !== undefined) {
+      initMonsterUnit(unit as unknown as Creature, unit.get_id(), undefined, kind)
+    }
+  }
 }
 
 export function InitAllMonsters(): void {
   for (const spec of MONSTER_SPECS) {
     initMonster(spec)
   }
+  initSceneNamedMonsters()
 
   ensureStage6AiTick()
 }
@@ -1141,9 +1189,8 @@ export function FindNearestMonster(position: Vector3, maxRange: Fixed): MonsterD
   let best: MonsterData | undefined
   let bestDistSq = maxRangeSq
 
-  for (const spec of MONSTER_SPECS) {
-    const data = monstersByUnitId[spec.unitId]
-    if (data === undefined || data.dead) {
+  for (const data of allMonsters) {
+    if (data.dead) {
       continue
     }
 
