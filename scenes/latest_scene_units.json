@@ -1,0 +1,9109 @@
+{
+  "errors": [],
+  "exported_at_unix": 1779359007,
+  "ids": [
+    1,
+    1141391368,
+    2115675148,
+    1280777755,
+    1782503214,
+    1732139556,
+    2105425904,
+    1077691945,
+    1157185073,
+    1156059701,
+    1918773302,
+    1526475831,
+    1271368628,
+    2001581630,
+    1206702150,
+    1080764999,
+    2036874317,
+    1491798607,
+    1881392724,
+    1925646933,
+    2004435032,
+    1073930844,
+    1428364386,
+    1146983526,
+    2028388970,
+    2013002864,
+    1781623410,
+    1731296382,
+    1687330069,
+    1192156288,
+    1205077128,
+    1743679626,
+    1140405899,
+    1218997392,
+    2050722961,
+    1990128796,
+    1881048733,
+    1594492577,
+    1275660450,
+    1080520875,
+    1873217301,
+    1430735542,
+    1492090551,
+    1431494328,
+    1685819687,
+    2076620475,
+    1799559364,
+    1512540079,
+    1524647113,
+    1978532558,
+    1350719188,
+    1643323093,
+    1311521496,
+    1549045028,
+    1983781596,
+    1043518687,
+    1994453219,
+    1872375019,
+    2034104046,
+    1105742071,
+    1931411198,
+    1545965312,
+    1706126085,
+    1579725578,
+    1854567188,
+    1784268053,
+    1135616291,
+    1401993508,
+    1422072101,
+    1137367558,
+    1187298016,
+    1638063401,
+    1381759788,
+    1971764526,
+    1361794547,
+    1101018420,
+    1101855552,
+    1338171201,
+    1050532163,
+    1468103492,
+    1855557960,
+    1041548108,
+    1975232333,
+    1453043027,
+    1327462744,
+    1147395932,
+    1570439517,
+    1953587553,
+    1121827682,
+    1985100131,
+    1085615249,
+    1078008687,
+    1934117747,
+    2013516152,
+    1412477318,
+    1274852237,
+    1850114966,
+    1303708057,
+    1630926748,
+    1525548447,
+    1887047585,
+    1115853218,
+    1877445547,
+    2114736047,
+    1523845553,
+    1542659571,
+    1286260660,
+    2066058681,
+    1406887356,
+    1681499584,
+    1734937541,
+    1965974982,
+    1359070153,
+    2102608843,
+    1391702476,
+    1062383567,
+    1502667218,
+    1712673236,
+    1997721046,
+    1760381794,
+    1276133488,
+    1548549609,
+    2065610958,
+    1435881969,
+    1648649203,
+    2119725047,
+    1890201080,
+    1923179518,
+    1001,
+    1003,
+    1002
+  ],
+  "schema": "egg_editor_scene_units.v2",
+  "selected_unit_ids": [],
+  "source": {
+    "data_api": "EditorAPI.get_scene_unit_data",
+    "ids_api": "EditorAPI.get_all_unit_ids"
+  },
+  "unit_count": 131,
+  "unit_tree": [
+    {
+      "children": [],
+      "data": {
+        "model_id": 0,
+        "parent_unit_id": 0,
+        "prefab_id": 0,
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "unit_eid": 0,
+        "unit_id": 1,
+        "unit_type": 128
+      },
+      "id": 1
+    },
+    {
+      "children": [],
+      "data": {
+        "create_probability": 1.0,
+        "enable_hp": false,
+        "fix_destroy_time": -1,
+        "model_alpha": 1.0,
+        "model_angle": [
+          0,
+          0,
+          0
+        ],
+        "model_id": 7000177,
+        "name": "方墙27",
+        "ob_max_hp": 0,
+        "parent_unit_id": 0,
+        "physic_enable": true,
+        "position": [
+          -82.0,
+          2.316,
+          -7.5
+        ],
+        "prefab_id": 1204079,
+        "scale": [
+          1.0,
+          1.0,
+          0.9
+        ],
+        "unit_eid": 1204079,
+        "unit_id": 1141391368,
+        "unit_type": 256,
+        "unit_uid": "1204079_uid",
+        "world_position": [
+          -82.0,
+          2.316,
+          -7.5
+        ]
+      },
+      "id": 1141391368
+    },
+    {
+      "children": [],
+      "data": {
+        "model_angle": [
+          0,
+          0,
+          0
+        ],
+        "model_id": 9000101,
+        "name": "变异蛋B11",
+        "parent_unit_id": 0,
+        "position": [
+          -63.56,
+          2.316,
+          21.155
+        ],
+        "prefab_id": 9000081,
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "unit_eid": 9000081,
+        "unit_id": 2115675148,
+        "unit_type": 4,
+        "world_position": [
+          -63.56,
+          2.316,
+          21.155
+        ]
+      },
+      "id": 2115675148
+    },
+    {
+      "children": [],
+      "data": {
+        "create_probability": 1.0,
+        "enable_hp": false,
+        "fix_destroy_time": -1,
+        "model_angle": [
+          -0.0,
+          -90.0,
+          0.0
+        ],
+        "model_id": 50055,
+        "name": "公告牌2",
+        "ob_max_hp": 0,
+        "parent_unit_id": 0,
+        "physic_enable": true,
+        "position": [
+          -88.25,
+          2.316,
+          14.5
+        ],
+        "prefab_id": 103684,
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "unit_eid": 103684,
+        "unit_id": 1280777755,
+        "unit_type": 256,
+        "unit_uid": "1101520_uid",
+        "world_position": [
+          -88.25,
+          2.316,
+          14.5
+        ]
+      },
+      "id": 1280777755
+    },
+    {
+      "children": [],
+      "data": {
+        "create_probability": 1.0,
+        "enable_hp": false,
+        "fix_destroy_time": -1,
+        "model_alpha": 1.0,
+        "model_angle": [
+          -0.0,
+          90.0,
+          -0.0
+        ],
+        "model_id": 7000177,
+        "name": "方墙9",
+        "ob_max_hp": 0,
+        "parent_unit_id": 0,
+        "physic_enable": true,
+        "position": [
+          -28.0,
+          2.297,
+          -22.5
+        ],
+        "prefab_id": 1204079,
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "unit_eid": 1204079,
+        "unit_id": 1782503214,
+        "unit_type": 256,
+        "unit_uid": "1204079_uid",
+        "world_position": [
+          -28.0,
+          2.297,
+          -22.5
+        ]
+      },
+      "id": 1782503214
+    },
+    {
+      "children": [],
+      "data": {
+        "create_probability": 1.0,
+        "enable_hp": false,
+        "fix_destroy_time": -1,
+        "model_alpha": 1.0,
+        "model_angle": [
+          -0.0,
+          90.0,
+          -0.0
+        ],
+        "model_id": 40357,
+        "name": "机械墙5",
+        "ob_max_hp": 0,
+        "parent_unit_id": 0,
+        "physic_enable": true,
+        "position": [
+          -51.0,
+          2.3159999847412,
+          -12.75
+        ],
+        "prefab_id": 1102440,
+        "scale": [
+          4.0310001373291,
+          5.0920000076294,
+          1.0
+        ],
+        "unit_eid": 1102440,
+        "unit_id": 1732139556,
+        "unit_type": 256,
+        "unit_uid": "100821_uid",
+        "world_position": [
+          -51.0,
+          2.3159999847412,
+          -12.75
+        ]
+      },
+      "id": 1732139556
+    },
+    {
+      "children": [],
+      "data": {
+        "model_angle": [
+          0,
+          0,
+          0
+        ],
+        "model_id": 9000102,
+        "name": "变异蛋A4",
+        "parent_unit_id": 0,
+        "position": [
+          -72.44,
+          2.316,
+          27.5
+        ],
+        "prefab_id": 9000080,
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "unit_eid": 9000080,
+        "unit_id": 2105425904,
+        "unit_type": 4,
+        "world_position": [
+          -72.44,
+          2.316,
+          27.5
+        ]
+      },
+      "id": 2105425904
+    },
+    {
+      "children": [],
+      "data": {
+        "create_probability": 1.0,
+        "enable_hp": false,
+        "fix_destroy_time": -1,
+        "model_angle": [
+          0,
+          0,
+          0
+        ],
+        "model_id": 40030,
+        "name": "齿轮2",
+        "ob_max_hp": 0,
+        "parent_unit_id": 0,
+        "physic_enable": true,
+        "position": [
+          -36.379,
+          2.316,
+          12.121
+        ],
+        "prefab_id": 1101080,
+        "scale": [
+          0.4995652,
+          1.0,
+          0.4995652
+        ],
+        "unit_eid": 1101080,
+        "unit_id": 1077691945,
+        "unit_type": 256,
+        "unit_uid": "100027",
+        "world_position": [
+          -36.379,
+          2.316,
+          12.121
+        ]
+      },
+      "id": 1077691945
+    },
+    {
+      "children": [],
+      "data": {
+        "create_probability": 1.0,
+        "enable_hp": false,
+        "fix_destroy_time": -1,
+        "model_alpha": 1.0,
+        "model_angle": [
+          -0.0,
+          90.0,
+          -0.0
+        ],
+        "model_id": 7000177,
+        "name": "方墙14",
+        "ob_max_hp": 0,
+        "parent_unit_id": 0,
+        "physic_enable": true,
+        "position": [
+          -77.75,
+          2.297,
+          -22.5
+        ],
+        "prefab_id": 1204079,
+        "scale": [
+          1.0,
+          1.0,
+          0.95
+        ],
+        "unit_eid": 1204079,
+        "unit_id": 1157185073,
+        "unit_type": 256,
+        "unit_uid": "1204079_uid",
+        "world_position": [
+          -77.75,
+          2.297,
+          -22.5
+        ]
+      },
+      "id": 1157185073
+    },
+    {
+      "children": [],
+      "data": {
+        "create_probability": 1.0,
+        "enable_hp": false,
+        "fix_destroy_time": -1,
+        "model_alpha": 1.0,
+        "model_angle": [
+          -0.0,
+          90.0,
+          -0.0
+        ],
+        "model_id": 40357,
+        "name": "机械墙3",
+        "ob_max_hp": 0,
+        "parent_unit_id": 0,
+        "physic_enable": true,
+        "position": [
+          -81.75,
+          2.316,
+          0.469
+        ],
+        "prefab_id": 1102440,
+        "scale": [
+          4.0310001373291,
+          5.0920000076294,
+          1.0
+        ],
+        "unit_eid": 1102440,
+        "unit_id": 1156059701,
+        "unit_type": 256,
+        "unit_uid": "100821_uid",
+        "world_position": [
+          -81.75,
+          2.316,
+          0.469
+        ]
+      },
+      "id": 1156059701
+    },
+    {
+      "children": [],
+      "data": {
+        "create_probability": 1.0,
+        "enable_hp": false,
+        "fix_destroy_time": -1,
+        "model_alpha": 1.0,
+        "model_angle": [
+          -0.0,
+          90.0,
+          -0.0
+        ],
+        "model_id": 7000177,
+        "name": "方墙49",
+        "ob_max_hp": 0,
+        "parent_unit_id": 0,
+        "physic_enable": true,
+        "position": [
+          -69.5,
+          2.3159999847412,
+          5.25
+        ],
+        "prefab_id": 1204079,
+        "scale": [
+          1.0,
+          1.0,
+          1.15
+        ],
+        "unit_eid": 1204079,
+        "unit_id": 1918773302,
+        "unit_type": 256,
+        "unit_uid": "1204079_uid",
+        "world_position": [
+          -69.5,
+          2.3159999847412,
+          5.25
+        ]
+      },
+      "id": 1918773302
+    },
+    {
+      "children": [],
+      "data": {
+        "model_angle": [
+          0,
+          0,
+          0
+        ],
+        "model_id": 9000102,
+        "name": "变异蛋A6",
+        "parent_unit_id": 0,
+        "position": [
+          -2.06,
+          2.316,
+          -17.0
+        ],
+        "prefab_id": 9000080,
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "unit_eid": 9000080,
+        "unit_id": 1526475831,
+        "unit_type": 4,
+        "world_position": [
+          -2.06,
+          2.316,
+          -17.0
+        ]
+      },
+      "id": 1526475831
+    },
+    {
+      "children": [],
+      "data": {
+        "create_probability": 1.0,
+        "fix_destroy_time": -1,
+        "model_angle": [
+          0,
+          0,
+          0
+        ],
+        "model_id": 40223,
+        "name": "传送带2",
+        "parent_unit_id": 0,
+        "position": [
+          -0.843,
+          2.315,
+          22.907
+        ],
+        "prefab_id": 1101040,
+        "scale": [
+          4.21075,
+          1.0,
+          1.0
+        ],
+        "unit_eid": 1101040,
+        "unit_id": 1271368628,
+        "unit_type": 256,
+        "unit_uid": "floor_7",
+        "world_position": [
+          -0.843,
+          2.315,
+          22.907
+        ]
+      },
+      "id": 1271368628
+    },
+    {
+      "children": [],
+      "data": {
+        "create_probability": 1.0,
+        "enable_hp": false,
+        "fix_destroy_time": -1,
+        "model_alpha": 1.0,
+        "model_angle": [
+          -0.0,
+          90.0,
+          -0.0
+        ],
+        "model_id": 7000177,
+        "name": "方墙56",
+        "ob_max_hp": 0,
+        "parent_unit_id": 0,
+        "physic_enable": true,
+        "position": [
+          -45.5,
+          2.3159999847412,
+          32.25
+        ],
+        "prefab_id": 1204079,
+        "scale": [
+          1.0,
+          1.0,
+          1.15
+        ],
+        "unit_eid": 1204079,
+        "unit_id": 2001581630,
+        "unit_type": 256,
+        "unit_uid": "1204079_uid",
+        "world_position": [
+          -45.5,
+          2.3159999847412,
+          32.25
+        ]
+      },
+      "id": 2001581630
+    },
+    {
+      "children": [],
+      "data": {
+        "create_probability": 1.0,
+        "enable_hp": false,
+        "fix_destroy_time": -1,
+        "model_alpha": 1.0,
+        "model_angle": [
+          0,
+          0,
+          0
+        ],
+        "model_id": 7000177,
+        "name": "方墙1",
+        "ob_max_hp": 0,
+        "parent_unit_id": 0,
+        "physic_enable": true,
+        "position": [
+          16.5,
+          2.286,
+          -18.0
+        ],
+        "prefab_id": 1204079,
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "unit_eid": 1204079,
+        "unit_id": 1206702150,
+        "unit_type": 256,
+        "unit_uid": "1204079_uid",
+        "world_position": [
+          16.5,
+          2.286,
+          -18.0
+        ]
+      },
+      "id": 1206702150
+    },
+    {
+      "children": [],
+      "data": {
+        "model_angle": [
+          0,
+          0,
+          0
+        ],
+        "model_id": 9000101,
+        "name": "变异蛋B6",
+        "parent_unit_id": 0,
+        "position": [
+          -39.44,
+          2.316,
+          27.155
+        ],
+        "prefab_id": 9000081,
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "unit_eid": 9000081,
+        "unit_id": 1080764999,
+        "unit_type": 4,
+        "world_position": [
+          -39.44,
+          2.316,
+          27.155
+        ]
+      },
+      "id": 1080764999
+    },
+    {
+      "children": [],
+      "data": {
+        "model_angle": [
+          0,
+          0,
+          0
+        ],
+        "model_id": 40326,
+        "name": "武器物品箱8_9",
+        "parent_unit_id": 0,
+        "position": [
+          -59.0,
+          2.3154296875,
+          -18.5
+        ],
+        "prefab_id": 31010115,
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "unit_eid": 31010115,
+        "unit_id": 2036874317,
+        "unit_type": 4096,
+        "unit_uid": "300019_uid",
+        "world_position": [
+          -59.0,
+          2.3154296875,
+          -18.5
+        ]
+      },
+      "id": 2036874317
+    },
+    {
+      "children": [],
+      "data": {
+        "model_angle": [
+          0,
+          0,
+          0
+        ],
+        "model_id": 9000002,
+        "name": "僵尸蛋1",
+        "parent_unit_id": 0,
+        "position": [
+          -75.586151123047,
+          2.31640625,
+          -8.0320091247559
+        ],
+        "prefab_id": 9000090,
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "unit_eid": 9000090,
+        "unit_id": 1491798607,
+        "unit_type": 4,
+        "world_position": [
+          -75.586151123047,
+          2.31640625,
+          -8.0320091247559
+        ]
+      },
+      "id": 1491798607
+    },
+    {
+      "children": [],
+      "data": {
+        "create_probability": 1.0,
+        "fix_destroy_time": -1,
+        "model_alpha": 1.0,
+        "model_angle": [
+          -0.0,
+          -90.0,
+          0.0
+        ],
+        "model_id": 40290,
+        "name": "终点胜利000",
+        "parent_unit_id": 0,
+        "position": [
+          -90.75,
+          4.06,
+          -12.0
+        ],
+        "prefab_id": 1501430,
+        "scale": [
+          0.49999982118607,
+          0.5,
+          0.99999964237213
+        ],
+        "unit_eid": 1501430,
+        "unit_id": 1881392724,
+        "unit_type": 256,
+        "unit_uid": "tree_a_48",
+        "world_position": [
+          -90.75,
+          4.06,
+          -12.0
+        ]
+      },
+      "id": 1881392724
+    },
+    {
+      "children": [],
+      "data": {
+        "create_probability": 1.0,
+        "enable_hp": false,
+        "fix_destroy_time": -1,
+        "model_alpha": 1.0,
+        "model_angle": [
+          -0.0,
+          90.0,
+          -0.0
+        ],
+        "model_id": 7000177,
+        "name": "方墙46",
+        "ob_max_hp": 0,
+        "parent_unit_id": 0,
+        "physic_enable": true,
+        "position": [
+          -35.5,
+          2.3159999847412,
+          5.25
+        ],
+        "prefab_id": 1204079,
+        "scale": [
+          1.0,
+          1.0,
+          1.15
+        ],
+        "unit_eid": 1204079,
+        "unit_id": 1925646933,
+        "unit_type": 256,
+        "unit_uid": "1204079_uid",
+        "world_position": [
+          -35.5,
+          2.3159999847412,
+          5.25
+        ]
+      },
+      "id": 1925646933
+    },
+    {
+      "children": [],
+      "data": {
+        "create_probability": 1.0,
+        "fix_destroy_time": -1,
+        "model_alpha": 1.0,
+        "model_angle": [
+          -0.0,
+          -90.0,
+          0.0
+        ],
+        "model_id": 40291,
+        "name": "终点胜利背景100",
+        "parent_unit_id": 0,
+        "position": [
+          -90.625,
+          4.06,
+          -10.405
+        ],
+        "prefab_id": 1501440,
+        "scale": [
+          1.1595000267029,
+          0.5,
+          0.49999982118607
+        ],
+        "unit_eid": 1501440,
+        "unit_id": 2004435032,
+        "unit_type": 256,
+        "unit_uid": "tree_a_49",
+        "world_position": [
+          -90.625,
+          4.06,
+          -10.405
+        ]
+      },
+      "id": 2004435032
+    },
+    {
+      "children": [],
+      "data": {
+        "model_angle": [
+          0,
+          0,
+          0
+        ],
+        "model_id": 9000102,
+        "name": "变异蛋A12",
+        "parent_unit_id": 0,
+        "position": [
+          3.56,
+          2.316,
+          -11.0
+        ],
+        "prefab_id": 9000080,
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "unit_eid": 9000080,
+        "unit_id": 1073930844,
+        "unit_type": 4,
+        "world_position": [
+          3.56,
+          2.316,
+          -11.0
+        ]
+      },
+      "id": 1073930844
+    },
+    {
+      "children": [],
+      "data": {
+        "model_angle": [
+          0,
+          0,
+          0
+        ],
+        "model_id": 40326,
+        "name": "武器物品箱8",
+        "parent_unit_id": 0,
+        "position": [
+          -1.5,
+          2.843,
+          10.0
+        ],
+        "prefab_id": 31010115,
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "unit_eid": 31010115,
+        "unit_id": 1428364386,
+        "unit_type": 4096,
+        "unit_uid": "300019_uid",
+        "world_position": [
+          -1.5,
+          2.843,
+          10.0
+        ]
+      },
+      "id": 1428364386
+    },
+    {
+      "children": [],
+      "data": {
+        "model_angle": [
+          -0.0,
+          0.0,
+          0.0
+        ],
+        "model_id": 90006,
+        "name": "胜利区域1",
+        "parent_unit_id": 0,
+        "position": [
+          -95.5,
+          5.0,
+          -10.1
+        ],
+        "prefab_id": 31010102,
+        "scale": [
+          8.9999998092651,
+          7.5,
+          23.799999237061
+        ],
+        "unit_eid": 31010102,
+        "unit_id": 1146983526,
+        "unit_type": 8,
+        "unit_uid": "31010102_uid",
+        "world_position": [
+          -95.5,
+          5.0,
+          -10.1
+        ]
+      },
+      "id": 1146983526
+    },
+    {
+      "children": [],
+      "data": {
+        "model_angle": [
+          0,
+          0,
+          0
+        ],
+        "model_id": 40326,
+        "name": "武器物品箱8_6",
+        "parent_unit_id": 0,
+        "position": [
+          -45.5,
+          2.3154296875,
+          0.5
+        ],
+        "prefab_id": 31010115,
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "unit_eid": 31010115,
+        "unit_id": 2028388970,
+        "unit_type": 4096,
+        "unit_uid": "300019_uid",
+        "world_position": [
+          -45.5,
+          2.3154296875,
+          0.5
+        ]
+      },
+      "id": 2028388970
+    },
+    {
+      "children": [],
+      "data": {
+        "create_probability": 1.0,
+        "enable_hp": false,
+        "fix_destroy_time": -1,
+        "model_alpha": 1.0,
+        "model_angle": [
+          -0.0,
+          90.0,
+          -0.0
+        ],
+        "model_id": 7000177,
+        "name": "方墙30",
+        "ob_max_hp": 0,
+        "parent_unit_id": 0,
+        "physic_enable": true,
+        "position": [
+          -12.25,
+          2.316,
+          5.5
+        ],
+        "prefab_id": 1204079,
+        "scale": [
+          1.0,
+          1.0,
+          1.15
+        ],
+        "unit_eid": 1204079,
+        "unit_id": 2013002864,
+        "unit_type": 256,
+        "unit_uid": "1204079_uid",
+        "world_position": [
+          -12.25,
+          2.316,
+          5.5
+        ]
+      },
+      "id": 2013002864
+    },
+    {
+      "children": [],
+      "data": {
+        "create_probability": 1.0,
+        "enable_hp": false,
+        "fix_destroy_time": -1,
+        "model_alpha": 1.0,
+        "model_angle": [
+          0,
+          0,
+          0
+        ],
+        "model_id": 7000177,
+        "name": "方墙26",
+        "ob_max_hp": 0,
+        "parent_unit_id": 0,
+        "physic_enable": true,
+        "position": [
+          -82.0,
+          2.316,
+          -17.0
+        ],
+        "prefab_id": 1204079,
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "unit_eid": 1204079,
+        "unit_id": 1781623410,
+        "unit_type": 256,
+        "unit_uid": "1204079_uid",
+        "world_position": [
+          -82.0,
+          2.316,
+          -17.0
+        ]
+      },
+      "id": 1781623410
+    },
+    {
+      "children": [],
+      "data": {
+        "model_angle": [
+          0,
+          0,
+          0
+        ],
+        "model_id": 9000102,
+        "name": "变异蛋A13",
+        "parent_unit_id": 0,
+        "position": [
+          -70.370193481445,
+          2.31640625,
+          0.62998008728027
+        ],
+        "prefab_id": 9000080,
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "unit_eid": 9000080,
+        "unit_id": 1731296382,
+        "unit_type": 4,
+        "world_position": [
+          -70.370193481445,
+          2.31640625,
+          0.62998008728027
+        ]
+      },
+      "id": 1731296382
+    },
+    {
+      "children": [],
+      "data": {
+        "create_probability": 1.0,
+        "enable_hp": false,
+        "fix_destroy_time": -1,
+        "model_alpha": 1.0,
+        "model_angle": [
+          -0.0,
+          90.0,
+          -0.0
+        ],
+        "model_id": 40357,
+        "name": "机械墙6",
+        "ob_max_hp": 0,
+        "parent_unit_id": 0,
+        "physic_enable": true,
+        "position": [
+          -40.0,
+          2.3159999847412,
+          36.75
+        ],
+        "prefab_id": 1102440,
+        "scale": [
+          4.0310001373291,
+          5.0920000076294,
+          1.0
+        ],
+        "unit_eid": 1102440,
+        "unit_id": 1687330069,
+        "unit_type": 256,
+        "unit_uid": "100821_uid",
+        "world_position": [
+          -40.0,
+          2.3159999847412,
+          36.75
+        ]
+      },
+      "id": 1687330069
+    },
+    {
+      "children": [],
+      "data": {
+        "create_probability": 1.0,
+        "emissive_intensity_1": 0.0,
+        "enable_hp": false,
+        "fix_destroy_time": -1,
+        "material_metalness_1": 0.0,
+        "material_roughness_1": 1.0,
+        "model_alpha": 1.0,
+        "model_angle": [
+          0,
+          0,
+          0
+        ],
+        "model_id": 55826,
+        "name": "箱子1",
+        "ob_max_hp": 0,
+        "parent_unit_id": 0,
+        "physic_enable": true,
+        "position": [
+          10.921459197998,
+          2.31591796875,
+          -19.205451965332
+        ],
+        "prefab_id": 100312,
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "unit_eid": 100312,
+        "unit_id": 1192156288,
+        "unit_type": 256,
+        "unit_uid": "100312_uid",
+        "world_position": [
+          10.921459197998,
+          2.31591796875,
+          -19.205451965332
+        ]
+      },
+      "id": 1192156288
+    },
+    {
+      "children": [],
+      "data": {
+        "model_angle": [
+          0,
+          0,
+          0
+        ],
+        "model_id": 50494,
+        "name": "隐身区域5",
+        "parent_unit_id": 0,
+        "position": [
+          -34.0,
+          2.31640625,
+          -18.0
+        ],
+        "prefab_id": 300025,
+        "scale": [
+          5,
+          3,
+          5
+        ],
+        "unit_eid": 300025,
+        "unit_id": 1205077128,
+        "unit_type": 512,
+        "unit_uid": "300025_uid",
+        "world_position": [
+          -34.0,
+          2.31640625,
+          -18.0
+        ]
+      },
+      "id": 1205077128
+    },
+    {
+      "children": [],
+      "data": {
+        "model_angle": [
+          0,
+          0,
+          0
+        ],
+        "model_id": 9000100,
+        "name": "变异蛋C3",
+        "parent_unit_id": 0,
+        "position": [
+          8.56,
+          2.316,
+          34.175
+        ],
+        "prefab_id": 9000082,
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "unit_eid": 9000082,
+        "unit_id": 1743679626,
+        "unit_type": 4,
+        "world_position": [
+          8.56,
+          2.316,
+          34.175
+        ]
+      },
+      "id": 1743679626
+    },
+    {
+      "children": [],
+      "data": {
+        "create_probability": 1.0,
+        "fix_destroy_time": -1,
+        "model_angle": [
+          -0.0396,
+          -90.0,
+          0.0
+        ],
+        "model_id": 58273,
+        "name": "悬浮文字6_3",
+        "parent_unit_id": 0,
+        "position": [
+          -81.5,
+          2.3159999847412,
+          -7.25
+        ],
+        "prefab_id": 103774,
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "unit_eid": 103774,
+        "unit_id": 1140405899,
+        "unit_type": 256,
+        "unit_uid": "1101524_uid",
+        "world_position": [
+          -81.5,
+          2.3159999847412,
+          -7.25
+        ]
+      },
+      "id": 1140405899
+    },
+    {
+      "children": [],
+      "data": {
+        "create_probability": 1.0,
+        "emissive_intensity_1": 0.0,
+        "enable_hp": false,
+        "fix_destroy_time": -1,
+        "material_metalness_1": 0.0,
+        "material_roughness_1": 1.0,
+        "model_alpha": 1.0,
+        "model_angle": [
+          0,
+          0,
+          0
+        ],
+        "model_id": 55826,
+        "name": "箱子2",
+        "ob_max_hp": 0,
+        "parent_unit_id": 0,
+        "physic_enable": true,
+        "position": [
+          -54.5,
+          2.316,
+          0.0
+        ],
+        "prefab_id": 100312,
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "unit_eid": 100312,
+        "unit_id": 1218997392,
+        "unit_type": 256,
+        "unit_uid": "100312_uid",
+        "world_position": [
+          -54.5,
+          2.316,
+          0.0
+        ]
+      },
+      "id": 1218997392
+    },
+    {
+      "children": [],
+      "data": {
+        "create_probability": 1.0,
+        "enable_hp": false,
+        "fix_destroy_time": -1,
+        "model_alpha": 1.0,
+        "model_angle": [
+          0,
+          0,
+          0
+        ],
+        "model_id": 7000177,
+        "name": "方墙28",
+        "ob_max_hp": 0,
+        "parent_unit_id": 0,
+        "physic_enable": true,
+        "position": [
+          -18.5,
+          2.316,
+          -17.0
+        ],
+        "prefab_id": 1204079,
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "unit_eid": 1204079,
+        "unit_id": 2050722961,
+        "unit_type": 256,
+        "unit_uid": "1204079_uid",
+        "world_position": [
+          -18.5,
+          2.316,
+          -17.0
+        ]
+      },
+      "id": 2050722961
+    },
+    {
+      "children": [],
+      "data": {
+        "create_probability": 1.0,
+        "enable_hp": false,
+        "fix_destroy_time": -1,
+        "model_alpha": 1.0,
+        "model_angle": [
+          0,
+          0,
+          0
+        ],
+        "model_id": 7000177,
+        "name": "方墙4",
+        "ob_max_hp": 0,
+        "parent_unit_id": 0,
+        "physic_enable": true,
+        "position": [
+          16.5,
+          2.286,
+          11.0
+        ],
+        "prefab_id": 1204079,
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "unit_eid": 1204079,
+        "unit_id": 1990128796,
+        "unit_type": 256,
+        "unit_uid": "1204079_uid",
+        "world_position": [
+          16.5,
+          2.286,
+          11.0
+        ]
+      },
+      "id": 1990128796
+    },
+    {
+      "children": [],
+      "data": {
+        "model_angle": [
+          0,
+          0,
+          0
+        ],
+        "model_id": 9000101,
+        "name": "变异蛋B5",
+        "parent_unit_id": 0,
+        "position": [
+          -28.56,
+          2.316,
+          23.155
+        ],
+        "prefab_id": 9000081,
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "unit_eid": 9000081,
+        "unit_id": 1881048733,
+        "unit_type": 4,
+        "world_position": [
+          -28.56,
+          2.316,
+          23.155
+        ]
+      },
+      "id": 1881048733
+    },
+    {
+      "children": [],
+      "data": {
+        "create_probability": 1.0,
+        "emissive_intensity_1": 0.0,
+        "enable_hp": false,
+        "fix_destroy_time": -1,
+        "material_metalness_1": 0.0,
+        "material_roughness_1": 1.0,
+        "model_alpha": 1.0,
+        "model_angle": [
+          0,
+          0,
+          0
+        ],
+        "model_id": 7000495,
+        "name": "欧式方形窄门1",
+        "ob_max_hp": 0,
+        "parent_unit_id": 0,
+        "physic_enable": true,
+        "position": [
+          -18.352,
+          2.315,
+          15.506
+        ],
+        "prefab_id": 100830,
+        "scale": [
+          1.0,
+          1.6666666666667,
+          1.496749997139
+        ],
+        "unit_eid": 100830,
+        "unit_id": 1594492577,
+        "unit_type": 256,
+        "unit_uid": "100830_uid",
+        "world_position": [
+          -18.352,
+          2.315,
+          15.506
+        ]
+      },
+      "id": 1594492577
+    },
+    {
+      "children": [],
+      "data": {
+        "create_probability": 1.0,
+        "enable_hp": false,
+        "fix_destroy_time": -1,
+        "model_angle": [
+          0,
+          0,
+          0
+        ],
+        "model_id": 40038,
+        "name": "半圆气垫1",
+        "ob_max_hp": 0,
+        "parent_unit_id": 0,
+        "physic_enable": true,
+        "position": [
+          -69.75,
+          2.316,
+          16.876
+        ],
+        "prefab_id": 1101130,
+        "scale": [
+          2.2497665405054,
+          1.0,
+          2.25066683024
+        ],
+        "unit_eid": 1101130,
+        "unit_id": 1275660450,
+        "unit_type": 256,
+        "unit_uid": "100035",
+        "world_position": [
+          -69.75,
+          2.316,
+          16.876
+        ]
+      },
+      "id": 1275660450
+    },
+    {
+      "children": [],
+      "data": {
+        "create_probability": 1.0,
+        "fix_destroy_time": -1,
+        "model_angle": [
+          -0.0396,
+          -90.0,
+          0.0
+        ],
+        "model_id": 58273,
+        "name": "悬浮文字15",
+        "parent_unit_id": 0,
+        "position": [
+          -50.5,
+          2.3159999847412,
+          36.75
+        ],
+        "prefab_id": 103774,
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "unit_eid": 103774,
+        "unit_id": 1080520875,
+        "unit_type": 256,
+        "unit_uid": "1101524_uid",
+        "world_position": [
+          -50.5,
+          2.3159999847412,
+          36.75
+        ]
+      },
+      "id": 1080520875
+    },
+    {
+      "children": [],
+      "data": {
+        "create_probability": 1.0,
+        "fix_destroy_time": -1,
+        "model_alpha": 1.0,
+        "model_angle": [
+          0,
+          0,
+          0
+        ],
+        "model_id": 40331,
+        "name": "蹦床1",
+        "parent_unit_id": 0,
+        "position": [
+          3.1172389984131,
+          2.3154296875,
+          9.3702354431152
+        ],
+        "prefab_id": 1101030,
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "unit_eid": 1101030,
+        "unit_id": 1873217301,
+        "unit_type": 256,
+        "unit_uid": "100000_uid",
+        "world_position": [
+          3.1172389984131,
+          2.3154296875,
+          9.3702354431152
+        ]
+      },
+      "id": 1873217301
+    },
+    {
+      "children": [],
+      "data": {
+        "create_probability": 1.0,
+        "fix_destroy_time": -1,
+        "model_alpha": 1.0,
+        "model_angle": [
+          0,
+          0,
+          0
+        ],
+        "model_id": 100093,
+        "name": "气球炸弹2",
+        "parent_unit_id": 0,
+        "position": [
+          -33.758392333984,
+          2.31640625,
+          -9.1627473831177
+        ],
+        "prefab_id": 1601131,
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "unit_eid": 1601131,
+        "unit_id": 1430735542,
+        "unit_type": 256,
+        "unit_uid": "1601131_uid",
+        "world_position": [
+          -33.758392333984,
+          2.31640625,
+          -9.1627473831177
+        ]
+      },
+      "id": 1430735542
+    },
+    {
+      "children": [],
+      "data": {
+        "model_angle": [
+          0,
+          0,
+          0
+        ],
+        "model_id": 50494,
+        "name": "隐身区域1",
+        "parent_unit_id": 0,
+        "position": [
+          -42.618515014648,
+          2.31640625,
+          36.767498016357
+        ],
+        "prefab_id": 300025,
+        "scale": [
+          5,
+          3,
+          5
+        ],
+        "unit_eid": 300025,
+        "unit_id": 1492090551,
+        "unit_type": 512,
+        "unit_uid": "300025_uid",
+        "world_position": [
+          -42.618515014648,
+          2.31640625,
+          36.767498016357
+        ]
+      },
+      "id": 1492090551
+    },
+    {
+      "children": [],
+      "data": {
+        "model_angle": [
+          -0.0,
+          -90.0,
+          180.0
+        ],
+        "model_id": 50179,
+        "name": "穿梭之门40",
+        "parent_unit_id": 0,
+        "position": [
+          -18.5,
+          6.0,
+          -8.0
+        ],
+        "prefab_id": 3101301,
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "unit_eid": 3101301,
+        "unit_id": 1431494328,
+        "unit_type": 512,
+        "unit_uid": "3101301_uid",
+        "world_position": [
+          -18.5,
+          6.0,
+          -8.0
+        ]
+      },
+      "id": 1431494328
+    },
+    {
+      "children": [],
+      "data": {
+        "model_id": 0,
+        "parent_unit_id": 0,
+        "prefab_id": 0,
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "unit_eid": 0,
+        "unit_id": 1685819687,
+        "unit_type": 0
+      },
+      "id": 1685819687
+    },
+    {
+      "children": [],
+      "data": {
+        "create_probability": 1.0,
+        "enable_hp": false,
+        "fix_destroy_time": -1,
+        "model_alpha": 1.0,
+        "model_angle": [
+          -0.0,
+          90.0,
+          -0.0
+        ],
+        "model_id": 7000177,
+        "name": "方墙50",
+        "ob_max_hp": 0,
+        "parent_unit_id": 0,
+        "physic_enable": true,
+        "position": [
+          -82.5,
+          2.316,
+          5.25
+        ],
+        "prefab_id": 1204079,
+        "scale": [
+          1.0,
+          1.0,
+          1.5499999761581
+        ],
+        "unit_eid": 1204079,
+        "unit_id": 2076620475,
+        "unit_type": 256,
+        "unit_uid": "1204079_uid",
+        "world_position": [
+          -82.5,
+          2.316,
+          5.25
+        ]
+      },
+      "id": 2076620475
+    },
+    {
+      "children": [],
+      "data": {
+        "create_probability": 1.0,
+        "enable_hp": false,
+        "fix_destroy_time": -1,
+        "model_alpha": 1.0,
+        "model_angle": [
+          0,
+          0,
+          0
+        ],
+        "model_id": 7000177,
+        "name": "方墙54",
+        "ob_max_hp": 0,
+        "parent_unit_id": 0,
+        "physic_enable": true,
+        "position": [
+          -51.5,
+          2.316,
+          -2.0
+        ],
+        "prefab_id": 1204079,
+        "scale": [
+          1.0,
+          1.0,
+          1.4999999761581
+        ],
+        "unit_eid": 1204079,
+        "unit_id": 1799559364,
+        "unit_type": 256,
+        "unit_uid": "1204079_uid",
+        "world_position": [
+          -51.5,
+          2.316,
+          -2.0
+        ]
+      },
+      "id": 1799559364
+    },
+    {
+      "children": [],
+      "data": {
+        "model_angle": [
+          0,
+          0,
+          0
+        ],
+        "model_id": 9000100,
+        "name": "变异蛋C10",
+        "parent_unit_id": 0,
+        "position": [
+          -45.863258361816,
+          2.31640625,
+          -8.5840892791748
+        ],
+        "prefab_id": 9000082,
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "unit_eid": 9000082,
+        "unit_id": 1512540079,
+        "unit_type": 4,
+        "world_position": [
+          -45.863258361816,
+          2.31640625,
+          -8.5840892791748
+        ]
+      },
+      "id": 1512540079
+    },
+    {
+      "children": [],
+      "data": {
+        "create_probability": 1.0,
+        "fix_destroy_time": -1,
+        "material_metalness_1": 0.0,
+        "material_pattern_color": [
+          255,
+          255,
+          255,
+          255
+        ],
+        "material_roughness_1": 1.0,
+        "model_angle": [
+          0,
+          0,
+          0
+        ],
+        "model_id": 50338,
+        "name": "爆炸魔药瓶3",
+        "parent_unit_id": 0,
+        "position": [
+          -33.896648406982,
+          2.31591796875,
+          -18.100296020508
+        ],
+        "prefab_id": 100155,
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "unit_eid": 100155,
+        "unit_id": 1524647113,
+        "unit_type": 256,
+        "unit_uid": "100155_uid",
+        "world_position": [
+          -33.896648406982,
+          2.31591796875,
+          -18.100296020508
+        ]
+      },
+      "id": 1524647113
+    },
+    {
+      "children": [],
+      "data": {
+        "create_probability": 1.0,
+        "enable_hp": false,
+        "fix_destroy_time": -1,
+        "model_alpha": 1.0,
+        "model_angle": [
+          -0.0,
+          90.0,
+          -0.0
+        ],
+        "model_id": 7000177,
+        "name": "方墙8",
+        "ob_max_hp": 0,
+        "parent_unit_id": 0,
+        "physic_enable": true,
+        "position": [
+          -18.0,
+          2.297,
+          -22.5
+        ],
+        "prefab_id": 1204079,
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "unit_eid": 1204079,
+        "unit_id": 1978532558,
+        "unit_type": 256,
+        "unit_uid": "1204079_uid",
+        "world_position": [
+          -18.0,
+          2.297,
+          -22.5
+        ]
+      },
+      "id": 1978532558
+    },
+    {
+      "children": [],
+      "data": {
+        "create_probability": 1.0,
+        "enable_hp": false,
+        "fix_destroy_time": -1,
+        "model_alpha": 1.0,
+        "model_angle": [
+          0,
+          0,
+          0
+        ],
+        "model_id": 7000177,
+        "name": "方墙53",
+        "ob_max_hp": 0,
+        "parent_unit_id": 0,
+        "physic_enable": true,
+        "position": [
+          -51.5,
+          2.316,
+          11.25
+        ],
+        "prefab_id": 1204079,
+        "scale": [
+          1.0,
+          1.0,
+          1.1499999880791
+        ],
+        "unit_eid": 1204079,
+        "unit_id": 1350719188,
+        "unit_type": 256,
+        "unit_uid": "1204079_uid",
+        "world_position": [
+          -51.5,
+          2.316,
+          11.25
+        ]
+      },
+      "id": 1350719188
+    },
+    {
+      "children": [],
+      "data": {
+        "model_angle": [
+          0,
+          0,
+          0
+        ],
+        "model_id": 9000100,
+        "name": "变异蛋C2",
+        "parent_unit_id": 0,
+        "position": [
+          -12.56,
+          2.316,
+          35.325
+        ],
+        "prefab_id": 9000082,
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "unit_eid": 9000082,
+        "unit_id": 1643323093,
+        "unit_type": 4,
+        "world_position": [
+          -12.56,
+          2.316,
+          35.325
+        ]
+      },
+      "id": 1643323093
+    },
+    {
+      "children": [],
+      "data": {
+        "model_angle": [
+          0,
+          0,
+          0
+        ],
+        "model_id": 50494,
+        "name": "隐身区域8",
+        "parent_unit_id": 0,
+        "position": [
+          7.5,
+          2.31640625,
+          -3.5
+        ],
+        "prefab_id": 300025,
+        "scale": [
+          5,
+          3,
+          5
+        ],
+        "unit_eid": 300025,
+        "unit_id": 1311521496,
+        "unit_type": 512,
+        "unit_uid": "300025_uid",
+        "world_position": [
+          7.5,
+          2.31640625,
+          -3.5
+        ]
+      },
+      "id": 1311521496
+    },
+    {
+      "children": [],
+      "data": {
+        "model_angle": [
+          0,
+          0,
+          0
+        ],
+        "model_id": 9000102,
+        "name": "变异蛋A11",
+        "parent_unit_id": 0,
+        "position": [
+          -41.049160003662,
+          2.31591796875,
+          -18.565900802612
+        ],
+        "prefab_id": 9000080,
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "unit_eid": 9000080,
+        "unit_id": 1549045028,
+        "unit_type": 4,
+        "world_position": [
+          -41.049160003662,
+          2.31591796875,
+          -18.565900802612
+        ]
+      },
+      "id": 1549045028
+    },
+    {
+      "children": [],
+      "data": {
+        "create_probability": 1.0,
+        "enable_hp": false,
+        "fix_destroy_time": -1,
+        "model_alpha": 1.0,
+        "model_angle": [
+          0,
+          0,
+          0
+        ],
+        "model_id": 7000177,
+        "name": "方墙29",
+        "ob_max_hp": 0,
+        "parent_unit_id": 0,
+        "physic_enable": true,
+        "position": [
+          -18.5,
+          2.316,
+          1.0
+        ],
+        "prefab_id": 1204079,
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "unit_eid": 1204079,
+        "unit_id": 1983781596,
+        "unit_type": 256,
+        "unit_uid": "1204079_uid",
+        "world_position": [
+          -18.5,
+          2.316,
+          1.0
+        ]
+      },
+      "id": 1983781596
+    },
+    {
+      "children": [],
+      "data": {
+        "create_probability": 1.0,
+        "fix_destroy_time": -1,
+        "model_angle": [
+          0.0,
+          -90.0,
+          0.0
+        ],
+        "model_id": 40223,
+        "name": "传送带1",
+        "parent_unit_id": 0,
+        "position": [
+          -1.5,
+          2.316,
+          23.0
+        ],
+        "prefab_id": 1101040,
+        "scale": [
+          4.25,
+          1.0,
+          1.0
+        ],
+        "unit_eid": 1101040,
+        "unit_id": 1043518687,
+        "unit_type": 256,
+        "unit_uid": "floor_7",
+        "world_position": [
+          -1.5,
+          2.316,
+          23.0
+        ]
+      },
+      "id": 1043518687
+    },
+    {
+      "children": [],
+      "data": {
+        "model_alpha": 1.0,
+        "model_angle": [
+          0,
+          0,
+          0
+        ],
+        "model_id": 50206,
+        "name": "拖尾电流1",
+        "parent_unit_id": 0,
+        "position": [
+          -1.5,
+          2.843,
+          23.5
+        ],
+        "prefab_id": 3301506,
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "unit_eid": 3301506,
+        "unit_id": 1994453219,
+        "unit_type": 512,
+        "unit_uid": "3301506_uid",
+        "world_position": [
+          -1.5,
+          2.843,
+          23.5
+        ]
+      },
+      "id": 1994453219
+    },
+    {
+      "children": [],
+      "data": {
+        "model_angle": [
+          -0.0,
+          90.0,
+          -0.0
+        ],
+        "model_id": 50004,
+        "name": "风圈1",
+        "parent_unit_id": 0,
+        "position": [
+          -1.3317947387695,
+          2.8427734375,
+          16.437685012817
+        ],
+        "prefab_id": 3101410,
+        "scale": [
+          1,
+          6,
+          6
+        ],
+        "unit_eid": 3101410,
+        "unit_id": 1872375019,
+        "unit_type": 512,
+        "unit_uid": "3101410_uid",
+        "world_position": [
+          -1.3317947387695,
+          2.8427734375,
+          16.437685012817
+        ]
+      },
+      "id": 1872375019
+    },
+    {
+      "children": [],
+      "data": {
+        "model_alpha": 1.0,
+        "model_angle": [
+          0,
+          0,
+          0
+        ],
+        "model_id": 50206,
+        "name": "拖尾电流3",
+        "parent_unit_id": 0,
+        "position": [
+          -70.959785461426,
+          2.31591796875,
+          34.902053833008
+        ],
+        "prefab_id": 3301506,
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "unit_eid": 3301506,
+        "unit_id": 2034104046,
+        "unit_type": 512,
+        "unit_uid": "3301506_uid",
+        "world_position": [
+          -70.959785461426,
+          2.31591796875,
+          34.902053833008
+        ]
+      },
+      "id": 2034104046
+    },
+    {
+      "children": [],
+      "data": {
+        "create_probability": 1.0,
+        "fix_destroy_time": -1,
+        "model_angle": [
+          -0.0396,
+          180.0,
+          0.0
+        ],
+        "model_id": 58273,
+        "name": "悬浮文字6_5",
+        "parent_unit_id": 0,
+        "position": [
+          6.5,
+          3.266,
+          -21.251
+        ],
+        "prefab_id": 103774,
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "unit_eid": 103774,
+        "unit_id": 1105742071,
+        "unit_type": 256,
+        "unit_uid": "1101524_uid",
+        "world_position": [
+          6.5,
+          3.266,
+          -21.251
+        ]
+      },
+      "id": 1105742071
+    },
+    {
+      "children": [],
+      "data": {
+        "model_angle": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "model_id": 90002,
+        "name": "相机路径0",
+        "parent_unit_id": 0,
+        "position": [
+          99999.0,
+          99999.0,
+          99999.0
+        ],
+        "prefab_id": 3201063,
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "unit_eid": 3201063,
+        "unit_id": 1931411198,
+        "unit_type": 2048,
+        "unit_uid": "3201063_uid",
+        "world_position": [
+          99999.0,
+          99999.0,
+          99999.0
+        ]
+      },
+      "id": 1931411198
+    },
+    {
+      "children": [],
+      "data": {
+        "create_probability": 1.0,
+        "enable_hp": false,
+        "fix_destroy_time": -1,
+        "model_alpha": 1.0,
+        "model_angle": [
+          0,
+          0,
+          0
+        ],
+        "model_id": 7000177,
+        "name": "方墙33",
+        "ob_max_hp": 0,
+        "parent_unit_id": 0,
+        "physic_enable": true,
+        "position": [
+          -18.5,
+          2.316,
+          29.25
+        ],
+        "prefab_id": 1204079,
+        "scale": [
+          1.0,
+          1.0,
+          2.15
+        ],
+        "unit_eid": 1204079,
+        "unit_id": 1545965312,
+        "unit_type": 256,
+        "unit_uid": "1204079_uid",
+        "world_position": [
+          -18.5,
+          2.316,
+          29.25
+        ]
+      },
+      "id": 1545965312
+    },
+    {
+      "children": [],
+      "data": {
+        "model_alpha": 1.0,
+        "model_angle": [
+          0,
+          0,
+          0
+        ],
+        "model_id": 50206,
+        "name": "拖尾电流4",
+        "parent_unit_id": 0,
+        "position": [
+          -4.8929653167725,
+          2.31640625,
+          -14.291271209717
+        ],
+        "prefab_id": 3301506,
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "unit_eid": 3301506,
+        "unit_id": 1706126085,
+        "unit_type": 512,
+        "unit_uid": "3301506_uid",
+        "world_position": [
+          -4.8929653167725,
+          2.31640625,
+          -14.291271209717
+        ]
+      },
+      "id": 1706126085
+    },
+    {
+      "children": [],
+      "data": {
+        "create_probability": 1.0,
+        "enable_hp": false,
+        "fix_destroy_time": -1,
+        "model_alpha": 1.0,
+        "model_angle": [
+          -0.0,
+          90.0,
+          -0.0
+        ],
+        "model_id": 7000177,
+        "name": "方墙6",
+        "ob_max_hp": 0,
+        "parent_unit_id": 0,
+        "physic_enable": true,
+        "position": [
+          6.5,
+          2.297,
+          -22.5
+        ],
+        "prefab_id": 1204079,
+        "scale": [
+          1.0,
+          1.0,
+          1.9
+        ],
+        "unit_eid": 1204079,
+        "unit_id": 1579725578,
+        "unit_type": 256,
+        "unit_uid": "1204079_uid",
+        "world_position": [
+          6.5,
+          2.297,
+          -22.5
+        ]
+      },
+      "id": 1579725578
+    },
+    {
+      "children": [],
+      "data": {
+        "model_angle": [
+          0,
+          0,
+          0
+        ],
+        "model_id": 9000101,
+        "name": "变异蛋B13",
+        "parent_unit_id": 0,
+        "position": [
+          -34.482646942139,
+          2.31591796875,
+          37.659587860107
+        ],
+        "prefab_id": 9000081,
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "unit_eid": 9000081,
+        "unit_id": 1854567188,
+        "unit_type": 4,
+        "world_position": [
+          -34.482646942139,
+          2.31591796875,
+          37.659587860107
+        ]
+      },
+      "id": 1854567188
+    },
+    {
+      "children": [],
+      "data": {
+        "model_angle": [
+          0,
+          0,
+          0
+        ],
+        "model_id": 9000100,
+        "name": "变异蛋C6",
+        "parent_unit_id": 0,
+        "position": [
+          -1.44,
+          2.316,
+          -6.825
+        ],
+        "prefab_id": 9000082,
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "unit_eid": 9000082,
+        "unit_id": 1784268053,
+        "unit_type": 4,
+        "world_position": [
+          -1.44,
+          2.316,
+          -6.825
+        ]
+      },
+      "id": 1784268053
+    },
+    {
+      "children": [],
+      "data": {
+        "model_angle": [
+          0,
+          0,
+          0
+        ],
+        "model_id": 9000102,
+        "name": "变异蛋A10",
+        "parent_unit_id": 0,
+        "position": [
+          -27.889099121094,
+          2.31591796875,
+          -17.957061767578
+        ],
+        "prefab_id": 9000080,
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "unit_eid": 9000080,
+        "unit_id": 1135616291,
+        "unit_type": 4,
+        "world_position": [
+          -27.889099121094,
+          2.31591796875,
+          -17.957061767578
+        ]
+      },
+      "id": 1135616291
+    },
+    {
+      "children": [],
+      "data": {
+        "model_angle": [
+          -0.0,
+          -90.0,
+          0.0
+        ],
+        "model_id": 90007,
+        "name": "分阵营出生点1",
+        "parent_unit_id": 0,
+        "position": [
+          12.5,
+          2.316,
+          9.0
+        ],
+        "prefab_id": 600005,
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "unit_eid": 600005,
+        "unit_id": 1401993508,
+        "unit_type": 16384,
+        "unit_uid": "600005_uid",
+        "world_position": [
+          12.5,
+          2.316,
+          9.0
+        ]
+      },
+      "id": 1401993508
+    },
+    {
+      "children": [],
+      "data": {
+        "model_angle": [
+          0.0,
+          90.0,
+          0.0
+        ],
+        "model_id": 40350,
+        "name": "传送门1",
+        "parent_unit_id": 0,
+        "position": [
+          -52.25,
+          2.316,
+          19.0
+        ],
+        "prefab_id": 3101040,
+        "scale": [
+          1.0,
+          1.4285714285714,
+          1.0
+        ],
+        "unit_eid": 3101040,
+        "unit_id": 1422072101,
+        "unit_type": 512,
+        "unit_uid": "100073_uid",
+        "world_position": [
+          -52.25,
+          2.316,
+          19.0
+        ]
+      },
+      "id": 1422072101
+    },
+    {
+      "children": [],
+      "data": {
+        "model_id": 0,
+        "parent_unit_id": 0,
+        "prefab_id": 0,
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "unit_eid": 0,
+        "unit_id": 1137367558,
+        "unit_type": 0
+      },
+      "id": 1137367558
+    },
+    {
+      "children": [],
+      "data": {
+        "model_id": 0,
+        "parent_unit_id": 0,
+        "prefab_id": 0,
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "unit_eid": 0,
+        "unit_id": 1187298016,
+        "unit_type": 0
+      },
+      "id": 1187298016
+    },
+    {
+      "children": [],
+      "data": {
+        "model_angle": [
+          0,
+          0,
+          0
+        ],
+        "model_id": 50494,
+        "name": "隐身区域2",
+        "parent_unit_id": 0,
+        "position": [
+          -71.5,
+          2.31640625,
+          34.5
+        ],
+        "prefab_id": 300025,
+        "scale": [
+          5,
+          3,
+          5
+        ],
+        "unit_eid": 300025,
+        "unit_id": 1638063401,
+        "unit_type": 512,
+        "unit_uid": "300025_uid",
+        "world_position": [
+          -71.5,
+          2.31640625,
+          34.5
+        ]
+      },
+      "id": 1638063401
+    },
+    {
+      "children": [],
+      "data": {
+        "create_probability": 1.0,
+        "enable_hp": false,
+        "fix_destroy_time": -1,
+        "model_alpha": 1.0,
+        "model_angle": [
+          -0.0,
+          90.0,
+          -0.0
+        ],
+        "model_id": 40357,
+        "name": "机械墙4",
+        "ob_max_hp": 0,
+        "parent_unit_id": 0,
+        "physic_enable": true,
+        "position": [
+          -81.75,
+          2.316,
+          20.031
+        ],
+        "prefab_id": 1102440,
+        "scale": [
+          4.0310001373291,
+          5.0920000076294,
+          1.0
+        ],
+        "unit_eid": 1102440,
+        "unit_id": 1381759788,
+        "unit_type": 256,
+        "unit_uid": "100821_uid",
+        "world_position": [
+          -81.75,
+          2.316,
+          20.031
+        ]
+      },
+      "id": 1381759788
+    },
+    {
+      "children": [],
+      "data": {
+        "create_probability": 1.0,
+        "enable_hp": false,
+        "fix_destroy_time": -1,
+        "model_alpha": 1.0,
+        "model_angle": [
+          -0.0,
+          90.0,
+          -0.0
+        ],
+        "model_id": 7000177,
+        "name": "方墙15",
+        "ob_max_hp": 0,
+        "parent_unit_id": 0,
+        "physic_enable": true,
+        "position": [
+          6.0,
+          2.316,
+          40.5
+        ],
+        "prefab_id": 1204079,
+        "scale": [
+          1.0,
+          1.0,
+          2.0999999523163
+        ],
+        "unit_eid": 1204079,
+        "unit_id": 1971764526,
+        "unit_type": 256,
+        "unit_uid": "1204079_uid",
+        "world_position": [
+          6.0,
+          2.316,
+          40.5
+        ]
+      },
+      "id": 1971764526
+    },
+    {
+      "children": [],
+      "data": {
+        "model_angle": [
+          0,
+          0,
+          0
+        ],
+        "model_id": 40326,
+        "name": "武器物品箱8_8",
+        "parent_unit_id": 0,
+        "position": [
+          -68.0,
+          2.316,
+          11.0
+        ],
+        "prefab_id": 31010115,
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "unit_eid": 31010115,
+        "unit_id": 1361794547,
+        "unit_type": 4096,
+        "unit_uid": "300019_uid",
+        "world_position": [
+          -68.0,
+          2.316,
+          11.0
+        ]
+      },
+      "id": 1361794547
+    },
+    {
+      "children": [],
+      "data": {
+        "model_angle": [
+          0,
+          0,
+          0
+        ],
+        "model_id": 40326,
+        "name": "武器物品箱8_5",
+        "parent_unit_id": 0,
+        "position": [
+          -13.0,
+          2.3154296875,
+          0.0
+        ],
+        "prefab_id": 31010115,
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "unit_eid": 31010115,
+        "unit_id": 1101018420,
+        "unit_type": 4096,
+        "unit_uid": "300019_uid",
+        "world_position": [
+          -13.0,
+          2.3154296875,
+          0.0
+        ]
+      },
+      "id": 1101018420
+    },
+    {
+      "children": [],
+      "data": {
+        "model_angle": [
+          0,
+          0,
+          0
+        ],
+        "model_id": 9000101,
+        "name": "变异蛋B12",
+        "parent_unit_id": 0,
+        "position": [
+          -60.06,
+          2.316,
+          14.655
+        ],
+        "prefab_id": 9000081,
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "unit_eid": 9000081,
+        "unit_id": 1101855552,
+        "unit_type": 4,
+        "world_position": [
+          -60.06,
+          2.316,
+          14.655
+        ]
+      },
+      "id": 1101855552
+    },
+    {
+      "children": [],
+      "data": {
+        "create_probability": 1.0,
+        "enable_hp": false,
+        "fix_destroy_time": -1,
+        "model_alpha": 1.0,
+        "model_angle": [
+          0,
+          0,
+          0
+        ],
+        "model_id": 7000177,
+        "name": "方墙24",
+        "ob_max_hp": 0,
+        "parent_unit_id": 0,
+        "physic_enable": true,
+        "position": [
+          -82.0,
+          2.316,
+          32.5
+        ],
+        "prefab_id": 1204079,
+        "scale": [
+          1.0,
+          1.0,
+          1.7000000238419
+        ],
+        "unit_eid": 1204079,
+        "unit_id": 1338171201,
+        "unit_type": 256,
+        "unit_uid": "1204079_uid",
+        "world_position": [
+          -82.0,
+          2.316,
+          32.5
+        ]
+      },
+      "id": 1338171201
+    },
+    {
+      "children": [],
+      "data": {
+        "create_probability": 1.0,
+        "emissive_intensity_1": 0.0,
+        "enable_hp": false,
+        "fix_destroy_time": -1,
+        "material_metalness_1": 0.0,
+        "material_roughness_1": 1.0,
+        "model_alpha": 1.0,
+        "model_angle": [
+          0,
+          0,
+          0
+        ],
+        "model_id": 7000495,
+        "name": "欧式方形窄门2",
+        "ob_max_hp": 0,
+        "parent_unit_id": 0,
+        "physic_enable": true,
+        "position": [
+          -51.5,
+          2.316,
+          19.0
+        ],
+        "prefab_id": 100830,
+        "scale": [
+          1.0,
+          1.6666666666667,
+          1.0
+        ],
+        "unit_eid": 100830,
+        "unit_id": 1050532163,
+        "unit_type": 256,
+        "unit_uid": "100830_uid",
+        "world_position": [
+          -51.5,
+          2.316,
+          19.0
+        ]
+      },
+      "id": 1050532163
+    },
+    {
+      "children": [],
+      "data": {
+        "create_probability": 1.0,
+        "emissive_intensity_1": 0.0,
+        "fix_destroy_time": -1,
+        "material_metalness_1": 0.0,
+        "material_roughness_1": 1.0,
+        "model_alpha": 1.0,
+        "model_angle": [
+          0,
+          0,
+          0
+        ],
+        "model_id": 50415,
+        "name": "按钮开关1",
+        "parent_unit_id": 0,
+        "position": [
+          -83.765113830566,
+          2.31591796875,
+          7.6931438446045
+        ],
+        "prefab_id": 100450,
+        "scale": [
+          2.0,
+          2.0,
+          2.0
+        ],
+        "unit_eid": 100450,
+        "unit_id": 1855557960,
+        "unit_type": 256,
+        "unit_uid": "100450_uid",
+        "world_position": [
+          -83.765113830566,
+          2.31591796875,
+          7.6931438446045
+        ]
+      },
+      "id": 1855557960
+    },
+    {
+      "children": [],
+      "data": {
+        "create_probability": 1.0,
+        "emissive_intensity_1": 0.0,
+        "enable_hp": false,
+        "fix_destroy_time": -1,
+        "material_metalness_1": 0.0,
+        "material_roughness_1": 1.0,
+        "model_alpha": 1.0,
+        "model_angle": [
+          0,
+          0,
+          0
+        ],
+        "model_id": 56286,
+        "name": "中式花纹砖1",
+        "ob_max_hp": 0,
+        "parent_unit_id": 0,
+        "physic_enable": true,
+        "position": [
+          7.0,
+          2.316,
+          -19.0
+        ],
+        "prefab_id": 101185,
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "unit_eid": 101185,
+        "unit_id": 1041548108,
+        "unit_type": 256,
+        "unit_uid": "101185_uid",
+        "world_position": [
+          7.0,
+          2.316,
+          -19.0
+        ]
+      },
+      "id": 1041548108
+    },
+    {
+      "children": [],
+      "data": {
+        "create_probability": 1.0,
+        "fix_destroy_time": -1,
+        "material_metalness_1": 0.0,
+        "material_pattern_color": [
+          255,
+          255,
+          255,
+          255
+        ],
+        "material_roughness_1": 1.0,
+        "model_angle": [
+          0,
+          0,
+          0
+        ],
+        "model_id": 50338,
+        "name": "爆炸魔药瓶2",
+        "parent_unit_id": 0,
+        "position": [
+          -71.833595275879,
+          3.01611328125,
+          9.1486167907715
+        ],
+        "prefab_id": 100155,
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "unit_eid": 100155,
+        "unit_id": 1975232333,
+        "unit_type": 256,
+        "unit_uid": "100155_uid",
+        "world_position": [
+          -71.833595275879,
+          3.01611328125,
+          9.1486167907715
+        ]
+      },
+      "id": 1975232333
+    },
+    {
+      "children": [],
+      "data": {
+        "create_probability": 1.0,
+        "enable_hp": false,
+        "fix_destroy_time": -1,
+        "model_angle": [
+          0,
+          0,
+          0
+        ],
+        "model_id": 40032,
+        "name": "十字齿轮2",
+        "ob_max_hp": 0,
+        "parent_unit_id": 0,
+        "physic_enable": true,
+        "position": [
+          -61.01,
+          2.316,
+          29.49
+        ],
+        "prefab_id": 1101070,
+        "scale": [
+          0.92993517513474,
+          1.0,
+          0.92993517513474
+        ],
+        "unit_eid": 1101070,
+        "unit_id": 1453043027,
+        "unit_type": 256,
+        "unit_uid": "100029",
+        "world_position": [
+          -61.01,
+          2.316,
+          29.49
+        ]
+      },
+      "id": 1453043027
+    },
+    {
+      "children": [],
+      "data": {
+        "model_angle": [
+          0,
+          0,
+          0
+        ],
+        "model_id": 9000102,
+        "name": "变异蛋A8",
+        "parent_unit_id": 0,
+        "position": [
+          -70.44,
+          2.316,
+          -6.5
+        ],
+        "prefab_id": 9000080,
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "unit_eid": 9000080,
+        "unit_id": 1327462744,
+        "unit_type": 4,
+        "world_position": [
+          -70.44,
+          2.316,
+          -6.5
+        ]
+      },
+      "id": 1327462744
+    },
+    {
+      "children": [],
+      "data": {
+        "create_probability": 1.0,
+        "emissive_intensity_1": 10.0,
+        "enable_hp": false,
+        "fix_destroy_time": -1,
+        "material_metalness_1": 0.0,
+        "material_roughness_1": 1.0,
+        "model_alpha": 1.0,
+        "model_angle": [
+          -0.0,
+          180.0,
+          -0.0
+        ],
+        "model_id": 50732,
+        "name": "星座数字21_1",
+        "ob_max_hp": 0,
+        "parent_unit_id": 0,
+        "physic_enable": true,
+        "position": [
+          14.83,
+          2.316,
+          -18.383
+        ],
+        "prefab_id": 103055,
+        "scale": [
+          3.143138114801,
+          3.070011368829,
+          4.9005097423068
+        ],
+        "unit_eid": 103055,
+        "unit_id": 1147395932,
+        "unit_type": 256,
+        "unit_uid": "1204051_uid",
+        "world_position": [
+          14.83,
+          2.316,
+          -18.383
+        ]
+      },
+      "id": 1147395932
+    },
+    {
+      "children": [],
+      "data": {
+        "model_alpha": 1.0,
+        "model_angle": [
+          0,
+          0,
+          0
+        ],
+        "model_id": 50206,
+        "name": "拖尾电流2",
+        "parent_unit_id": 0,
+        "position": [
+          11.5,
+          2.842,
+          23.0
+        ],
+        "prefab_id": 3301506,
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "unit_eid": 3301506,
+        "unit_id": 1570439517,
+        "unit_type": 512,
+        "unit_uid": "3301506_uid",
+        "world_position": [
+          11.5,
+          2.842,
+          23.0
+        ]
+      },
+      "id": 1570439517
+    },
+    {
+      "children": [],
+      "data": {
+        "create_probability": 1.0,
+        "enable_hp": false,
+        "fix_destroy_time": -1,
+        "model_angle": [
+          -0.0,
+          90.0,
+          -0.0
+        ],
+        "model_id": 50055,
+        "name": "公告牌1",
+        "ob_max_hp": 0,
+        "parent_unit_id": 0,
+        "physic_enable": true,
+        "position": [
+          -23.789405822754,
+          2.31640625,
+          -0.22825050354004
+        ],
+        "prefab_id": 103684,
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "unit_eid": 103684,
+        "unit_id": 1953587553,
+        "unit_type": 256,
+        "unit_uid": "1101520_uid",
+        "world_position": [
+          -23.789405822754,
+          2.31640625,
+          -0.22825050354004
+        ]
+      },
+      "id": 1953587553
+    },
+    {
+      "children": [],
+      "data": {
+        "create_probability": 1.0,
+        "enable_hp": false,
+        "fix_destroy_time": -1,
+        "model_alpha": 1.0,
+        "model_angle": [
+          -0.0,
+          90.0,
+          -0.0
+        ],
+        "model_id": 7000177,
+        "name": "方墙31",
+        "ob_max_hp": 0,
+        "parent_unit_id": 0,
+        "physic_enable": true,
+        "position": [
+          0.25,
+          2.316,
+          5.5
+        ],
+        "prefab_id": 1204079,
+        "scale": [
+          1.0,
+          1.0,
+          1.3999999761581
+        ],
+        "unit_eid": 1204079,
+        "unit_id": 1121827682,
+        "unit_type": 256,
+        "unit_uid": "1204079_uid",
+        "world_position": [
+          0.25,
+          2.316,
+          5.5
+        ]
+      },
+      "id": 1121827682
+    },
+    {
+      "children": [],
+      "data": {
+        "model_angle": [
+          0,
+          0,
+          0
+        ],
+        "model_id": 40326,
+        "name": "武器物品箱8_7",
+        "parent_unit_id": 0,
+        "position": [
+          -31.0,
+          3.186,
+          31.0
+        ],
+        "prefab_id": 31010115,
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "unit_eid": 31010115,
+        "unit_id": 1985100131,
+        "unit_type": 4096,
+        "unit_uid": "300019_uid",
+        "world_position": [
+          -31.0,
+          3.186,
+          31.0
+        ]
+      },
+      "id": 1985100131
+    },
+    {
+      "children": [],
+      "data": {
+        "model_alpha": 1.0,
+        "model_angle": [
+          0,
+          0,
+          0
+        ],
+        "model_id": 50206,
+        "name": "拖尾电流6",
+        "parent_unit_id": 0,
+        "position": [
+          -75.42147064209,
+          0.0,
+          -16.910587310791
+        ],
+        "prefab_id": 3301506,
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "unit_eid": 3301506,
+        "unit_id": 1085615249,
+        "unit_type": 512,
+        "unit_uid": "3301506_uid",
+        "world_position": [
+          -75.42147064209,
+          0.0,
+          -16.910587310791
+        ]
+      },
+      "id": 1085615249
+    },
+    {
+      "children": [],
+      "data": {
+        "model_angle": [
+          0,
+          0,
+          0
+        ],
+        "model_id": 9000100,
+        "name": "变异蛋C7",
+        "parent_unit_id": 0,
+        "position": [
+          10.06,
+          2.316,
+          -11.325
+        ],
+        "prefab_id": 9000082,
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "unit_eid": 9000082,
+        "unit_id": 1078008687,
+        "unit_type": 4,
+        "world_position": [
+          10.06,
+          2.316,
+          -11.325
+        ]
+      },
+      "id": 1078008687
+    },
+    {
+      "children": [],
+      "data": {
+        "create_probability": 1.0,
+        "enable_hp": false,
+        "fix_destroy_time": -1,
+        "model_alpha": 1.0,
+        "model_angle": [
+          -0.0,
+          90.0,
+          -0.0
+        ],
+        "model_id": 7000177,
+        "name": "方墙48",
+        "ob_max_hp": 0,
+        "parent_unit_id": 0,
+        "physic_enable": true,
+        "position": [
+          -58.5,
+          2.3159999847412,
+          5.25
+        ],
+        "prefab_id": 1204079,
+        "scale": [
+          1.0,
+          1.0,
+          1.15
+        ],
+        "unit_eid": 1204079,
+        "unit_id": 1934117747,
+        "unit_type": 256,
+        "unit_uid": "1204079_uid",
+        "world_position": [
+          -58.5,
+          2.3159999847412,
+          5.25
+        ]
+      },
+      "id": 1934117747
+    },
+    {
+      "children": [],
+      "data": {
+        "create_probability": 1.0,
+        "enable_hp": false,
+        "fix_destroy_time": -1,
+        "model_alpha": 1.0,
+        "model_angle": [
+          0,
+          0,
+          0
+        ],
+        "model_id": 7000177,
+        "name": "方墙52",
+        "ob_max_hp": 0,
+        "parent_unit_id": 0,
+        "physic_enable": true,
+        "position": [
+          -51.5,
+          2.316,
+          31.0
+        ],
+        "prefab_id": 1204079,
+        "scale": [
+          1.0,
+          1.0,
+          2.0000001192093
+        ],
+        "unit_eid": 1204079,
+        "unit_id": 2013516152,
+        "unit_type": 256,
+        "unit_uid": "1204079_uid",
+        "world_position": [
+          -51.5,
+          2.316,
+          31.0
+        ]
+      },
+      "id": 2013516152
+    },
+    {
+      "children": [],
+      "data": {
+        "create_probability": 1.0,
+        "enable_hp": false,
+        "fix_destroy_time": -1,
+        "model_alpha": 1.0,
+        "model_angle": [
+          0,
+          0,
+          0
+        ],
+        "model_id": 7000177,
+        "name": "方墙35",
+        "ob_max_hp": 0,
+        "parent_unit_id": 0,
+        "physic_enable": true,
+        "position": [
+          16.5,
+          2.286,
+          33.5
+        ],
+        "prefab_id": 1204079,
+        "scale": [
+          1.0,
+          1.0,
+          1.5
+        ],
+        "unit_eid": 1204079,
+        "unit_id": 1412477318,
+        "unit_type": 256,
+        "unit_uid": "1204079_uid",
+        "world_position": [
+          16.5,
+          2.286,
+          33.5
+        ]
+      },
+      "id": 1412477318
+    },
+    {
+      "children": [],
+      "data": {
+        "create_probability": 1.0,
+        "enable_hp": false,
+        "fix_destroy_time": -1,
+        "model_alpha": 1.0,
+        "model_angle": [
+          0,
+          0,
+          0
+        ],
+        "model_id": 7000177,
+        "name": "方墙55",
+        "ob_max_hp": 0,
+        "parent_unit_id": 0,
+        "physic_enable": true,
+        "position": [
+          -51.5,
+          2.316,
+          -19.25
+        ],
+        "prefab_id": 1204079,
+        "scale": [
+          1.0,
+          1.0,
+          0.74999997615814
+        ],
+        "unit_eid": 1204079,
+        "unit_id": 1274852237,
+        "unit_type": 256,
+        "unit_uid": "1204079_uid",
+        "world_position": [
+          -51.5,
+          2.316,
+          -19.25
+        ]
+      },
+      "id": 1274852237
+    },
+    {
+      "children": [],
+      "data": {
+        "model_alpha": 1.0,
+        "model_angle": [
+          0,
+          0,
+          0
+        ],
+        "model_id": 50206,
+        "name": "拖尾电流5",
+        "parent_unit_id": 0,
+        "position": [
+          8.3137531280518,
+          2.31591796875,
+          -3.342134475708
+        ],
+        "prefab_id": 3301506,
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "unit_eid": 3301506,
+        "unit_id": 1850114966,
+        "unit_type": 512,
+        "unit_uid": "3301506_uid",
+        "world_position": [
+          8.3137531280518,
+          2.31591796875,
+          -3.342134475708
+        ]
+      },
+      "id": 1850114966
+    },
+    {
+      "children": [],
+      "data": {
+        "model_angle": [
+          0,
+          0,
+          0
+        ],
+        "model_id": 9000102,
+        "name": "变异蛋A7",
+        "parent_unit_id": 0,
+        "position": [
+          -71.06,
+          2.316,
+          -18.0
+        ],
+        "prefab_id": 9000080,
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "unit_eid": 9000080,
+        "unit_id": 1303708057,
+        "unit_type": 4,
+        "world_position": [
+          -71.06,
+          2.316,
+          -18.0
+        ]
+      },
+      "id": 1303708057
+    },
+    {
+      "children": [],
+      "data": {
+        "model_angle": [
+          0,
+          0,
+          0
+        ],
+        "model_id": 50494,
+        "name": "隐身区域3",
+        "parent_unit_id": 0,
+        "position": [
+          -1.75,
+          2.316,
+          20.0
+        ],
+        "prefab_id": 300025,
+        "scale": [
+          7.5,
+          3.0,
+          11.0
+        ],
+        "unit_eid": 300025,
+        "unit_id": 1630926748,
+        "unit_type": 512,
+        "unit_uid": "300025_uid",
+        "world_position": [
+          -1.75,
+          2.316,
+          20.0
+        ]
+      },
+      "id": 1630926748
+    },
+    {
+      "children": [],
+      "data": {
+        "create_probability": 1.0,
+        "enable_hp": false,
+        "fix_destroy_time": -1,
+        "model_alpha": 1.0,
+        "model_angle": [
+          -0.0,
+          90.0,
+          -0.0
+        ],
+        "model_id": 7000177,
+        "name": "方墙34",
+        "ob_max_hp": 0,
+        "parent_unit_id": 0,
+        "physic_enable": true,
+        "position": [
+          10.0,
+          2.316,
+          5.5
+        ],
+        "prefab_id": 1204079,
+        "scale": [
+          1.0,
+          1.0,
+          1.3999999761581
+        ],
+        "unit_eid": 1204079,
+        "unit_id": 1525548447,
+        "unit_type": 256,
+        "unit_uid": "1204079_uid",
+        "world_position": [
+          10.0,
+          2.316,
+          5.5
+        ]
+      },
+      "id": 1525548447
+    },
+    {
+      "children": [],
+      "data": {
+        "create_probability": 1.0,
+        "fix_destroy_time": -1,
+        "model_alpha": 1.0,
+        "model_angle": [
+          0,
+          0,
+          0
+        ],
+        "model_id": 100093,
+        "name": "气球炸弹3",
+        "parent_unit_id": 0,
+        "position": [
+          -42.659118652344,
+          2.31640625,
+          36.973667144775
+        ],
+        "prefab_id": 1601131,
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "unit_eid": 1601131,
+        "unit_id": 1887047585,
+        "unit_type": 256,
+        "unit_uid": "1601131_uid",
+        "world_position": [
+          -42.659118652344,
+          2.31640625,
+          36.973667144775
+        ]
+      },
+      "id": 1887047585
+    },
+    {
+      "children": [],
+      "data": {
+        "model_angle": [
+          0,
+          0,
+          0
+        ],
+        "model_id": 9000100,
+        "name": "变异蛋C1",
+        "parent_unit_id": 0,
+        "position": [
+          -12.06,
+          2.316,
+          15.825
+        ],
+        "prefab_id": 9000082,
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "unit_eid": 9000082,
+        "unit_id": 1115853218,
+        "unit_type": 4,
+        "world_position": [
+          -12.06,
+          2.316,
+          15.825
+        ]
+      },
+      "id": 1115853218
+    },
+    {
+      "children": [],
+      "data": {
+        "create_probability": 1.0,
+        "enable_hp": false,
+        "fix_destroy_time": -1,
+        "model_alpha": 1.0,
+        "model_angle": [
+          -0.0,
+          90.0,
+          -0.0
+        ],
+        "model_id": 7000177,
+        "name": "方墙10",
+        "ob_max_hp": 0,
+        "parent_unit_id": 0,
+        "physic_enable": true,
+        "position": [
+          -38.0,
+          2.297,
+          -22.5
+        ],
+        "prefab_id": 1204079,
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "unit_eid": 1204079,
+        "unit_id": 1877445547,
+        "unit_type": 256,
+        "unit_uid": "1204079_uid",
+        "world_position": [
+          -38.0,
+          2.297,
+          -22.5
+        ]
+      },
+      "id": 1877445547
+    },
+    {
+      "children": [],
+      "data": {
+        "create_probability": 1.0,
+        "fix_destroy_time": -1,
+        "model_angle": [
+          0.0,
+          180.0,
+          0.0
+        ],
+        "model_id": 40223,
+        "name": "传送带3",
+        "parent_unit_id": 0,
+        "position": [
+          -35.445,
+          2.316,
+          19.5
+        ],
+        "prefab_id": 1101040,
+        "scale": [
+          3.86125,
+          1.0,
+          1.0
+        ],
+        "unit_eid": 1101040,
+        "unit_id": 2114736047,
+        "unit_type": 256,
+        "unit_uid": "floor_7",
+        "world_position": [
+          -35.445,
+          2.316,
+          19.5
+        ]
+      },
+      "id": 2114736047
+    },
+    {
+      "children": [],
+      "data": {
+        "create_probability": 1.0,
+        "enable_hp": false,
+        "fix_destroy_time": -1,
+        "model_alpha": 1.0,
+        "model_angle": [
+          0,
+          0,
+          0
+        ],
+        "model_id": 7000177,
+        "name": "方墙32",
+        "ob_max_hp": 0,
+        "parent_unit_id": 0,
+        "physic_enable": true,
+        "position": [
+          -18.5,
+          2.316,
+          9.0
+        ],
+        "prefab_id": 1204079,
+        "scale": [
+          1.0,
+          1.0,
+          0.7
+        ],
+        "unit_eid": 1204079,
+        "unit_id": 1523845553,
+        "unit_type": 256,
+        "unit_uid": "1204079_uid",
+        "world_position": [
+          -18.5,
+          2.316,
+          9.0
+        ]
+      },
+      "id": 1523845553
+    },
+    {
+      "children": [],
+      "data": {
+        "create_probability": 1.0,
+        "enable_hp": false,
+        "fix_destroy_time": -1,
+        "model_alpha": 1.0,
+        "model_angle": [
+          -0.0,
+          90.0,
+          -0.0
+        ],
+        "model_id": 7000177,
+        "name": "方墙47",
+        "ob_max_hp": 0,
+        "parent_unit_id": 0,
+        "physic_enable": true,
+        "position": [
+          -47.0,
+          2.3159999847412,
+          5.25
+        ],
+        "prefab_id": 1204079,
+        "scale": [
+          1.0,
+          1.0,
+          1.15
+        ],
+        "unit_eid": 1204079,
+        "unit_id": 1542659571,
+        "unit_type": 256,
+        "unit_uid": "1204079_uid",
+        "world_position": [
+          -47.0,
+          2.3159999847412,
+          5.25
+        ]
+      },
+      "id": 1542659571
+    },
+    {
+      "children": [],
+      "data": {
+        "create_probability": 1.0,
+        "enable_hp": false,
+        "fix_destroy_time": -1,
+        "model_alpha": 1.0,
+        "model_angle": [
+          0,
+          0,
+          0
+        ],
+        "model_id": 7000177,
+        "name": "方墙25",
+        "ob_max_hp": 0,
+        "parent_unit_id": 0,
+        "physic_enable": true,
+        "position": [
+          -82.0,
+          2.316,
+          10.5
+        ],
+        "prefab_id": 1204079,
+        "scale": [
+          1.0,
+          1.0,
+          1.1
+        ],
+        "unit_eid": 1204079,
+        "unit_id": 1286260660,
+        "unit_type": 256,
+        "unit_uid": "1204079_uid",
+        "world_position": [
+          -82.0,
+          2.316,
+          10.5
+        ]
+      },
+      "id": 1286260660
+    },
+    {
+      "children": [],
+      "data": {
+        "model_angle": [
+          0,
+          0,
+          0
+        ],
+        "model_id": 50494,
+        "name": "隐身区域7",
+        "parent_unit_id": 0,
+        "position": [
+          -5.0,
+          2.31640625,
+          -14.0
+        ],
+        "prefab_id": 300025,
+        "scale": [
+          5,
+          3,
+          5
+        ],
+        "unit_eid": 300025,
+        "unit_id": 2066058681,
+        "unit_type": 512,
+        "unit_uid": "300025_uid",
+        "world_position": [
+          -5.0,
+          2.31640625,
+          -14.0
+        ]
+      },
+      "id": 2066058681
+    },
+    {
+      "children": [],
+      "data": {
+        "create_probability": 1.0,
+        "fix_destroy_time": -1,
+        "model_alpha": 1.0,
+        "model_angle": [
+          0,
+          0,
+          0
+        ],
+        "model_id": 40331,
+        "name": "蹦床2",
+        "parent_unit_id": 0,
+        "position": [
+          -48.0,
+          2.3154296875,
+          37.0
+        ],
+        "prefab_id": 1101030,
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "unit_eid": 1101030,
+        "unit_id": 1406887356,
+        "unit_type": 256,
+        "unit_uid": "100000_uid",
+        "world_position": [
+          -48.0,
+          2.3154296875,
+          37.0
+        ]
+      },
+      "id": 1406887356
+    },
+    {
+      "children": [],
+      "data": {
+        "create_probability": 1.0,
+        "enable_hp": false,
+        "fix_destroy_time": -1,
+        "model_angle": [
+          -0.0,
+          0.0,
+          0.0
+        ],
+        "model_id": 90004,
+        "name": "地砖0",
+        "ob_max_hp": 0,
+        "parent_unit_id": 0,
+        "physic_enable": true,
+        "position": [
+          -36.758,
+          0.0,
+          9.0
+        ],
+        "prefab_id": 1201010,
+        "scale": [
+          7.1653713327625,
+          1.1579438447952,
+          6.4999904632568
+        ],
+        "unit_eid": 1201010,
+        "unit_id": 1681499584,
+        "unit_type": 256,
+        "unit_uid": "floor_3",
+        "world_position": [
+          -36.758,
+          0.0,
+          9.0
+        ]
+      },
+      "id": 1681499584
+    },
+    {
+      "children": [],
+      "data": {
+        "create_probability": 1.0,
+        "enable_hp": false,
+        "fix_destroy_time": -1,
+        "model_alpha": 1.0,
+        "model_angle": [
+          0,
+          0,
+          0
+        ],
+        "model_id": 7000177,
+        "name": "方墙51",
+        "ob_max_hp": 0,
+        "parent_unit_id": 0,
+        "physic_enable": true,
+        "position": [
+          -89.5,
+          2.313,
+          22.0
+        ],
+        "prefab_id": 1204079,
+        "scale": [
+          1.0,
+          1.0,
+          3.6000001907349
+        ],
+        "unit_eid": 1204079,
+        "unit_id": 1734937541,
+        "unit_type": 256,
+        "unit_uid": "1204079_uid",
+        "world_position": [
+          -89.5,
+          2.313,
+          22.0
+        ]
+      },
+      "id": 1734937541
+    },
+    {
+      "children": [],
+      "data": {
+        "create_probability": 1.0,
+        "enable_hp": false,
+        "fix_destroy_time": -1,
+        "model_alpha": 1.0,
+        "model_angle": [
+          0,
+          0,
+          0
+        ],
+        "model_id": 58598,
+        "name": "密码锁1",
+        "ob_max_hp": 0,
+        "parent_unit_id": 0,
+        "physic_enable": true,
+        "position": [
+          -81.36,
+          6.5,
+          -4.31
+        ],
+        "prefab_id": 104498,
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "unit_eid": 104498,
+        "unit_id": 1965974982,
+        "unit_type": 256,
+        "unit_uid": "1204051_uid",
+        "world_position": [
+          -81.36,
+          6.5,
+          -4.31
+        ]
+      },
+      "id": 1965974982
+    },
+    {
+      "children": [],
+      "data": {
+        "create_probability": 1.0,
+        "enable_hp": false,
+        "fix_destroy_time": -1,
+        "model_alpha": 1.0,
+        "model_angle": [
+          -0.0,
+          90.0,
+          -0.0
+        ],
+        "model_id": 7000177,
+        "name": "方墙11",
+        "ob_max_hp": 0,
+        "parent_unit_id": 0,
+        "physic_enable": true,
+        "position": [
+          -48.0,
+          2.297,
+          -22.5
+        ],
+        "prefab_id": 1204079,
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "unit_eid": 1204079,
+        "unit_id": 1359070153,
+        "unit_type": 256,
+        "unit_uid": "1204079_uid",
+        "world_position": [
+          -48.0,
+          2.297,
+          -22.5
+        ]
+      },
+      "id": 1359070153
+    },
+    {
+      "children": [],
+      "data": {
+        "create_probability": 1.0,
+        "enable_hp": false,
+        "fix_destroy_time": -1,
+        "model_alpha": 1.0,
+        "model_angle": [
+          -0.0,
+          90.0,
+          -0.0
+        ],
+        "model_id": 7000177,
+        "name": "方墙13",
+        "ob_max_hp": 0,
+        "parent_unit_id": 0,
+        "physic_enable": true,
+        "position": [
+          -68.0,
+          2.297,
+          -22.5
+        ],
+        "prefab_id": 1204079,
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "unit_eid": 1204079,
+        "unit_id": 2102608843,
+        "unit_type": 256,
+        "unit_uid": "1204079_uid",
+        "world_position": [
+          -68.0,
+          2.297,
+          -22.5
+        ]
+      },
+      "id": 2102608843
+    },
+    {
+      "children": [],
+      "data": {
+        "model_angle": [
+          0,
+          0,
+          0
+        ],
+        "model_id": 50494,
+        "name": "隐身区域4",
+        "parent_unit_id": 0,
+        "position": [
+          11.0,
+          2.31640625,
+          22.5
+        ],
+        "prefab_id": 300025,
+        "scale": [
+          5,
+          3,
+          5
+        ],
+        "unit_eid": 300025,
+        "unit_id": 1391702476,
+        "unit_type": 512,
+        "unit_uid": "300025_uid",
+        "world_position": [
+          11.0,
+          2.31640625,
+          22.5
+        ]
+      },
+      "id": 1391702476
+    },
+    {
+      "children": [],
+      "data": {
+        "model_angle": [
+          0,
+          0,
+          0
+        ],
+        "model_id": 9000100,
+        "name": "变异蛋C9",
+        "parent_unit_id": 0,
+        "position": [
+          -47.584117889404,
+          2.31591796875,
+          -15.358451843262
+        ],
+        "prefab_id": 9000082,
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "unit_eid": 9000082,
+        "unit_id": 1062383567,
+        "unit_type": 4,
+        "world_position": [
+          -47.584117889404,
+          2.31591796875,
+          -15.358451843262
+        ]
+      },
+      "id": 1062383567
+    },
+    {
+      "children": [],
+      "data": {
+        "model_angle": [
+          0,
+          0,
+          0
+        ],
+        "model_id": 9000101,
+        "name": "变异蛋B10",
+        "parent_unit_id": 0,
+        "position": [
+          -68.94,
+          2.316,
+          22.345
+        ],
+        "prefab_id": 9000081,
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "unit_eid": 9000081,
+        "unit_id": 1502667218,
+        "unit_type": 4,
+        "world_position": [
+          -68.94,
+          2.316,
+          22.345
+        ]
+      },
+      "id": 1502667218
+    },
+    {
+      "children": [],
+      "data": {
+        "create_probability": 1.0,
+        "emissive_intensity_1": 10.0,
+        "enable_hp": false,
+        "fix_destroy_time": -1,
+        "material_metalness_1": 0.0,
+        "material_roughness_1": 1.0,
+        "model_alpha": 1.0,
+        "model_angle": [
+          -0.0,
+          180.0,
+          0.0
+        ],
+        "model_id": 50736,
+        "name": "星座数字61",
+        "ob_max_hp": 0,
+        "parent_unit_id": 0,
+        "physic_enable": true,
+        "position": [
+          -52.895,
+          2.316,
+          -4.0
+        ],
+        "prefab_id": 103059,
+        "scale": [
+          1.0,
+          2.0645728111267,
+          3.07684
+        ],
+        "unit_eid": 103059,
+        "unit_id": 1712673236,
+        "unit_type": 256,
+        "unit_uid": "1204051_uid",
+        "world_position": [
+          -52.895,
+          2.316,
+          -4.0
+        ]
+      },
+      "id": 1712673236
+    },
+    {
+      "children": [],
+      "data": {
+        "model_angle": [
+          0,
+          0,
+          0
+        ],
+        "model_id": 9000102,
+        "name": "变异蛋A14",
+        "parent_unit_id": 0,
+        "position": [
+          -70.514038085938,
+          2.31640625,
+          -12.403969764709
+        ],
+        "prefab_id": 9000080,
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "unit_eid": 9000080,
+        "unit_id": 1997721046,
+        "unit_type": 4,
+        "world_position": [
+          -70.514038085938,
+          2.31640625,
+          -12.403969764709
+        ]
+      },
+      "id": 1997721046
+    },
+    {
+      "children": [],
+      "data": {
+        "model_angle": [
+          0,
+          0,
+          0
+        ],
+        "model_id": 9000101,
+        "name": "变异蛋B7",
+        "parent_unit_id": 0,
+        "position": [
+          -43.56,
+          2.316,
+          22.655
+        ],
+        "prefab_id": 9000081,
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "unit_eid": 9000081,
+        "unit_id": 1760381794,
+        "unit_type": 4,
+        "world_position": [
+          -43.56,
+          2.316,
+          22.655
+        ]
+      },
+      "id": 1760381794
+    },
+    {
+      "children": [],
+      "data": {
+        "create_probability": 1.0,
+        "enable_hp": false,
+        "fix_destroy_time": -1,
+        "model_alpha": 1.0,
+        "model_angle": [
+          -0.0,
+          90.0,
+          -0.0
+        ],
+        "model_id": 7000177,
+        "name": "方墙45",
+        "ob_max_hp": 0,
+        "parent_unit_id": 0,
+        "physic_enable": true,
+        "position": [
+          -24.0,
+          2.3159999847412,
+          5.25
+        ],
+        "prefab_id": 1204079,
+        "scale": [
+          1.0,
+          1.0,
+          1.15
+        ],
+        "unit_eid": 1204079,
+        "unit_id": 1276133488,
+        "unit_type": 256,
+        "unit_uid": "1204079_uid",
+        "world_position": [
+          -24.0,
+          2.3159999847412,
+          5.25
+        ]
+      },
+      "id": 1276133488
+    },
+    {
+      "children": [],
+      "data": {
+        "create_probability": 1.0,
+        "emissive_intensity_1": 10.0,
+        "enable_hp": false,
+        "fix_destroy_time": -1,
+        "material_metalness_1": 0.0,
+        "material_roughness_1": 1.0,
+        "model_alpha": 1.0,
+        "model_angle": [
+          0.0,
+          -90.0,
+          0.0
+        ],
+        "model_id": 50732,
+        "name": "星座数字21",
+        "ob_max_hp": 0,
+        "parent_unit_id": 0,
+        "physic_enable": true,
+        "position": [
+          6.617,
+          2.316,
+          7.17
+        ],
+        "prefab_id": 103055,
+        "scale": [
+          3.143138114801,
+          3.070011368829,
+          4.9005097423068
+        ],
+        "unit_eid": 103055,
+        "unit_id": 1548549609,
+        "unit_type": 256,
+        "unit_uid": "1204051_uid",
+        "world_position": [
+          6.617,
+          2.316,
+          7.17
+        ]
+      },
+      "id": 1548549609
+    },
+    {
+      "children": [],
+      "data": {
+        "create_probability": 1.0,
+        "enable_hp": false,
+        "fix_destroy_time": -1,
+        "model_alpha": 1.0,
+        "model_angle": [
+          -0.0,
+          90.0,
+          -0.0
+        ],
+        "model_id": 7000177,
+        "name": "方墙12",
+        "ob_max_hp": 0,
+        "parent_unit_id": 0,
+        "physic_enable": true,
+        "position": [
+          -58.0,
+          2.297,
+          -22.5
+        ],
+        "prefab_id": 1204079,
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "unit_eid": 1204079,
+        "unit_id": 2065610958,
+        "unit_type": 256,
+        "unit_uid": "1204079_uid",
+        "world_position": [
+          -58.0,
+          2.297,
+          -22.5
+        ]
+      },
+      "id": 2065610958
+    },
+    {
+      "children": [],
+      "data": {
+        "create_probability": 1.0,
+        "emissive_intensity_1": 10.0,
+        "enable_hp": false,
+        "fix_destroy_time": -1,
+        "material_metalness_1": 0.0,
+        "material_roughness_1": 1.0,
+        "model_alpha": 1.0,
+        "model_angle": [
+          0.0,
+          90.0,
+          0.0
+        ],
+        "model_id": 50730,
+        "name": "星座数字01",
+        "ob_max_hp": 0,
+        "parent_unit_id": 0,
+        "physic_enable": true,
+        "position": [
+          -23.712,
+          11.0,
+          7.543
+        ],
+        "prefab_id": 103053,
+        "scale": [
+          -1.3236179,
+          -5.3190166939375,
+          -4.1576451805345
+        ],
+        "unit_eid": 103053,
+        "unit_id": 1435881969,
+        "unit_type": 256,
+        "unit_uid": "1204051_uid",
+        "world_position": [
+          -23.712,
+          11.0,
+          7.543
+        ]
+      },
+      "id": 1435881969
+    },
+    {
+      "children": [],
+      "data": {
+        "model_angle": [
+          0,
+          0,
+          0
+        ],
+        "model_id": 90006,
+        "name": "通用触发区域1",
+        "parent_unit_id": 0,
+        "position": [
+          11.362742424011,
+          0.0,
+          7.9041137695312
+        ],
+        "prefab_id": 3101010,
+        "scale": [
+          5,
+          3,
+          5
+        ],
+        "unit_eid": 3101010,
+        "unit_id": 1648649203,
+        "unit_type": 8,
+        "unit_uid": "100054_uid",
+        "world_position": [
+          11.362742424011,
+          0.0,
+          7.9041137695312
+        ]
+      },
+      "id": 1648649203
+    },
+    {
+      "children": [],
+      "data": {
+        "create_probability": 1.0,
+        "enable_hp": false,
+        "fix_destroy_time": -1,
+        "model_alpha": 1.0,
+        "model_angle": [
+          0,
+          0,
+          0
+        ],
+        "model_id": 7000177,
+        "name": "方墙5",
+        "ob_max_hp": 1.0,
+        "parent_unit_id": 0,
+        "physic_enable": true,
+        "position": [
+          16.5,
+          2.286,
+          21.0
+        ],
+        "prefab_id": 1204079,
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "unit_eid": 1204079,
+        "unit_id": 2119725047,
+        "unit_type": 256,
+        "unit_uid": "1204079_uid",
+        "world_position": [
+          16.5,
+          2.286,
+          21.0
+        ]
+      },
+      "id": 2119725047
+    },
+    {
+      "children": [],
+      "data": {
+        "create_probability": 1.0,
+        "enable_hp": false,
+        "fix_destroy_time": -1,
+        "model_alpha": 1.0,
+        "model_angle": [
+          -0.0,
+          90.0,
+          -0.0
+        ],
+        "model_id": 7000177,
+        "name": "方墙7",
+        "ob_max_hp": 0,
+        "parent_unit_id": 0,
+        "physic_enable": true,
+        "position": [
+          -8.0,
+          2.297,
+          -22.5
+        ],
+        "prefab_id": 1204079,
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "unit_eid": 1204079,
+        "unit_id": 1890201080,
+        "unit_type": 256,
+        "unit_uid": "1204079_uid",
+        "world_position": [
+          -8.0,
+          2.297,
+          -22.5
+        ]
+      },
+      "id": 1890201080
+    },
+    {
+      "children": [
+        {
+          "children": [],
+          "data": {
+            "model_angle": [
+              0,
+              0,
+              0
+            ],
+            "model_id": 50494,
+            "name": "隐身区域6",
+            "parent_unit_id": 1923179518,
+            "position": [
+              -3.549,
+              0.0,
+              -39.998
+            ],
+            "prefab_id": 300025,
+            "scale": [
+              5,
+              3,
+              5
+            ],
+            "unit_eid": 300025,
+            "unit_id": 1468103492,
+            "unit_type": 512,
+            "unit_uid": "300025_uid",
+            "world_position": [
+              -34.0,
+              2.316,
+              -9.0
+            ]
+          },
+          "id": 1468103492
+        }
+      ],
+      "data": {
+        "children_unit_ids": [
+          1468103492
+        ],
+        "create_probability": 1.0,
+        "fix_destroy_time": -1,
+        "model_alpha": 1.0,
+        "model_angle": [
+          0,
+          0,
+          0
+        ],
+        "model_id": 50169,
+        "name": "音响蹦床1",
+        "parent_unit_id": 0,
+        "position": [
+          -30.451,
+          2.316,
+          30.998
+        ],
+        "prefab_id": 1101589,
+        "scale": [
+          2.5242500305176,
+          2.685,
+          2.7490000724792
+        ],
+        "unit_eid": 1101589,
+        "unit_id": 1923179518,
+        "unit_type": 256,
+        "unit_uid": "1101589_uid",
+        "world_position": [
+          -30.451,
+          2.316,
+          30.998
+        ]
+      },
+      "id": 1923179518
+    },
+    {
+      "children": [],
+      "data": {
+        "model_id": 0,
+        "parent_unit_id": 0,
+        "prefab_id": 0,
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "unit_eid": 0,
+        "unit_id": 1001,
+        "unit_type": 0
+      },
+      "id": 1001
+    },
+    {
+      "children": [],
+      "data": {
+        "model_id": 0,
+        "parent_unit_id": 0,
+        "prefab_id": 0,
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "unit_eid": 0,
+        "unit_id": 1003,
+        "unit_type": 0
+      },
+      "id": 1003
+    },
+    {
+      "children": [],
+      "data": {
+        "model_id": 0,
+        "parent_unit_id": 0,
+        "prefab_id": 0,
+        "scale": [
+          1,
+          1,
+          1
+        ],
+        "unit_eid": 0,
+        "unit_id": 1002,
+        "unit_type": 0
+      },
+      "id": 1002
+    }
+  ],
+  "units_by_id": {
+    "1": {
+      "model_id": 0,
+      "parent_unit_id": 0,
+      "prefab_id": 0,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "unit_eid": 0,
+      "unit_id": 1,
+      "unit_type": 128
+    },
+    "1001": {
+      "model_id": 0,
+      "parent_unit_id": 0,
+      "prefab_id": 0,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "unit_eid": 0,
+      "unit_id": 1001,
+      "unit_type": 0
+    },
+    "1002": {
+      "model_id": 0,
+      "parent_unit_id": 0,
+      "prefab_id": 0,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "unit_eid": 0,
+      "unit_id": 1002,
+      "unit_type": 0
+    },
+    "1003": {
+      "model_id": 0,
+      "parent_unit_id": 0,
+      "prefab_id": 0,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "unit_eid": 0,
+      "unit_id": 1003,
+      "unit_type": 0
+    },
+    "1041548108": {
+      "create_probability": 1.0,
+      "emissive_intensity_1": 0.0,
+      "enable_hp": false,
+      "fix_destroy_time": -1,
+      "material_metalness_1": 0.0,
+      "material_roughness_1": 1.0,
+      "model_alpha": 1.0,
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 56286,
+      "name": "中式花纹砖1",
+      "ob_max_hp": 0,
+      "parent_unit_id": 0,
+      "physic_enable": true,
+      "position": [
+        7.0,
+        2.316,
+        -19.0
+      ],
+      "prefab_id": 101185,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "unit_eid": 101185,
+      "unit_id": 1041548108,
+      "unit_type": 256,
+      "unit_uid": "101185_uid",
+      "world_position": [
+        7.0,
+        2.316,
+        -19.0
+      ]
+    },
+    "1043518687": {
+      "create_probability": 1.0,
+      "fix_destroy_time": -1,
+      "model_angle": [
+        0.0,
+        -90.0,
+        0.0
+      ],
+      "model_id": 40223,
+      "name": "传送带1",
+      "parent_unit_id": 0,
+      "position": [
+        -1.5,
+        2.316,
+        23.0
+      ],
+      "prefab_id": 1101040,
+      "scale": [
+        4.25,
+        1.0,
+        1.0
+      ],
+      "unit_eid": 1101040,
+      "unit_id": 1043518687,
+      "unit_type": 256,
+      "unit_uid": "floor_7",
+      "world_position": [
+        -1.5,
+        2.316,
+        23.0
+      ]
+    },
+    "1050532163": {
+      "create_probability": 1.0,
+      "emissive_intensity_1": 0.0,
+      "enable_hp": false,
+      "fix_destroy_time": -1,
+      "material_metalness_1": 0.0,
+      "material_roughness_1": 1.0,
+      "model_alpha": 1.0,
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 7000495,
+      "name": "欧式方形窄门2",
+      "ob_max_hp": 0,
+      "parent_unit_id": 0,
+      "physic_enable": true,
+      "position": [
+        -51.5,
+        2.316,
+        19.0
+      ],
+      "prefab_id": 100830,
+      "scale": [
+        1.0,
+        1.6666666666667,
+        1.0
+      ],
+      "unit_eid": 100830,
+      "unit_id": 1050532163,
+      "unit_type": 256,
+      "unit_uid": "100830_uid",
+      "world_position": [
+        -51.5,
+        2.316,
+        19.0
+      ]
+    },
+    "1062383567": {
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 9000100,
+      "name": "变异蛋C9",
+      "parent_unit_id": 0,
+      "position": [
+        -47.584117889404,
+        2.31591796875,
+        -15.358451843262
+      ],
+      "prefab_id": 9000082,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "unit_eid": 9000082,
+      "unit_id": 1062383567,
+      "unit_type": 4,
+      "world_position": [
+        -47.584117889404,
+        2.31591796875,
+        -15.358451843262
+      ]
+    },
+    "1073930844": {
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 9000102,
+      "name": "变异蛋A12",
+      "parent_unit_id": 0,
+      "position": [
+        3.56,
+        2.316,
+        -11.0
+      ],
+      "prefab_id": 9000080,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "unit_eid": 9000080,
+      "unit_id": 1073930844,
+      "unit_type": 4,
+      "world_position": [
+        3.56,
+        2.316,
+        -11.0
+      ]
+    },
+    "1077691945": {
+      "create_probability": 1.0,
+      "enable_hp": false,
+      "fix_destroy_time": -1,
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 40030,
+      "name": "齿轮2",
+      "ob_max_hp": 0,
+      "parent_unit_id": 0,
+      "physic_enable": true,
+      "position": [
+        -36.379,
+        2.316,
+        12.121
+      ],
+      "prefab_id": 1101080,
+      "scale": [
+        0.4995652,
+        1.0,
+        0.4995652
+      ],
+      "unit_eid": 1101080,
+      "unit_id": 1077691945,
+      "unit_type": 256,
+      "unit_uid": "100027",
+      "world_position": [
+        -36.379,
+        2.316,
+        12.121
+      ]
+    },
+    "1078008687": {
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 9000100,
+      "name": "变异蛋C7",
+      "parent_unit_id": 0,
+      "position": [
+        10.06,
+        2.316,
+        -11.325
+      ],
+      "prefab_id": 9000082,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "unit_eid": 9000082,
+      "unit_id": 1078008687,
+      "unit_type": 4,
+      "world_position": [
+        10.06,
+        2.316,
+        -11.325
+      ]
+    },
+    "1080520875": {
+      "create_probability": 1.0,
+      "fix_destroy_time": -1,
+      "model_angle": [
+        -0.0396,
+        -90.0,
+        0.0
+      ],
+      "model_id": 58273,
+      "name": "悬浮文字15",
+      "parent_unit_id": 0,
+      "position": [
+        -50.5,
+        2.3159999847412,
+        36.75
+      ],
+      "prefab_id": 103774,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "unit_eid": 103774,
+      "unit_id": 1080520875,
+      "unit_type": 256,
+      "unit_uid": "1101524_uid",
+      "world_position": [
+        -50.5,
+        2.3159999847412,
+        36.75
+      ]
+    },
+    "1080764999": {
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 9000101,
+      "name": "变异蛋B6",
+      "parent_unit_id": 0,
+      "position": [
+        -39.44,
+        2.316,
+        27.155
+      ],
+      "prefab_id": 9000081,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "unit_eid": 9000081,
+      "unit_id": 1080764999,
+      "unit_type": 4,
+      "world_position": [
+        -39.44,
+        2.316,
+        27.155
+      ]
+    },
+    "1085615249": {
+      "model_alpha": 1.0,
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 50206,
+      "name": "拖尾电流6",
+      "parent_unit_id": 0,
+      "position": [
+        -75.42147064209,
+        0.0,
+        -16.910587310791
+      ],
+      "prefab_id": 3301506,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "unit_eid": 3301506,
+      "unit_id": 1085615249,
+      "unit_type": 512,
+      "unit_uid": "3301506_uid",
+      "world_position": [
+        -75.42147064209,
+        0.0,
+        -16.910587310791
+      ]
+    },
+    "1101018420": {
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 40326,
+      "name": "武器物品箱8_5",
+      "parent_unit_id": 0,
+      "position": [
+        -13.0,
+        2.3154296875,
+        0.0
+      ],
+      "prefab_id": 31010115,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "unit_eid": 31010115,
+      "unit_id": 1101018420,
+      "unit_type": 4096,
+      "unit_uid": "300019_uid",
+      "world_position": [
+        -13.0,
+        2.3154296875,
+        0.0
+      ]
+    },
+    "1101855552": {
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 9000101,
+      "name": "变异蛋B12",
+      "parent_unit_id": 0,
+      "position": [
+        -60.06,
+        2.316,
+        14.655
+      ],
+      "prefab_id": 9000081,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "unit_eid": 9000081,
+      "unit_id": 1101855552,
+      "unit_type": 4,
+      "world_position": [
+        -60.06,
+        2.316,
+        14.655
+      ]
+    },
+    "1105742071": {
+      "create_probability": 1.0,
+      "fix_destroy_time": -1,
+      "model_angle": [
+        -0.0396,
+        180.0,
+        0.0
+      ],
+      "model_id": 58273,
+      "name": "悬浮文字6_5",
+      "parent_unit_id": 0,
+      "position": [
+        6.5,
+        3.266,
+        -21.251
+      ],
+      "prefab_id": 103774,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "unit_eid": 103774,
+      "unit_id": 1105742071,
+      "unit_type": 256,
+      "unit_uid": "1101524_uid",
+      "world_position": [
+        6.5,
+        3.266,
+        -21.251
+      ]
+    },
+    "1115853218": {
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 9000100,
+      "name": "变异蛋C1",
+      "parent_unit_id": 0,
+      "position": [
+        -12.06,
+        2.316,
+        15.825
+      ],
+      "prefab_id": 9000082,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "unit_eid": 9000082,
+      "unit_id": 1115853218,
+      "unit_type": 4,
+      "world_position": [
+        -12.06,
+        2.316,
+        15.825
+      ]
+    },
+    "1121827682": {
+      "create_probability": 1.0,
+      "enable_hp": false,
+      "fix_destroy_time": -1,
+      "model_alpha": 1.0,
+      "model_angle": [
+        -0.0,
+        90.0,
+        -0.0
+      ],
+      "model_id": 7000177,
+      "name": "方墙31",
+      "ob_max_hp": 0,
+      "parent_unit_id": 0,
+      "physic_enable": true,
+      "position": [
+        0.25,
+        2.316,
+        5.5
+      ],
+      "prefab_id": 1204079,
+      "scale": [
+        1.0,
+        1.0,
+        1.3999999761581
+      ],
+      "unit_eid": 1204079,
+      "unit_id": 1121827682,
+      "unit_type": 256,
+      "unit_uid": "1204079_uid",
+      "world_position": [
+        0.25,
+        2.316,
+        5.5
+      ]
+    },
+    "1135616291": {
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 9000102,
+      "name": "变异蛋A10",
+      "parent_unit_id": 0,
+      "position": [
+        -27.889099121094,
+        2.31591796875,
+        -17.957061767578
+      ],
+      "prefab_id": 9000080,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "unit_eid": 9000080,
+      "unit_id": 1135616291,
+      "unit_type": 4,
+      "world_position": [
+        -27.889099121094,
+        2.31591796875,
+        -17.957061767578
+      ]
+    },
+    "1137367558": {
+      "model_id": 0,
+      "parent_unit_id": 0,
+      "prefab_id": 0,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "unit_eid": 0,
+      "unit_id": 1137367558,
+      "unit_type": 0
+    },
+    "1140405899": {
+      "create_probability": 1.0,
+      "fix_destroy_time": -1,
+      "model_angle": [
+        -0.0396,
+        -90.0,
+        0.0
+      ],
+      "model_id": 58273,
+      "name": "悬浮文字6_3",
+      "parent_unit_id": 0,
+      "position": [
+        -81.5,
+        2.3159999847412,
+        -7.25
+      ],
+      "prefab_id": 103774,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "unit_eid": 103774,
+      "unit_id": 1140405899,
+      "unit_type": 256,
+      "unit_uid": "1101524_uid",
+      "world_position": [
+        -81.5,
+        2.3159999847412,
+        -7.25
+      ]
+    },
+    "1141391368": {
+      "create_probability": 1.0,
+      "enable_hp": false,
+      "fix_destroy_time": -1,
+      "model_alpha": 1.0,
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 7000177,
+      "name": "方墙27",
+      "ob_max_hp": 0,
+      "parent_unit_id": 0,
+      "physic_enable": true,
+      "position": [
+        -82.0,
+        2.316,
+        -7.5
+      ],
+      "prefab_id": 1204079,
+      "scale": [
+        1.0,
+        1.0,
+        0.9
+      ],
+      "unit_eid": 1204079,
+      "unit_id": 1141391368,
+      "unit_type": 256,
+      "unit_uid": "1204079_uid",
+      "world_position": [
+        -82.0,
+        2.316,
+        -7.5
+      ]
+    },
+    "1146983526": {
+      "model_angle": [
+        -0.0,
+        0.0,
+        0.0
+      ],
+      "model_id": 90006,
+      "name": "胜利区域1",
+      "parent_unit_id": 0,
+      "position": [
+        -95.5,
+        5.0,
+        -10.1
+      ],
+      "prefab_id": 31010102,
+      "scale": [
+        8.9999998092651,
+        7.5,
+        23.799999237061
+      ],
+      "unit_eid": 31010102,
+      "unit_id": 1146983526,
+      "unit_type": 8,
+      "unit_uid": "31010102_uid",
+      "world_position": [
+        -95.5,
+        5.0,
+        -10.1
+      ]
+    },
+    "1147395932": {
+      "create_probability": 1.0,
+      "emissive_intensity_1": 10.0,
+      "enable_hp": false,
+      "fix_destroy_time": -1,
+      "material_metalness_1": 0.0,
+      "material_roughness_1": 1.0,
+      "model_alpha": 1.0,
+      "model_angle": [
+        -0.0,
+        180.0,
+        -0.0
+      ],
+      "model_id": 50732,
+      "name": "星座数字21_1",
+      "ob_max_hp": 0,
+      "parent_unit_id": 0,
+      "physic_enable": true,
+      "position": [
+        14.83,
+        2.316,
+        -18.383
+      ],
+      "prefab_id": 103055,
+      "scale": [
+        3.143138114801,
+        3.070011368829,
+        4.9005097423068
+      ],
+      "unit_eid": 103055,
+      "unit_id": 1147395932,
+      "unit_type": 256,
+      "unit_uid": "1204051_uid",
+      "world_position": [
+        14.83,
+        2.316,
+        -18.383
+      ]
+    },
+    "1156059701": {
+      "create_probability": 1.0,
+      "enable_hp": false,
+      "fix_destroy_time": -1,
+      "model_alpha": 1.0,
+      "model_angle": [
+        -0.0,
+        90.0,
+        -0.0
+      ],
+      "model_id": 40357,
+      "name": "机械墙3",
+      "ob_max_hp": 0,
+      "parent_unit_id": 0,
+      "physic_enable": true,
+      "position": [
+        -81.75,
+        2.316,
+        0.469
+      ],
+      "prefab_id": 1102440,
+      "scale": [
+        4.0310001373291,
+        5.0920000076294,
+        1.0
+      ],
+      "unit_eid": 1102440,
+      "unit_id": 1156059701,
+      "unit_type": 256,
+      "unit_uid": "100821_uid",
+      "world_position": [
+        -81.75,
+        2.316,
+        0.469
+      ]
+    },
+    "1157185073": {
+      "create_probability": 1.0,
+      "enable_hp": false,
+      "fix_destroy_time": -1,
+      "model_alpha": 1.0,
+      "model_angle": [
+        -0.0,
+        90.0,
+        -0.0
+      ],
+      "model_id": 7000177,
+      "name": "方墙14",
+      "ob_max_hp": 0,
+      "parent_unit_id": 0,
+      "physic_enable": true,
+      "position": [
+        -77.75,
+        2.297,
+        -22.5
+      ],
+      "prefab_id": 1204079,
+      "scale": [
+        1.0,
+        1.0,
+        0.95
+      ],
+      "unit_eid": 1204079,
+      "unit_id": 1157185073,
+      "unit_type": 256,
+      "unit_uid": "1204079_uid",
+      "world_position": [
+        -77.75,
+        2.297,
+        -22.5
+      ]
+    },
+    "1187298016": {
+      "model_id": 0,
+      "parent_unit_id": 0,
+      "prefab_id": 0,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "unit_eid": 0,
+      "unit_id": 1187298016,
+      "unit_type": 0
+    },
+    "1192156288": {
+      "create_probability": 1.0,
+      "emissive_intensity_1": 0.0,
+      "enable_hp": false,
+      "fix_destroy_time": -1,
+      "material_metalness_1": 0.0,
+      "material_roughness_1": 1.0,
+      "model_alpha": 1.0,
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 55826,
+      "name": "箱子1",
+      "ob_max_hp": 0,
+      "parent_unit_id": 0,
+      "physic_enable": true,
+      "position": [
+        10.921459197998,
+        2.31591796875,
+        -19.205451965332
+      ],
+      "prefab_id": 100312,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "unit_eid": 100312,
+      "unit_id": 1192156288,
+      "unit_type": 256,
+      "unit_uid": "100312_uid",
+      "world_position": [
+        10.921459197998,
+        2.31591796875,
+        -19.205451965332
+      ]
+    },
+    "1205077128": {
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 50494,
+      "name": "隐身区域5",
+      "parent_unit_id": 0,
+      "position": [
+        -34.0,
+        2.31640625,
+        -18.0
+      ],
+      "prefab_id": 300025,
+      "scale": [
+        5,
+        3,
+        5
+      ],
+      "unit_eid": 300025,
+      "unit_id": 1205077128,
+      "unit_type": 512,
+      "unit_uid": "300025_uid",
+      "world_position": [
+        -34.0,
+        2.31640625,
+        -18.0
+      ]
+    },
+    "1206702150": {
+      "create_probability": 1.0,
+      "enable_hp": false,
+      "fix_destroy_time": -1,
+      "model_alpha": 1.0,
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 7000177,
+      "name": "方墙1",
+      "ob_max_hp": 0,
+      "parent_unit_id": 0,
+      "physic_enable": true,
+      "position": [
+        16.5,
+        2.286,
+        -18.0
+      ],
+      "prefab_id": 1204079,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "unit_eid": 1204079,
+      "unit_id": 1206702150,
+      "unit_type": 256,
+      "unit_uid": "1204079_uid",
+      "world_position": [
+        16.5,
+        2.286,
+        -18.0
+      ]
+    },
+    "1218997392": {
+      "create_probability": 1.0,
+      "emissive_intensity_1": 0.0,
+      "enable_hp": false,
+      "fix_destroy_time": -1,
+      "material_metalness_1": 0.0,
+      "material_roughness_1": 1.0,
+      "model_alpha": 1.0,
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 55826,
+      "name": "箱子2",
+      "ob_max_hp": 0,
+      "parent_unit_id": 0,
+      "physic_enable": true,
+      "position": [
+        -54.5,
+        2.316,
+        0.0
+      ],
+      "prefab_id": 100312,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "unit_eid": 100312,
+      "unit_id": 1218997392,
+      "unit_type": 256,
+      "unit_uid": "100312_uid",
+      "world_position": [
+        -54.5,
+        2.316,
+        0.0
+      ]
+    },
+    "1271368628": {
+      "create_probability": 1.0,
+      "fix_destroy_time": -1,
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 40223,
+      "name": "传送带2",
+      "parent_unit_id": 0,
+      "position": [
+        -0.843,
+        2.315,
+        22.907
+      ],
+      "prefab_id": 1101040,
+      "scale": [
+        4.21075,
+        1.0,
+        1.0
+      ],
+      "unit_eid": 1101040,
+      "unit_id": 1271368628,
+      "unit_type": 256,
+      "unit_uid": "floor_7",
+      "world_position": [
+        -0.843,
+        2.315,
+        22.907
+      ]
+    },
+    "1274852237": {
+      "create_probability": 1.0,
+      "enable_hp": false,
+      "fix_destroy_time": -1,
+      "model_alpha": 1.0,
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 7000177,
+      "name": "方墙55",
+      "ob_max_hp": 0,
+      "parent_unit_id": 0,
+      "physic_enable": true,
+      "position": [
+        -51.5,
+        2.316,
+        -19.25
+      ],
+      "prefab_id": 1204079,
+      "scale": [
+        1.0,
+        1.0,
+        0.74999997615814
+      ],
+      "unit_eid": 1204079,
+      "unit_id": 1274852237,
+      "unit_type": 256,
+      "unit_uid": "1204079_uid",
+      "world_position": [
+        -51.5,
+        2.316,
+        -19.25
+      ]
+    },
+    "1275660450": {
+      "create_probability": 1.0,
+      "enable_hp": false,
+      "fix_destroy_time": -1,
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 40038,
+      "name": "半圆气垫1",
+      "ob_max_hp": 0,
+      "parent_unit_id": 0,
+      "physic_enable": true,
+      "position": [
+        -69.75,
+        2.316,
+        16.876
+      ],
+      "prefab_id": 1101130,
+      "scale": [
+        2.2497665405054,
+        1.0,
+        2.25066683024
+      ],
+      "unit_eid": 1101130,
+      "unit_id": 1275660450,
+      "unit_type": 256,
+      "unit_uid": "100035",
+      "world_position": [
+        -69.75,
+        2.316,
+        16.876
+      ]
+    },
+    "1276133488": {
+      "create_probability": 1.0,
+      "enable_hp": false,
+      "fix_destroy_time": -1,
+      "model_alpha": 1.0,
+      "model_angle": [
+        -0.0,
+        90.0,
+        -0.0
+      ],
+      "model_id": 7000177,
+      "name": "方墙45",
+      "ob_max_hp": 0,
+      "parent_unit_id": 0,
+      "physic_enable": true,
+      "position": [
+        -24.0,
+        2.3159999847412,
+        5.25
+      ],
+      "prefab_id": 1204079,
+      "scale": [
+        1.0,
+        1.0,
+        1.15
+      ],
+      "unit_eid": 1204079,
+      "unit_id": 1276133488,
+      "unit_type": 256,
+      "unit_uid": "1204079_uid",
+      "world_position": [
+        -24.0,
+        2.3159999847412,
+        5.25
+      ]
+    },
+    "1280777755": {
+      "create_probability": 1.0,
+      "enable_hp": false,
+      "fix_destroy_time": -1,
+      "model_angle": [
+        -0.0,
+        -90.0,
+        0.0
+      ],
+      "model_id": 50055,
+      "name": "公告牌2",
+      "ob_max_hp": 0,
+      "parent_unit_id": 0,
+      "physic_enable": true,
+      "position": [
+        -88.25,
+        2.316,
+        14.5
+      ],
+      "prefab_id": 103684,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "unit_eid": 103684,
+      "unit_id": 1280777755,
+      "unit_type": 256,
+      "unit_uid": "1101520_uid",
+      "world_position": [
+        -88.25,
+        2.316,
+        14.5
+      ]
+    },
+    "1286260660": {
+      "create_probability": 1.0,
+      "enable_hp": false,
+      "fix_destroy_time": -1,
+      "model_alpha": 1.0,
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 7000177,
+      "name": "方墙25",
+      "ob_max_hp": 0,
+      "parent_unit_id": 0,
+      "physic_enable": true,
+      "position": [
+        -82.0,
+        2.316,
+        10.5
+      ],
+      "prefab_id": 1204079,
+      "scale": [
+        1.0,
+        1.0,
+        1.1
+      ],
+      "unit_eid": 1204079,
+      "unit_id": 1286260660,
+      "unit_type": 256,
+      "unit_uid": "1204079_uid",
+      "world_position": [
+        -82.0,
+        2.316,
+        10.5
+      ]
+    },
+    "1303708057": {
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 9000102,
+      "name": "变异蛋A7",
+      "parent_unit_id": 0,
+      "position": [
+        -71.06,
+        2.316,
+        -18.0
+      ],
+      "prefab_id": 9000080,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "unit_eid": 9000080,
+      "unit_id": 1303708057,
+      "unit_type": 4,
+      "world_position": [
+        -71.06,
+        2.316,
+        -18.0
+      ]
+    },
+    "1311521496": {
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 50494,
+      "name": "隐身区域8",
+      "parent_unit_id": 0,
+      "position": [
+        7.5,
+        2.31640625,
+        -3.5
+      ],
+      "prefab_id": 300025,
+      "scale": [
+        5,
+        3,
+        5
+      ],
+      "unit_eid": 300025,
+      "unit_id": 1311521496,
+      "unit_type": 512,
+      "unit_uid": "300025_uid",
+      "world_position": [
+        7.5,
+        2.31640625,
+        -3.5
+      ]
+    },
+    "1327462744": {
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 9000102,
+      "name": "变异蛋A8",
+      "parent_unit_id": 0,
+      "position": [
+        -70.44,
+        2.316,
+        -6.5
+      ],
+      "prefab_id": 9000080,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "unit_eid": 9000080,
+      "unit_id": 1327462744,
+      "unit_type": 4,
+      "world_position": [
+        -70.44,
+        2.316,
+        -6.5
+      ]
+    },
+    "1338171201": {
+      "create_probability": 1.0,
+      "enable_hp": false,
+      "fix_destroy_time": -1,
+      "model_alpha": 1.0,
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 7000177,
+      "name": "方墙24",
+      "ob_max_hp": 0,
+      "parent_unit_id": 0,
+      "physic_enable": true,
+      "position": [
+        -82.0,
+        2.316,
+        32.5
+      ],
+      "prefab_id": 1204079,
+      "scale": [
+        1.0,
+        1.0,
+        1.7000000238419
+      ],
+      "unit_eid": 1204079,
+      "unit_id": 1338171201,
+      "unit_type": 256,
+      "unit_uid": "1204079_uid",
+      "world_position": [
+        -82.0,
+        2.316,
+        32.5
+      ]
+    },
+    "1350719188": {
+      "create_probability": 1.0,
+      "enable_hp": false,
+      "fix_destroy_time": -1,
+      "model_alpha": 1.0,
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 7000177,
+      "name": "方墙53",
+      "ob_max_hp": 0,
+      "parent_unit_id": 0,
+      "physic_enable": true,
+      "position": [
+        -51.5,
+        2.316,
+        11.25
+      ],
+      "prefab_id": 1204079,
+      "scale": [
+        1.0,
+        1.0,
+        1.1499999880791
+      ],
+      "unit_eid": 1204079,
+      "unit_id": 1350719188,
+      "unit_type": 256,
+      "unit_uid": "1204079_uid",
+      "world_position": [
+        -51.5,
+        2.316,
+        11.25
+      ]
+    },
+    "1359070153": {
+      "create_probability": 1.0,
+      "enable_hp": false,
+      "fix_destroy_time": -1,
+      "model_alpha": 1.0,
+      "model_angle": [
+        -0.0,
+        90.0,
+        -0.0
+      ],
+      "model_id": 7000177,
+      "name": "方墙11",
+      "ob_max_hp": 0,
+      "parent_unit_id": 0,
+      "physic_enable": true,
+      "position": [
+        -48.0,
+        2.297,
+        -22.5
+      ],
+      "prefab_id": 1204079,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "unit_eid": 1204079,
+      "unit_id": 1359070153,
+      "unit_type": 256,
+      "unit_uid": "1204079_uid",
+      "world_position": [
+        -48.0,
+        2.297,
+        -22.5
+      ]
+    },
+    "1361794547": {
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 40326,
+      "name": "武器物品箱8_8",
+      "parent_unit_id": 0,
+      "position": [
+        -68.0,
+        2.316,
+        11.0
+      ],
+      "prefab_id": 31010115,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "unit_eid": 31010115,
+      "unit_id": 1361794547,
+      "unit_type": 4096,
+      "unit_uid": "300019_uid",
+      "world_position": [
+        -68.0,
+        2.316,
+        11.0
+      ]
+    },
+    "1381759788": {
+      "create_probability": 1.0,
+      "enable_hp": false,
+      "fix_destroy_time": -1,
+      "model_alpha": 1.0,
+      "model_angle": [
+        -0.0,
+        90.0,
+        -0.0
+      ],
+      "model_id": 40357,
+      "name": "机械墙4",
+      "ob_max_hp": 0,
+      "parent_unit_id": 0,
+      "physic_enable": true,
+      "position": [
+        -81.75,
+        2.316,
+        20.031
+      ],
+      "prefab_id": 1102440,
+      "scale": [
+        4.0310001373291,
+        5.0920000076294,
+        1.0
+      ],
+      "unit_eid": 1102440,
+      "unit_id": 1381759788,
+      "unit_type": 256,
+      "unit_uid": "100821_uid",
+      "world_position": [
+        -81.75,
+        2.316,
+        20.031
+      ]
+    },
+    "1391702476": {
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 50494,
+      "name": "隐身区域4",
+      "parent_unit_id": 0,
+      "position": [
+        11.0,
+        2.31640625,
+        22.5
+      ],
+      "prefab_id": 300025,
+      "scale": [
+        5,
+        3,
+        5
+      ],
+      "unit_eid": 300025,
+      "unit_id": 1391702476,
+      "unit_type": 512,
+      "unit_uid": "300025_uid",
+      "world_position": [
+        11.0,
+        2.31640625,
+        22.5
+      ]
+    },
+    "1401993508": {
+      "model_angle": [
+        -0.0,
+        -90.0,
+        0.0
+      ],
+      "model_id": 90007,
+      "name": "分阵营出生点1",
+      "parent_unit_id": 0,
+      "position": [
+        12.5,
+        2.316,
+        9.0
+      ],
+      "prefab_id": 600005,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "unit_eid": 600005,
+      "unit_id": 1401993508,
+      "unit_type": 16384,
+      "unit_uid": "600005_uid",
+      "world_position": [
+        12.5,
+        2.316,
+        9.0
+      ]
+    },
+    "1406887356": {
+      "create_probability": 1.0,
+      "fix_destroy_time": -1,
+      "model_alpha": 1.0,
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 40331,
+      "name": "蹦床2",
+      "parent_unit_id": 0,
+      "position": [
+        -48.0,
+        2.3154296875,
+        37.0
+      ],
+      "prefab_id": 1101030,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "unit_eid": 1101030,
+      "unit_id": 1406887356,
+      "unit_type": 256,
+      "unit_uid": "100000_uid",
+      "world_position": [
+        -48.0,
+        2.3154296875,
+        37.0
+      ]
+    },
+    "1412477318": {
+      "create_probability": 1.0,
+      "enable_hp": false,
+      "fix_destroy_time": -1,
+      "model_alpha": 1.0,
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 7000177,
+      "name": "方墙35",
+      "ob_max_hp": 0,
+      "parent_unit_id": 0,
+      "physic_enable": true,
+      "position": [
+        16.5,
+        2.286,
+        33.5
+      ],
+      "prefab_id": 1204079,
+      "scale": [
+        1.0,
+        1.0,
+        1.5
+      ],
+      "unit_eid": 1204079,
+      "unit_id": 1412477318,
+      "unit_type": 256,
+      "unit_uid": "1204079_uid",
+      "world_position": [
+        16.5,
+        2.286,
+        33.5
+      ]
+    },
+    "1422072101": {
+      "model_angle": [
+        0.0,
+        90.0,
+        0.0
+      ],
+      "model_id": 40350,
+      "name": "传送门1",
+      "parent_unit_id": 0,
+      "position": [
+        -52.25,
+        2.316,
+        19.0
+      ],
+      "prefab_id": 3101040,
+      "scale": [
+        1.0,
+        1.4285714285714,
+        1.0
+      ],
+      "unit_eid": 3101040,
+      "unit_id": 1422072101,
+      "unit_type": 512,
+      "unit_uid": "100073_uid",
+      "world_position": [
+        -52.25,
+        2.316,
+        19.0
+      ]
+    },
+    "1428364386": {
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 40326,
+      "name": "武器物品箱8",
+      "parent_unit_id": 0,
+      "position": [
+        -1.5,
+        2.843,
+        10.0
+      ],
+      "prefab_id": 31010115,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "unit_eid": 31010115,
+      "unit_id": 1428364386,
+      "unit_type": 4096,
+      "unit_uid": "300019_uid",
+      "world_position": [
+        -1.5,
+        2.843,
+        10.0
+      ]
+    },
+    "1430735542": {
+      "create_probability": 1.0,
+      "fix_destroy_time": -1,
+      "model_alpha": 1.0,
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 100093,
+      "name": "气球炸弹2",
+      "parent_unit_id": 0,
+      "position": [
+        -33.758392333984,
+        2.31640625,
+        -9.1627473831177
+      ],
+      "prefab_id": 1601131,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "unit_eid": 1601131,
+      "unit_id": 1430735542,
+      "unit_type": 256,
+      "unit_uid": "1601131_uid",
+      "world_position": [
+        -33.758392333984,
+        2.31640625,
+        -9.1627473831177
+      ]
+    },
+    "1431494328": {
+      "model_angle": [
+        -0.0,
+        -90.0,
+        180.0
+      ],
+      "model_id": 50179,
+      "name": "穿梭之门40",
+      "parent_unit_id": 0,
+      "position": [
+        -18.5,
+        6.0,
+        -8.0
+      ],
+      "prefab_id": 3101301,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "unit_eid": 3101301,
+      "unit_id": 1431494328,
+      "unit_type": 512,
+      "unit_uid": "3101301_uid",
+      "world_position": [
+        -18.5,
+        6.0,
+        -8.0
+      ]
+    },
+    "1435881969": {
+      "create_probability": 1.0,
+      "emissive_intensity_1": 10.0,
+      "enable_hp": false,
+      "fix_destroy_time": -1,
+      "material_metalness_1": 0.0,
+      "material_roughness_1": 1.0,
+      "model_alpha": 1.0,
+      "model_angle": [
+        0.0,
+        90.0,
+        0.0
+      ],
+      "model_id": 50730,
+      "name": "星座数字01",
+      "ob_max_hp": 0,
+      "parent_unit_id": 0,
+      "physic_enable": true,
+      "position": [
+        -23.712,
+        11.0,
+        7.543
+      ],
+      "prefab_id": 103053,
+      "scale": [
+        -1.3236179,
+        -5.3190166939375,
+        -4.1576451805345
+      ],
+      "unit_eid": 103053,
+      "unit_id": 1435881969,
+      "unit_type": 256,
+      "unit_uid": "1204051_uid",
+      "world_position": [
+        -23.712,
+        11.0,
+        7.543
+      ]
+    },
+    "1453043027": {
+      "create_probability": 1.0,
+      "enable_hp": false,
+      "fix_destroy_time": -1,
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 40032,
+      "name": "十字齿轮2",
+      "ob_max_hp": 0,
+      "parent_unit_id": 0,
+      "physic_enable": true,
+      "position": [
+        -61.01,
+        2.316,
+        29.49
+      ],
+      "prefab_id": 1101070,
+      "scale": [
+        0.92993517513474,
+        1.0,
+        0.92993517513474
+      ],
+      "unit_eid": 1101070,
+      "unit_id": 1453043027,
+      "unit_type": 256,
+      "unit_uid": "100029",
+      "world_position": [
+        -61.01,
+        2.316,
+        29.49
+      ]
+    },
+    "1468103492": {
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 50494,
+      "name": "隐身区域6",
+      "parent_unit_id": 1923179518,
+      "position": [
+        -3.549,
+        0.0,
+        -39.998
+      ],
+      "prefab_id": 300025,
+      "scale": [
+        5,
+        3,
+        5
+      ],
+      "unit_eid": 300025,
+      "unit_id": 1468103492,
+      "unit_type": 512,
+      "unit_uid": "300025_uid",
+      "world_position": [
+        -34.0,
+        2.316,
+        -9.0
+      ]
+    },
+    "1491798607": {
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 9000002,
+      "name": "僵尸蛋1",
+      "parent_unit_id": 0,
+      "position": [
+        -75.586151123047,
+        2.31640625,
+        -8.0320091247559
+      ],
+      "prefab_id": 9000090,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "unit_eid": 9000090,
+      "unit_id": 1491798607,
+      "unit_type": 4,
+      "world_position": [
+        -75.586151123047,
+        2.31640625,
+        -8.0320091247559
+      ]
+    },
+    "1492090551": {
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 50494,
+      "name": "隐身区域1",
+      "parent_unit_id": 0,
+      "position": [
+        -42.618515014648,
+        2.31640625,
+        36.767498016357
+      ],
+      "prefab_id": 300025,
+      "scale": [
+        5,
+        3,
+        5
+      ],
+      "unit_eid": 300025,
+      "unit_id": 1492090551,
+      "unit_type": 512,
+      "unit_uid": "300025_uid",
+      "world_position": [
+        -42.618515014648,
+        2.31640625,
+        36.767498016357
+      ]
+    },
+    "1502667218": {
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 9000101,
+      "name": "变异蛋B10",
+      "parent_unit_id": 0,
+      "position": [
+        -68.94,
+        2.316,
+        22.345
+      ],
+      "prefab_id": 9000081,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "unit_eid": 9000081,
+      "unit_id": 1502667218,
+      "unit_type": 4,
+      "world_position": [
+        -68.94,
+        2.316,
+        22.345
+      ]
+    },
+    "1512540079": {
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 9000100,
+      "name": "变异蛋C10",
+      "parent_unit_id": 0,
+      "position": [
+        -45.863258361816,
+        2.31640625,
+        -8.5840892791748
+      ],
+      "prefab_id": 9000082,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "unit_eid": 9000082,
+      "unit_id": 1512540079,
+      "unit_type": 4,
+      "world_position": [
+        -45.863258361816,
+        2.31640625,
+        -8.5840892791748
+      ]
+    },
+    "1523845553": {
+      "create_probability": 1.0,
+      "enable_hp": false,
+      "fix_destroy_time": -1,
+      "model_alpha": 1.0,
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 7000177,
+      "name": "方墙32",
+      "ob_max_hp": 0,
+      "parent_unit_id": 0,
+      "physic_enable": true,
+      "position": [
+        -18.5,
+        2.316,
+        9.0
+      ],
+      "prefab_id": 1204079,
+      "scale": [
+        1.0,
+        1.0,
+        0.7
+      ],
+      "unit_eid": 1204079,
+      "unit_id": 1523845553,
+      "unit_type": 256,
+      "unit_uid": "1204079_uid",
+      "world_position": [
+        -18.5,
+        2.316,
+        9.0
+      ]
+    },
+    "1524647113": {
+      "create_probability": 1.0,
+      "fix_destroy_time": -1,
+      "material_metalness_1": 0.0,
+      "material_pattern_color": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "material_roughness_1": 1.0,
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 50338,
+      "name": "爆炸魔药瓶3",
+      "parent_unit_id": 0,
+      "position": [
+        -33.896648406982,
+        2.31591796875,
+        -18.100296020508
+      ],
+      "prefab_id": 100155,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "unit_eid": 100155,
+      "unit_id": 1524647113,
+      "unit_type": 256,
+      "unit_uid": "100155_uid",
+      "world_position": [
+        -33.896648406982,
+        2.31591796875,
+        -18.100296020508
+      ]
+    },
+    "1525548447": {
+      "create_probability": 1.0,
+      "enable_hp": false,
+      "fix_destroy_time": -1,
+      "model_alpha": 1.0,
+      "model_angle": [
+        -0.0,
+        90.0,
+        -0.0
+      ],
+      "model_id": 7000177,
+      "name": "方墙34",
+      "ob_max_hp": 0,
+      "parent_unit_id": 0,
+      "physic_enable": true,
+      "position": [
+        10.0,
+        2.316,
+        5.5
+      ],
+      "prefab_id": 1204079,
+      "scale": [
+        1.0,
+        1.0,
+        1.3999999761581
+      ],
+      "unit_eid": 1204079,
+      "unit_id": 1525548447,
+      "unit_type": 256,
+      "unit_uid": "1204079_uid",
+      "world_position": [
+        10.0,
+        2.316,
+        5.5
+      ]
+    },
+    "1526475831": {
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 9000102,
+      "name": "变异蛋A6",
+      "parent_unit_id": 0,
+      "position": [
+        -2.06,
+        2.316,
+        -17.0
+      ],
+      "prefab_id": 9000080,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "unit_eid": 9000080,
+      "unit_id": 1526475831,
+      "unit_type": 4,
+      "world_position": [
+        -2.06,
+        2.316,
+        -17.0
+      ]
+    },
+    "1542659571": {
+      "create_probability": 1.0,
+      "enable_hp": false,
+      "fix_destroy_time": -1,
+      "model_alpha": 1.0,
+      "model_angle": [
+        -0.0,
+        90.0,
+        -0.0
+      ],
+      "model_id": 7000177,
+      "name": "方墙47",
+      "ob_max_hp": 0,
+      "parent_unit_id": 0,
+      "physic_enable": true,
+      "position": [
+        -47.0,
+        2.3159999847412,
+        5.25
+      ],
+      "prefab_id": 1204079,
+      "scale": [
+        1.0,
+        1.0,
+        1.15
+      ],
+      "unit_eid": 1204079,
+      "unit_id": 1542659571,
+      "unit_type": 256,
+      "unit_uid": "1204079_uid",
+      "world_position": [
+        -47.0,
+        2.3159999847412,
+        5.25
+      ]
+    },
+    "1545965312": {
+      "create_probability": 1.0,
+      "enable_hp": false,
+      "fix_destroy_time": -1,
+      "model_alpha": 1.0,
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 7000177,
+      "name": "方墙33",
+      "ob_max_hp": 0,
+      "parent_unit_id": 0,
+      "physic_enable": true,
+      "position": [
+        -18.5,
+        2.316,
+        29.25
+      ],
+      "prefab_id": 1204079,
+      "scale": [
+        1.0,
+        1.0,
+        2.15
+      ],
+      "unit_eid": 1204079,
+      "unit_id": 1545965312,
+      "unit_type": 256,
+      "unit_uid": "1204079_uid",
+      "world_position": [
+        -18.5,
+        2.316,
+        29.25
+      ]
+    },
+    "1548549609": {
+      "create_probability": 1.0,
+      "emissive_intensity_1": 10.0,
+      "enable_hp": false,
+      "fix_destroy_time": -1,
+      "material_metalness_1": 0.0,
+      "material_roughness_1": 1.0,
+      "model_alpha": 1.0,
+      "model_angle": [
+        0.0,
+        -90.0,
+        0.0
+      ],
+      "model_id": 50732,
+      "name": "星座数字21",
+      "ob_max_hp": 0,
+      "parent_unit_id": 0,
+      "physic_enable": true,
+      "position": [
+        6.617,
+        2.316,
+        7.17
+      ],
+      "prefab_id": 103055,
+      "scale": [
+        3.143138114801,
+        3.070011368829,
+        4.9005097423068
+      ],
+      "unit_eid": 103055,
+      "unit_id": 1548549609,
+      "unit_type": 256,
+      "unit_uid": "1204051_uid",
+      "world_position": [
+        6.617,
+        2.316,
+        7.17
+      ]
+    },
+    "1549045028": {
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 9000102,
+      "name": "变异蛋A11",
+      "parent_unit_id": 0,
+      "position": [
+        -41.049160003662,
+        2.31591796875,
+        -18.565900802612
+      ],
+      "prefab_id": 9000080,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "unit_eid": 9000080,
+      "unit_id": 1549045028,
+      "unit_type": 4,
+      "world_position": [
+        -41.049160003662,
+        2.31591796875,
+        -18.565900802612
+      ]
+    },
+    "1570439517": {
+      "model_alpha": 1.0,
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 50206,
+      "name": "拖尾电流2",
+      "parent_unit_id": 0,
+      "position": [
+        11.5,
+        2.842,
+        23.0
+      ],
+      "prefab_id": 3301506,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "unit_eid": 3301506,
+      "unit_id": 1570439517,
+      "unit_type": 512,
+      "unit_uid": "3301506_uid",
+      "world_position": [
+        11.5,
+        2.842,
+        23.0
+      ]
+    },
+    "1579725578": {
+      "create_probability": 1.0,
+      "enable_hp": false,
+      "fix_destroy_time": -1,
+      "model_alpha": 1.0,
+      "model_angle": [
+        -0.0,
+        90.0,
+        -0.0
+      ],
+      "model_id": 7000177,
+      "name": "方墙6",
+      "ob_max_hp": 0,
+      "parent_unit_id": 0,
+      "physic_enable": true,
+      "position": [
+        6.5,
+        2.297,
+        -22.5
+      ],
+      "prefab_id": 1204079,
+      "scale": [
+        1.0,
+        1.0,
+        1.9
+      ],
+      "unit_eid": 1204079,
+      "unit_id": 1579725578,
+      "unit_type": 256,
+      "unit_uid": "1204079_uid",
+      "world_position": [
+        6.5,
+        2.297,
+        -22.5
+      ]
+    },
+    "1594492577": {
+      "create_probability": 1.0,
+      "emissive_intensity_1": 0.0,
+      "enable_hp": false,
+      "fix_destroy_time": -1,
+      "material_metalness_1": 0.0,
+      "material_roughness_1": 1.0,
+      "model_alpha": 1.0,
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 7000495,
+      "name": "欧式方形窄门1",
+      "ob_max_hp": 0,
+      "parent_unit_id": 0,
+      "physic_enable": true,
+      "position": [
+        -18.352,
+        2.315,
+        15.506
+      ],
+      "prefab_id": 100830,
+      "scale": [
+        1.0,
+        1.6666666666667,
+        1.496749997139
+      ],
+      "unit_eid": 100830,
+      "unit_id": 1594492577,
+      "unit_type": 256,
+      "unit_uid": "100830_uid",
+      "world_position": [
+        -18.352,
+        2.315,
+        15.506
+      ]
+    },
+    "1630926748": {
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 50494,
+      "name": "隐身区域3",
+      "parent_unit_id": 0,
+      "position": [
+        -1.75,
+        2.316,
+        20.0
+      ],
+      "prefab_id": 300025,
+      "scale": [
+        7.5,
+        3.0,
+        11.0
+      ],
+      "unit_eid": 300025,
+      "unit_id": 1630926748,
+      "unit_type": 512,
+      "unit_uid": "300025_uid",
+      "world_position": [
+        -1.75,
+        2.316,
+        20.0
+      ]
+    },
+    "1638063401": {
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 50494,
+      "name": "隐身区域2",
+      "parent_unit_id": 0,
+      "position": [
+        -71.5,
+        2.31640625,
+        34.5
+      ],
+      "prefab_id": 300025,
+      "scale": [
+        5,
+        3,
+        5
+      ],
+      "unit_eid": 300025,
+      "unit_id": 1638063401,
+      "unit_type": 512,
+      "unit_uid": "300025_uid",
+      "world_position": [
+        -71.5,
+        2.31640625,
+        34.5
+      ]
+    },
+    "1643323093": {
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 9000100,
+      "name": "变异蛋C2",
+      "parent_unit_id": 0,
+      "position": [
+        -12.56,
+        2.316,
+        35.325
+      ],
+      "prefab_id": 9000082,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "unit_eid": 9000082,
+      "unit_id": 1643323093,
+      "unit_type": 4,
+      "world_position": [
+        -12.56,
+        2.316,
+        35.325
+      ]
+    },
+    "1648649203": {
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 90006,
+      "name": "通用触发区域1",
+      "parent_unit_id": 0,
+      "position": [
+        11.362742424011,
+        0.0,
+        7.9041137695312
+      ],
+      "prefab_id": 3101010,
+      "scale": [
+        5,
+        3,
+        5
+      ],
+      "unit_eid": 3101010,
+      "unit_id": 1648649203,
+      "unit_type": 8,
+      "unit_uid": "100054_uid",
+      "world_position": [
+        11.362742424011,
+        0.0,
+        7.9041137695312
+      ]
+    },
+    "1681499584": {
+      "create_probability": 1.0,
+      "enable_hp": false,
+      "fix_destroy_time": -1,
+      "model_angle": [
+        -0.0,
+        0.0,
+        0.0
+      ],
+      "model_id": 90004,
+      "name": "地砖0",
+      "ob_max_hp": 0,
+      "parent_unit_id": 0,
+      "physic_enable": true,
+      "position": [
+        -36.758,
+        0.0,
+        9.0
+      ],
+      "prefab_id": 1201010,
+      "scale": [
+        7.1653713327625,
+        1.1579438447952,
+        6.4999904632568
+      ],
+      "unit_eid": 1201010,
+      "unit_id": 1681499584,
+      "unit_type": 256,
+      "unit_uid": "floor_3",
+      "world_position": [
+        -36.758,
+        0.0,
+        9.0
+      ]
+    },
+    "1685819687": {
+      "model_id": 0,
+      "parent_unit_id": 0,
+      "prefab_id": 0,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "unit_eid": 0,
+      "unit_id": 1685819687,
+      "unit_type": 0
+    },
+    "1687330069": {
+      "create_probability": 1.0,
+      "enable_hp": false,
+      "fix_destroy_time": -1,
+      "model_alpha": 1.0,
+      "model_angle": [
+        -0.0,
+        90.0,
+        -0.0
+      ],
+      "model_id": 40357,
+      "name": "机械墙6",
+      "ob_max_hp": 0,
+      "parent_unit_id": 0,
+      "physic_enable": true,
+      "position": [
+        -40.0,
+        2.3159999847412,
+        36.75
+      ],
+      "prefab_id": 1102440,
+      "scale": [
+        4.0310001373291,
+        5.0920000076294,
+        1.0
+      ],
+      "unit_eid": 1102440,
+      "unit_id": 1687330069,
+      "unit_type": 256,
+      "unit_uid": "100821_uid",
+      "world_position": [
+        -40.0,
+        2.3159999847412,
+        36.75
+      ]
+    },
+    "1706126085": {
+      "model_alpha": 1.0,
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 50206,
+      "name": "拖尾电流4",
+      "parent_unit_id": 0,
+      "position": [
+        -4.8929653167725,
+        2.31640625,
+        -14.291271209717
+      ],
+      "prefab_id": 3301506,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "unit_eid": 3301506,
+      "unit_id": 1706126085,
+      "unit_type": 512,
+      "unit_uid": "3301506_uid",
+      "world_position": [
+        -4.8929653167725,
+        2.31640625,
+        -14.291271209717
+      ]
+    },
+    "1712673236": {
+      "create_probability": 1.0,
+      "emissive_intensity_1": 10.0,
+      "enable_hp": false,
+      "fix_destroy_time": -1,
+      "material_metalness_1": 0.0,
+      "material_roughness_1": 1.0,
+      "model_alpha": 1.0,
+      "model_angle": [
+        -0.0,
+        180.0,
+        0.0
+      ],
+      "model_id": 50736,
+      "name": "星座数字61",
+      "ob_max_hp": 0,
+      "parent_unit_id": 0,
+      "physic_enable": true,
+      "position": [
+        -52.895,
+        2.316,
+        -4.0
+      ],
+      "prefab_id": 103059,
+      "scale": [
+        1.0,
+        2.0645728111267,
+        3.07684
+      ],
+      "unit_eid": 103059,
+      "unit_id": 1712673236,
+      "unit_type": 256,
+      "unit_uid": "1204051_uid",
+      "world_position": [
+        -52.895,
+        2.316,
+        -4.0
+      ]
+    },
+    "1731296382": {
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 9000102,
+      "name": "变异蛋A13",
+      "parent_unit_id": 0,
+      "position": [
+        -70.370193481445,
+        2.31640625,
+        0.62998008728027
+      ],
+      "prefab_id": 9000080,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "unit_eid": 9000080,
+      "unit_id": 1731296382,
+      "unit_type": 4,
+      "world_position": [
+        -70.370193481445,
+        2.31640625,
+        0.62998008728027
+      ]
+    },
+    "1732139556": {
+      "create_probability": 1.0,
+      "enable_hp": false,
+      "fix_destroy_time": -1,
+      "model_alpha": 1.0,
+      "model_angle": [
+        -0.0,
+        90.0,
+        -0.0
+      ],
+      "model_id": 40357,
+      "name": "机械墙5",
+      "ob_max_hp": 0,
+      "parent_unit_id": 0,
+      "physic_enable": true,
+      "position": [
+        -51.0,
+        2.3159999847412,
+        -12.75
+      ],
+      "prefab_id": 1102440,
+      "scale": [
+        4.0310001373291,
+        5.0920000076294,
+        1.0
+      ],
+      "unit_eid": 1102440,
+      "unit_id": 1732139556,
+      "unit_type": 256,
+      "unit_uid": "100821_uid",
+      "world_position": [
+        -51.0,
+        2.3159999847412,
+        -12.75
+      ]
+    },
+    "1734937541": {
+      "create_probability": 1.0,
+      "enable_hp": false,
+      "fix_destroy_time": -1,
+      "model_alpha": 1.0,
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 7000177,
+      "name": "方墙51",
+      "ob_max_hp": 0,
+      "parent_unit_id": 0,
+      "physic_enable": true,
+      "position": [
+        -89.5,
+        2.313,
+        22.0
+      ],
+      "prefab_id": 1204079,
+      "scale": [
+        1.0,
+        1.0,
+        3.6000001907349
+      ],
+      "unit_eid": 1204079,
+      "unit_id": 1734937541,
+      "unit_type": 256,
+      "unit_uid": "1204079_uid",
+      "world_position": [
+        -89.5,
+        2.313,
+        22.0
+      ]
+    },
+    "1743679626": {
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 9000100,
+      "name": "变异蛋C3",
+      "parent_unit_id": 0,
+      "position": [
+        8.56,
+        2.316,
+        34.175
+      ],
+      "prefab_id": 9000082,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "unit_eid": 9000082,
+      "unit_id": 1743679626,
+      "unit_type": 4,
+      "world_position": [
+        8.56,
+        2.316,
+        34.175
+      ]
+    },
+    "1760381794": {
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 9000101,
+      "name": "变异蛋B7",
+      "parent_unit_id": 0,
+      "position": [
+        -43.56,
+        2.316,
+        22.655
+      ],
+      "prefab_id": 9000081,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "unit_eid": 9000081,
+      "unit_id": 1760381794,
+      "unit_type": 4,
+      "world_position": [
+        -43.56,
+        2.316,
+        22.655
+      ]
+    },
+    "1781623410": {
+      "create_probability": 1.0,
+      "enable_hp": false,
+      "fix_destroy_time": -1,
+      "model_alpha": 1.0,
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 7000177,
+      "name": "方墙26",
+      "ob_max_hp": 0,
+      "parent_unit_id": 0,
+      "physic_enable": true,
+      "position": [
+        -82.0,
+        2.316,
+        -17.0
+      ],
+      "prefab_id": 1204079,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "unit_eid": 1204079,
+      "unit_id": 1781623410,
+      "unit_type": 256,
+      "unit_uid": "1204079_uid",
+      "world_position": [
+        -82.0,
+        2.316,
+        -17.0
+      ]
+    },
+    "1782503214": {
+      "create_probability": 1.0,
+      "enable_hp": false,
+      "fix_destroy_time": -1,
+      "model_alpha": 1.0,
+      "model_angle": [
+        -0.0,
+        90.0,
+        -0.0
+      ],
+      "model_id": 7000177,
+      "name": "方墙9",
+      "ob_max_hp": 0,
+      "parent_unit_id": 0,
+      "physic_enable": true,
+      "position": [
+        -28.0,
+        2.297,
+        -22.5
+      ],
+      "prefab_id": 1204079,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "unit_eid": 1204079,
+      "unit_id": 1782503214,
+      "unit_type": 256,
+      "unit_uid": "1204079_uid",
+      "world_position": [
+        -28.0,
+        2.297,
+        -22.5
+      ]
+    },
+    "1784268053": {
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 9000100,
+      "name": "变异蛋C6",
+      "parent_unit_id": 0,
+      "position": [
+        -1.44,
+        2.316,
+        -6.825
+      ],
+      "prefab_id": 9000082,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "unit_eid": 9000082,
+      "unit_id": 1784268053,
+      "unit_type": 4,
+      "world_position": [
+        -1.44,
+        2.316,
+        -6.825
+      ]
+    },
+    "1799559364": {
+      "create_probability": 1.0,
+      "enable_hp": false,
+      "fix_destroy_time": -1,
+      "model_alpha": 1.0,
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 7000177,
+      "name": "方墙54",
+      "ob_max_hp": 0,
+      "parent_unit_id": 0,
+      "physic_enable": true,
+      "position": [
+        -51.5,
+        2.316,
+        -2.0
+      ],
+      "prefab_id": 1204079,
+      "scale": [
+        1.0,
+        1.0,
+        1.4999999761581
+      ],
+      "unit_eid": 1204079,
+      "unit_id": 1799559364,
+      "unit_type": 256,
+      "unit_uid": "1204079_uid",
+      "world_position": [
+        -51.5,
+        2.316,
+        -2.0
+      ]
+    },
+    "1850114966": {
+      "model_alpha": 1.0,
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 50206,
+      "name": "拖尾电流5",
+      "parent_unit_id": 0,
+      "position": [
+        8.3137531280518,
+        2.31591796875,
+        -3.342134475708
+      ],
+      "prefab_id": 3301506,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "unit_eid": 3301506,
+      "unit_id": 1850114966,
+      "unit_type": 512,
+      "unit_uid": "3301506_uid",
+      "world_position": [
+        8.3137531280518,
+        2.31591796875,
+        -3.342134475708
+      ]
+    },
+    "1854567188": {
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 9000101,
+      "name": "变异蛋B13",
+      "parent_unit_id": 0,
+      "position": [
+        -34.482646942139,
+        2.31591796875,
+        37.659587860107
+      ],
+      "prefab_id": 9000081,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "unit_eid": 9000081,
+      "unit_id": 1854567188,
+      "unit_type": 4,
+      "world_position": [
+        -34.482646942139,
+        2.31591796875,
+        37.659587860107
+      ]
+    },
+    "1855557960": {
+      "create_probability": 1.0,
+      "emissive_intensity_1": 0.0,
+      "fix_destroy_time": -1,
+      "material_metalness_1": 0.0,
+      "material_roughness_1": 1.0,
+      "model_alpha": 1.0,
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 50415,
+      "name": "按钮开关1",
+      "parent_unit_id": 0,
+      "position": [
+        -83.765113830566,
+        2.31591796875,
+        7.6931438446045
+      ],
+      "prefab_id": 100450,
+      "scale": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "unit_eid": 100450,
+      "unit_id": 1855557960,
+      "unit_type": 256,
+      "unit_uid": "100450_uid",
+      "world_position": [
+        -83.765113830566,
+        2.31591796875,
+        7.6931438446045
+      ]
+    },
+    "1872375019": {
+      "model_angle": [
+        -0.0,
+        90.0,
+        -0.0
+      ],
+      "model_id": 50004,
+      "name": "风圈1",
+      "parent_unit_id": 0,
+      "position": [
+        -1.3317947387695,
+        2.8427734375,
+        16.437685012817
+      ],
+      "prefab_id": 3101410,
+      "scale": [
+        1,
+        6,
+        6
+      ],
+      "unit_eid": 3101410,
+      "unit_id": 1872375019,
+      "unit_type": 512,
+      "unit_uid": "3101410_uid",
+      "world_position": [
+        -1.3317947387695,
+        2.8427734375,
+        16.437685012817
+      ]
+    },
+    "1873217301": {
+      "create_probability": 1.0,
+      "fix_destroy_time": -1,
+      "model_alpha": 1.0,
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 40331,
+      "name": "蹦床1",
+      "parent_unit_id": 0,
+      "position": [
+        3.1172389984131,
+        2.3154296875,
+        9.3702354431152
+      ],
+      "prefab_id": 1101030,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "unit_eid": 1101030,
+      "unit_id": 1873217301,
+      "unit_type": 256,
+      "unit_uid": "100000_uid",
+      "world_position": [
+        3.1172389984131,
+        2.3154296875,
+        9.3702354431152
+      ]
+    },
+    "1877445547": {
+      "create_probability": 1.0,
+      "enable_hp": false,
+      "fix_destroy_time": -1,
+      "model_alpha": 1.0,
+      "model_angle": [
+        -0.0,
+        90.0,
+        -0.0
+      ],
+      "model_id": 7000177,
+      "name": "方墙10",
+      "ob_max_hp": 0,
+      "parent_unit_id": 0,
+      "physic_enable": true,
+      "position": [
+        -38.0,
+        2.297,
+        -22.5
+      ],
+      "prefab_id": 1204079,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "unit_eid": 1204079,
+      "unit_id": 1877445547,
+      "unit_type": 256,
+      "unit_uid": "1204079_uid",
+      "world_position": [
+        -38.0,
+        2.297,
+        -22.5
+      ]
+    },
+    "1881048733": {
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 9000101,
+      "name": "变异蛋B5",
+      "parent_unit_id": 0,
+      "position": [
+        -28.56,
+        2.316,
+        23.155
+      ],
+      "prefab_id": 9000081,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "unit_eid": 9000081,
+      "unit_id": 1881048733,
+      "unit_type": 4,
+      "world_position": [
+        -28.56,
+        2.316,
+        23.155
+      ]
+    },
+    "1881392724": {
+      "create_probability": 1.0,
+      "fix_destroy_time": -1,
+      "model_alpha": 1.0,
+      "model_angle": [
+        -0.0,
+        -90.0,
+        0.0
+      ],
+      "model_id": 40290,
+      "name": "终点胜利000",
+      "parent_unit_id": 0,
+      "position": [
+        -90.75,
+        4.06,
+        -12.0
+      ],
+      "prefab_id": 1501430,
+      "scale": [
+        0.49999982118607,
+        0.5,
+        0.99999964237213
+      ],
+      "unit_eid": 1501430,
+      "unit_id": 1881392724,
+      "unit_type": 256,
+      "unit_uid": "tree_a_48",
+      "world_position": [
+        -90.75,
+        4.06,
+        -12.0
+      ]
+    },
+    "1887047585": {
+      "create_probability": 1.0,
+      "fix_destroy_time": -1,
+      "model_alpha": 1.0,
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 100093,
+      "name": "气球炸弹3",
+      "parent_unit_id": 0,
+      "position": [
+        -42.659118652344,
+        2.31640625,
+        36.973667144775
+      ],
+      "prefab_id": 1601131,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "unit_eid": 1601131,
+      "unit_id": 1887047585,
+      "unit_type": 256,
+      "unit_uid": "1601131_uid",
+      "world_position": [
+        -42.659118652344,
+        2.31640625,
+        36.973667144775
+      ]
+    },
+    "1890201080": {
+      "create_probability": 1.0,
+      "enable_hp": false,
+      "fix_destroy_time": -1,
+      "model_alpha": 1.0,
+      "model_angle": [
+        -0.0,
+        90.0,
+        -0.0
+      ],
+      "model_id": 7000177,
+      "name": "方墙7",
+      "ob_max_hp": 0,
+      "parent_unit_id": 0,
+      "physic_enable": true,
+      "position": [
+        -8.0,
+        2.297,
+        -22.5
+      ],
+      "prefab_id": 1204079,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "unit_eid": 1204079,
+      "unit_id": 1890201080,
+      "unit_type": 256,
+      "unit_uid": "1204079_uid",
+      "world_position": [
+        -8.0,
+        2.297,
+        -22.5
+      ]
+    },
+    "1918773302": {
+      "create_probability": 1.0,
+      "enable_hp": false,
+      "fix_destroy_time": -1,
+      "model_alpha": 1.0,
+      "model_angle": [
+        -0.0,
+        90.0,
+        -0.0
+      ],
+      "model_id": 7000177,
+      "name": "方墙49",
+      "ob_max_hp": 0,
+      "parent_unit_id": 0,
+      "physic_enable": true,
+      "position": [
+        -69.5,
+        2.3159999847412,
+        5.25
+      ],
+      "prefab_id": 1204079,
+      "scale": [
+        1.0,
+        1.0,
+        1.15
+      ],
+      "unit_eid": 1204079,
+      "unit_id": 1918773302,
+      "unit_type": 256,
+      "unit_uid": "1204079_uid",
+      "world_position": [
+        -69.5,
+        2.3159999847412,
+        5.25
+      ]
+    },
+    "1923179518": {
+      "children_unit_ids": [
+        1468103492
+      ],
+      "create_probability": 1.0,
+      "fix_destroy_time": -1,
+      "model_alpha": 1.0,
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 50169,
+      "name": "音响蹦床1",
+      "parent_unit_id": 0,
+      "position": [
+        -30.451,
+        2.316,
+        30.998
+      ],
+      "prefab_id": 1101589,
+      "scale": [
+        2.5242500305176,
+        2.685,
+        2.7490000724792
+      ],
+      "unit_eid": 1101589,
+      "unit_id": 1923179518,
+      "unit_type": 256,
+      "unit_uid": "1101589_uid",
+      "world_position": [
+        -30.451,
+        2.316,
+        30.998
+      ]
+    },
+    "1925646933": {
+      "create_probability": 1.0,
+      "enable_hp": false,
+      "fix_destroy_time": -1,
+      "model_alpha": 1.0,
+      "model_angle": [
+        -0.0,
+        90.0,
+        -0.0
+      ],
+      "model_id": 7000177,
+      "name": "方墙46",
+      "ob_max_hp": 0,
+      "parent_unit_id": 0,
+      "physic_enable": true,
+      "position": [
+        -35.5,
+        2.3159999847412,
+        5.25
+      ],
+      "prefab_id": 1204079,
+      "scale": [
+        1.0,
+        1.0,
+        1.15
+      ],
+      "unit_eid": 1204079,
+      "unit_id": 1925646933,
+      "unit_type": 256,
+      "unit_uid": "1204079_uid",
+      "world_position": [
+        -35.5,
+        2.3159999847412,
+        5.25
+      ]
+    },
+    "1931411198": {
+      "model_angle": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "model_id": 90002,
+      "name": "相机路径0",
+      "parent_unit_id": 0,
+      "position": [
+        99999.0,
+        99999.0,
+        99999.0
+      ],
+      "prefab_id": 3201063,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "unit_eid": 3201063,
+      "unit_id": 1931411198,
+      "unit_type": 2048,
+      "unit_uid": "3201063_uid",
+      "world_position": [
+        99999.0,
+        99999.0,
+        99999.0
+      ]
+    },
+    "1934117747": {
+      "create_probability": 1.0,
+      "enable_hp": false,
+      "fix_destroy_time": -1,
+      "model_alpha": 1.0,
+      "model_angle": [
+        -0.0,
+        90.0,
+        -0.0
+      ],
+      "model_id": 7000177,
+      "name": "方墙48",
+      "ob_max_hp": 0,
+      "parent_unit_id": 0,
+      "physic_enable": true,
+      "position": [
+        -58.5,
+        2.3159999847412,
+        5.25
+      ],
+      "prefab_id": 1204079,
+      "scale": [
+        1.0,
+        1.0,
+        1.15
+      ],
+      "unit_eid": 1204079,
+      "unit_id": 1934117747,
+      "unit_type": 256,
+      "unit_uid": "1204079_uid",
+      "world_position": [
+        -58.5,
+        2.3159999847412,
+        5.25
+      ]
+    },
+    "1953587553": {
+      "create_probability": 1.0,
+      "enable_hp": false,
+      "fix_destroy_time": -1,
+      "model_angle": [
+        -0.0,
+        90.0,
+        -0.0
+      ],
+      "model_id": 50055,
+      "name": "公告牌1",
+      "ob_max_hp": 0,
+      "parent_unit_id": 0,
+      "physic_enable": true,
+      "position": [
+        -23.789405822754,
+        2.31640625,
+        -0.22825050354004
+      ],
+      "prefab_id": 103684,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "unit_eid": 103684,
+      "unit_id": 1953587553,
+      "unit_type": 256,
+      "unit_uid": "1101520_uid",
+      "world_position": [
+        -23.789405822754,
+        2.31640625,
+        -0.22825050354004
+      ]
+    },
+    "1965974982": {
+      "create_probability": 1.0,
+      "enable_hp": false,
+      "fix_destroy_time": -1,
+      "model_alpha": 1.0,
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 58598,
+      "name": "密码锁1",
+      "ob_max_hp": 0,
+      "parent_unit_id": 0,
+      "physic_enable": true,
+      "position": [
+        -81.36,
+        6.5,
+        -4.31
+      ],
+      "prefab_id": 104498,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "unit_eid": 104498,
+      "unit_id": 1965974982,
+      "unit_type": 256,
+      "unit_uid": "1204051_uid",
+      "world_position": [
+        -81.36,
+        6.5,
+        -4.31
+      ]
+    },
+    "1971764526": {
+      "create_probability": 1.0,
+      "enable_hp": false,
+      "fix_destroy_time": -1,
+      "model_alpha": 1.0,
+      "model_angle": [
+        -0.0,
+        90.0,
+        -0.0
+      ],
+      "model_id": 7000177,
+      "name": "方墙15",
+      "ob_max_hp": 0,
+      "parent_unit_id": 0,
+      "physic_enable": true,
+      "position": [
+        6.0,
+        2.316,
+        40.5
+      ],
+      "prefab_id": 1204079,
+      "scale": [
+        1.0,
+        1.0,
+        2.0999999523163
+      ],
+      "unit_eid": 1204079,
+      "unit_id": 1971764526,
+      "unit_type": 256,
+      "unit_uid": "1204079_uid",
+      "world_position": [
+        6.0,
+        2.316,
+        40.5
+      ]
+    },
+    "1975232333": {
+      "create_probability": 1.0,
+      "fix_destroy_time": -1,
+      "material_metalness_1": 0.0,
+      "material_pattern_color": [
+        255,
+        255,
+        255,
+        255
+      ],
+      "material_roughness_1": 1.0,
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 50338,
+      "name": "爆炸魔药瓶2",
+      "parent_unit_id": 0,
+      "position": [
+        -71.833595275879,
+        3.01611328125,
+        9.1486167907715
+      ],
+      "prefab_id": 100155,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "unit_eid": 100155,
+      "unit_id": 1975232333,
+      "unit_type": 256,
+      "unit_uid": "100155_uid",
+      "world_position": [
+        -71.833595275879,
+        3.01611328125,
+        9.1486167907715
+      ]
+    },
+    "1978532558": {
+      "create_probability": 1.0,
+      "enable_hp": false,
+      "fix_destroy_time": -1,
+      "model_alpha": 1.0,
+      "model_angle": [
+        -0.0,
+        90.0,
+        -0.0
+      ],
+      "model_id": 7000177,
+      "name": "方墙8",
+      "ob_max_hp": 0,
+      "parent_unit_id": 0,
+      "physic_enable": true,
+      "position": [
+        -18.0,
+        2.297,
+        -22.5
+      ],
+      "prefab_id": 1204079,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "unit_eid": 1204079,
+      "unit_id": 1978532558,
+      "unit_type": 256,
+      "unit_uid": "1204079_uid",
+      "world_position": [
+        -18.0,
+        2.297,
+        -22.5
+      ]
+    },
+    "1983781596": {
+      "create_probability": 1.0,
+      "enable_hp": false,
+      "fix_destroy_time": -1,
+      "model_alpha": 1.0,
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 7000177,
+      "name": "方墙29",
+      "ob_max_hp": 0,
+      "parent_unit_id": 0,
+      "physic_enable": true,
+      "position": [
+        -18.5,
+        2.316,
+        1.0
+      ],
+      "prefab_id": 1204079,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "unit_eid": 1204079,
+      "unit_id": 1983781596,
+      "unit_type": 256,
+      "unit_uid": "1204079_uid",
+      "world_position": [
+        -18.5,
+        2.316,
+        1.0
+      ]
+    },
+    "1985100131": {
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 40326,
+      "name": "武器物品箱8_7",
+      "parent_unit_id": 0,
+      "position": [
+        -31.0,
+        3.186,
+        31.0
+      ],
+      "prefab_id": 31010115,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "unit_eid": 31010115,
+      "unit_id": 1985100131,
+      "unit_type": 4096,
+      "unit_uid": "300019_uid",
+      "world_position": [
+        -31.0,
+        3.186,
+        31.0
+      ]
+    },
+    "1990128796": {
+      "create_probability": 1.0,
+      "enable_hp": false,
+      "fix_destroy_time": -1,
+      "model_alpha": 1.0,
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 7000177,
+      "name": "方墙4",
+      "ob_max_hp": 0,
+      "parent_unit_id": 0,
+      "physic_enable": true,
+      "position": [
+        16.5,
+        2.286,
+        11.0
+      ],
+      "prefab_id": 1204079,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "unit_eid": 1204079,
+      "unit_id": 1990128796,
+      "unit_type": 256,
+      "unit_uid": "1204079_uid",
+      "world_position": [
+        16.5,
+        2.286,
+        11.0
+      ]
+    },
+    "1994453219": {
+      "model_alpha": 1.0,
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 50206,
+      "name": "拖尾电流1",
+      "parent_unit_id": 0,
+      "position": [
+        -1.5,
+        2.843,
+        23.5
+      ],
+      "prefab_id": 3301506,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "unit_eid": 3301506,
+      "unit_id": 1994453219,
+      "unit_type": 512,
+      "unit_uid": "3301506_uid",
+      "world_position": [
+        -1.5,
+        2.843,
+        23.5
+      ]
+    },
+    "1997721046": {
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 9000102,
+      "name": "变异蛋A14",
+      "parent_unit_id": 0,
+      "position": [
+        -70.514038085938,
+        2.31640625,
+        -12.403969764709
+      ],
+      "prefab_id": 9000080,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "unit_eid": 9000080,
+      "unit_id": 1997721046,
+      "unit_type": 4,
+      "world_position": [
+        -70.514038085938,
+        2.31640625,
+        -12.403969764709
+      ]
+    },
+    "2001581630": {
+      "create_probability": 1.0,
+      "enable_hp": false,
+      "fix_destroy_time": -1,
+      "model_alpha": 1.0,
+      "model_angle": [
+        -0.0,
+        90.0,
+        -0.0
+      ],
+      "model_id": 7000177,
+      "name": "方墙56",
+      "ob_max_hp": 0,
+      "parent_unit_id": 0,
+      "physic_enable": true,
+      "position": [
+        -45.5,
+        2.3159999847412,
+        32.25
+      ],
+      "prefab_id": 1204079,
+      "scale": [
+        1.0,
+        1.0,
+        1.15
+      ],
+      "unit_eid": 1204079,
+      "unit_id": 2001581630,
+      "unit_type": 256,
+      "unit_uid": "1204079_uid",
+      "world_position": [
+        -45.5,
+        2.3159999847412,
+        32.25
+      ]
+    },
+    "2004435032": {
+      "create_probability": 1.0,
+      "fix_destroy_time": -1,
+      "model_alpha": 1.0,
+      "model_angle": [
+        -0.0,
+        -90.0,
+        0.0
+      ],
+      "model_id": 40291,
+      "name": "终点胜利背景100",
+      "parent_unit_id": 0,
+      "position": [
+        -90.625,
+        4.06,
+        -10.405
+      ],
+      "prefab_id": 1501440,
+      "scale": [
+        1.1595000267029,
+        0.5,
+        0.49999982118607
+      ],
+      "unit_eid": 1501440,
+      "unit_id": 2004435032,
+      "unit_type": 256,
+      "unit_uid": "tree_a_49",
+      "world_position": [
+        -90.625,
+        4.06,
+        -10.405
+      ]
+    },
+    "2013002864": {
+      "create_probability": 1.0,
+      "enable_hp": false,
+      "fix_destroy_time": -1,
+      "model_alpha": 1.0,
+      "model_angle": [
+        -0.0,
+        90.0,
+        -0.0
+      ],
+      "model_id": 7000177,
+      "name": "方墙30",
+      "ob_max_hp": 0,
+      "parent_unit_id": 0,
+      "physic_enable": true,
+      "position": [
+        -12.25,
+        2.316,
+        5.5
+      ],
+      "prefab_id": 1204079,
+      "scale": [
+        1.0,
+        1.0,
+        1.15
+      ],
+      "unit_eid": 1204079,
+      "unit_id": 2013002864,
+      "unit_type": 256,
+      "unit_uid": "1204079_uid",
+      "world_position": [
+        -12.25,
+        2.316,
+        5.5
+      ]
+    },
+    "2013516152": {
+      "create_probability": 1.0,
+      "enable_hp": false,
+      "fix_destroy_time": -1,
+      "model_alpha": 1.0,
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 7000177,
+      "name": "方墙52",
+      "ob_max_hp": 0,
+      "parent_unit_id": 0,
+      "physic_enable": true,
+      "position": [
+        -51.5,
+        2.316,
+        31.0
+      ],
+      "prefab_id": 1204079,
+      "scale": [
+        1.0,
+        1.0,
+        2.0000001192093
+      ],
+      "unit_eid": 1204079,
+      "unit_id": 2013516152,
+      "unit_type": 256,
+      "unit_uid": "1204079_uid",
+      "world_position": [
+        -51.5,
+        2.316,
+        31.0
+      ]
+    },
+    "2028388970": {
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 40326,
+      "name": "武器物品箱8_6",
+      "parent_unit_id": 0,
+      "position": [
+        -45.5,
+        2.3154296875,
+        0.5
+      ],
+      "prefab_id": 31010115,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "unit_eid": 31010115,
+      "unit_id": 2028388970,
+      "unit_type": 4096,
+      "unit_uid": "300019_uid",
+      "world_position": [
+        -45.5,
+        2.3154296875,
+        0.5
+      ]
+    },
+    "2034104046": {
+      "model_alpha": 1.0,
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 50206,
+      "name": "拖尾电流3",
+      "parent_unit_id": 0,
+      "position": [
+        -70.959785461426,
+        2.31591796875,
+        34.902053833008
+      ],
+      "prefab_id": 3301506,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "unit_eid": 3301506,
+      "unit_id": 2034104046,
+      "unit_type": 512,
+      "unit_uid": "3301506_uid",
+      "world_position": [
+        -70.959785461426,
+        2.31591796875,
+        34.902053833008
+      ]
+    },
+    "2036874317": {
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 40326,
+      "name": "武器物品箱8_9",
+      "parent_unit_id": 0,
+      "position": [
+        -59.0,
+        2.3154296875,
+        -18.5
+      ],
+      "prefab_id": 31010115,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "unit_eid": 31010115,
+      "unit_id": 2036874317,
+      "unit_type": 4096,
+      "unit_uid": "300019_uid",
+      "world_position": [
+        -59.0,
+        2.3154296875,
+        -18.5
+      ]
+    },
+    "2050722961": {
+      "create_probability": 1.0,
+      "enable_hp": false,
+      "fix_destroy_time": -1,
+      "model_alpha": 1.0,
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 7000177,
+      "name": "方墙28",
+      "ob_max_hp": 0,
+      "parent_unit_id": 0,
+      "physic_enable": true,
+      "position": [
+        -18.5,
+        2.316,
+        -17.0
+      ],
+      "prefab_id": 1204079,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "unit_eid": 1204079,
+      "unit_id": 2050722961,
+      "unit_type": 256,
+      "unit_uid": "1204079_uid",
+      "world_position": [
+        -18.5,
+        2.316,
+        -17.0
+      ]
+    },
+    "2065610958": {
+      "create_probability": 1.0,
+      "enable_hp": false,
+      "fix_destroy_time": -1,
+      "model_alpha": 1.0,
+      "model_angle": [
+        -0.0,
+        90.0,
+        -0.0
+      ],
+      "model_id": 7000177,
+      "name": "方墙12",
+      "ob_max_hp": 0,
+      "parent_unit_id": 0,
+      "physic_enable": true,
+      "position": [
+        -58.0,
+        2.297,
+        -22.5
+      ],
+      "prefab_id": 1204079,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "unit_eid": 1204079,
+      "unit_id": 2065610958,
+      "unit_type": 256,
+      "unit_uid": "1204079_uid",
+      "world_position": [
+        -58.0,
+        2.297,
+        -22.5
+      ]
+    },
+    "2066058681": {
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 50494,
+      "name": "隐身区域7",
+      "parent_unit_id": 0,
+      "position": [
+        -5.0,
+        2.31640625,
+        -14.0
+      ],
+      "prefab_id": 300025,
+      "scale": [
+        5,
+        3,
+        5
+      ],
+      "unit_eid": 300025,
+      "unit_id": 2066058681,
+      "unit_type": 512,
+      "unit_uid": "300025_uid",
+      "world_position": [
+        -5.0,
+        2.31640625,
+        -14.0
+      ]
+    },
+    "2076620475": {
+      "create_probability": 1.0,
+      "enable_hp": false,
+      "fix_destroy_time": -1,
+      "model_alpha": 1.0,
+      "model_angle": [
+        -0.0,
+        90.0,
+        -0.0
+      ],
+      "model_id": 7000177,
+      "name": "方墙50",
+      "ob_max_hp": 0,
+      "parent_unit_id": 0,
+      "physic_enable": true,
+      "position": [
+        -82.5,
+        2.316,
+        5.25
+      ],
+      "prefab_id": 1204079,
+      "scale": [
+        1.0,
+        1.0,
+        1.5499999761581
+      ],
+      "unit_eid": 1204079,
+      "unit_id": 2076620475,
+      "unit_type": 256,
+      "unit_uid": "1204079_uid",
+      "world_position": [
+        -82.5,
+        2.316,
+        5.25
+      ]
+    },
+    "2102608843": {
+      "create_probability": 1.0,
+      "enable_hp": false,
+      "fix_destroy_time": -1,
+      "model_alpha": 1.0,
+      "model_angle": [
+        -0.0,
+        90.0,
+        -0.0
+      ],
+      "model_id": 7000177,
+      "name": "方墙13",
+      "ob_max_hp": 0,
+      "parent_unit_id": 0,
+      "physic_enable": true,
+      "position": [
+        -68.0,
+        2.297,
+        -22.5
+      ],
+      "prefab_id": 1204079,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "unit_eid": 1204079,
+      "unit_id": 2102608843,
+      "unit_type": 256,
+      "unit_uid": "1204079_uid",
+      "world_position": [
+        -68.0,
+        2.297,
+        -22.5
+      ]
+    },
+    "2105425904": {
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 9000102,
+      "name": "变异蛋A4",
+      "parent_unit_id": 0,
+      "position": [
+        -72.44,
+        2.316,
+        27.5
+      ],
+      "prefab_id": 9000080,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "unit_eid": 9000080,
+      "unit_id": 2105425904,
+      "unit_type": 4,
+      "world_position": [
+        -72.44,
+        2.316,
+        27.5
+      ]
+    },
+    "2114736047": {
+      "create_probability": 1.0,
+      "fix_destroy_time": -1,
+      "model_angle": [
+        0.0,
+        180.0,
+        0.0
+      ],
+      "model_id": 40223,
+      "name": "传送带3",
+      "parent_unit_id": 0,
+      "position": [
+        -35.445,
+        2.316,
+        19.5
+      ],
+      "prefab_id": 1101040,
+      "scale": [
+        3.86125,
+        1.0,
+        1.0
+      ],
+      "unit_eid": 1101040,
+      "unit_id": 2114736047,
+      "unit_type": 256,
+      "unit_uid": "floor_7",
+      "world_position": [
+        -35.445,
+        2.316,
+        19.5
+      ]
+    },
+    "2115675148": {
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 9000101,
+      "name": "变异蛋B11",
+      "parent_unit_id": 0,
+      "position": [
+        -63.56,
+        2.316,
+        21.155
+      ],
+      "prefab_id": 9000081,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "unit_eid": 9000081,
+      "unit_id": 2115675148,
+      "unit_type": 4,
+      "world_position": [
+        -63.56,
+        2.316,
+        21.155
+      ]
+    },
+    "2119725047": {
+      "create_probability": 1.0,
+      "enable_hp": false,
+      "fix_destroy_time": -1,
+      "model_alpha": 1.0,
+      "model_angle": [
+        0,
+        0,
+        0
+      ],
+      "model_id": 7000177,
+      "name": "方墙5",
+      "ob_max_hp": 1.0,
+      "parent_unit_id": 0,
+      "physic_enable": true,
+      "position": [
+        16.5,
+        2.286,
+        21.0
+      ],
+      "prefab_id": 1204079,
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "unit_eid": 1204079,
+      "unit_id": 2119725047,
+      "unit_type": 256,
+      "unit_uid": "1204079_uid",
+      "world_position": [
+        16.5,
+        2.286,
+        21.0
+      ]
+    }
+  }
+}

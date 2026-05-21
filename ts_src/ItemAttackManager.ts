@@ -52,6 +52,7 @@ const equipmentHitRegistered: Record<string, boolean> = {}
 const abilityHitRegistered: Record<string, boolean> = {}
 const recentHitTokens: Record<string, boolean> = {}
 let initialized = false
+const ABILITY_BULLET_HIT_EVENT_SUPPORTED = false
 
 for (const config of ATTACK_ITEMS) {
   itemByKey[config.key] = config
@@ -351,6 +352,18 @@ function registerAbilityHitEvents(ability: Ability | undefined, role: Role | und
 
   const token = abilityToken(ability)
   if (abilityHitRegistered[token] === true) {
+    return
+  }
+
+  if (!ABILITY_BULLET_HIT_EVENT_SUPPORTED) {
+    abilityHitRegistered[token] = true
+    print(
+      `[Stage3][ItemAttack] ability bullet hit event disabled` +
+        ` key=${tostring(ability.get_key())}` +
+        ` role=${tostring(role.get_roleid())}` +
+        ` reason=${reason}` +
+        ` fallback=lifeentity_damage_events`
+    )
     return
   }
 

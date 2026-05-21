@@ -109,7 +109,8 @@ const BUTTON_RADIUS_SQ = math.tofixed(2.8) * math.tofixed(2.8)
 const TILE_RADIUS_SQ = math.tofixed(2.4) * math.tofixed(2.4)
 const VICTORY_RADIUS_SQ = math.tofixed(4.0) * math.tofixed(4.0)
 const PASSWORD_LOCK_INVALID_CONFIRM_SECONDS = math.tofixed(1.2)
-const PASSWORD_LOCK_TOUCHABLE_GATE_SECONDS = math.tofixed(3.6)
+const PASSWORD_LOCK_SUCCESS_EVENT = "输入密码2026"
+const PASSWORD_LOCK_DISABLE_EVENT = "机械墙3消失"
 const WALL32_HINT_TEXT = ""
 const WALL32_HINT_FONT_SIZE = 30
 const LEGACY_PASSWORD_UI_NODE_NAMES = [
@@ -136,9 +137,10 @@ let passwordWallOpened = false
 let passwordLockSeenPhysicalValid = false
 let passwordLockInteracted = false
 let passwordLockInvalidSeconds = math.tofixed(0)
-let passwordLockUntouchableSeconds = math.tofixed(0)
 let passwordLockLastRole: Role | undefined
 let passwordLockInteractEventId: integer | undefined
+let passwordLockSuccessEventId: integer | undefined
+let passwordLockSuccessTriggerEventId: integer | undefined
 let trampolineShown = false
 let victoryDone = false
 const tileStandSecondsByRoleId: Record<number, Fixed> = {}
@@ -310,12 +312,12 @@ function openTarget(target: StageUnitTarget, role: Role | undefined, tip: string
   return opened
 }
 
-function openMechWall3ByPasswordLockInvalid(reason: string, role: Role | undefined): void {
+function openMechWall3ByPasswordUnlock(reason: string, role: Role | undefined): void {
   if (passwordWallOpened) {
     return
   }
 
-  const opened = hideTarget(MECH_WALL3, `stage12 password lock invalid ${reason}`)
+  const opened = hideTarget(MECH_WALL3, `stage12 password unlock ${reason}`)
   if (!opened) {
     print(`[Stage12][PasswordLock] wall open retry pending reason=${reason}`)
     return
@@ -323,8 +325,13 @@ function openMechWall3ByPasswordLockInvalid(reason: string, role: Role | undefin
 
   passwordWallOpened = true
   if (role !== undefined) {
-    role.show_tips("密码锁已失效，机械墙3打开", math.tofixed(1.4))
+    role.show_tips("密码正确，机械墙3打开", math.tofixed(1.4))
   }
+  showPasswordUnlockTestTip(role)
+  safeVoid(() => LuaAPI.global_send_custom_event(PASSWORD_LOCK_DISABLE_EVENT, { wall_id: MECH_WALL3.id }), {
+    tag: "Stage12 password lock send disable event",
+    logger: (msg: string) => print(msg),
+  })
   print(
     `[Stage12][PasswordLock] wall opened` +
       ` lock=${tostring(PASSWORD_LOCK1.id)}` +
@@ -340,13 +347,6 @@ function resetPasswordLockInvalidConfirm(reason: string): void {
   passwordLockInvalidSeconds = math.tofixed(0)
 }
 
-function resetPasswordLockTouchableGate(reason: string): void {
-  if (passwordLockUntouchableSeconds > math.tofixed(0)) {
-    print(`[Stage12][PasswordLock] touchable gate reset reason=${reason}`)
-  }
-  passwordLockUntouchableSeconds = math.tofixed(0)
-}
-
 function confirmPasswordLockInvalid(reason: string, role: Role | undefined): void {
   if (!passwordLockInteracted) {
     resetPasswordLockInvalidConfirm(`${reason}:not_interacted`)
@@ -358,7 +358,7 @@ function confirmPasswordLockInvalid(reason: string, role: Role | undefined): voi
     return
   }
 
-  openMechWall3ByPasswordLockInvalid(`${reason}:confirmed`, role === undefined ? passwordLockLastRole : role)
+  openMechWall3ByPasswordUnlock(`${reason}:confirmed`, role === undefined ? passwordLockLastRole : role)
 }
 
 function checkPasswordLockInvalid(reason: string, role: Role | undefined = undefined): void {
@@ -393,7 +393,6 @@ function checkPasswordLockInvalid(reason: string, role: Role | undefined = undef
         ` touchable=${tostring(touchable)}` +
         ` seenPhysical=${tostring(passwordLockSeenPhysicalValid)}` +
         ` interacted=${tostring(passwordLockInteracted)}` +
-        ` untouchableSeconds=${tostring(passwordLockUntouchableSeconds)}` +
         ` invalidSeconds=${tostring(passwordLockInvalidSeconds)}`
     )
   }
@@ -404,7 +403,6 @@ function checkPasswordLockInvalid(reason: string, role: Role | undefined = undef
 
   if (!passwordLockInteracted) {
     resetPasswordLockInvalidConfirm(`${reason}:before_input`)
-    resetPasswordLockTouchableGate(`${reason}:before_input`)
     return
   }
 
@@ -416,17 +414,32 @@ function checkPasswordLockInvalid(reason: string, role: Role | undefined = undef
     confirmPasswordLockInvalid(`${reason}:physics_inactive`, role)
     return
   }
-  if (passwordLockSeenPhysicalValid && touchable === false) {
-    passwordLockUntouchableSeconds = passwordLockUntouchableSeconds + UPDATE_SECONDS
-    if (passwordLockUntouchableSeconds >= PASSWORD_LOCK_TOUCHABLE_GATE_SECONDS) {
-      openMechWall3ByPasswordLockInvalid(`${reason}:touchable_disabled_confirmed`, role === undefined ? passwordLockLastRole : role)
-      return
-    }
-    resetPasswordLockInvalidConfirm(`${reason}:touchable_gate_wait`)
+  resetPasswordLockInvalidConfirm(`${reason}:no_invalid_signal`)
+}
+
+function showPasswordUnlockTestTip(role: Role | undefined): void {
+  const message = "大门已经打开"
+  if (role !== undefined) {
+    role.show_tips(message, math.tofixed(1.6))
     return
   }
-  resetPasswordLockTouchableGate(`${reason}:touchable_restored`)
-  resetPasswordLockInvalidConfirm(`${reason}:no_invalid_signal`)
+
+  for (const validRole of GameAPI.get_all_valid_roles()) {
+    validRole.show_tips(message, math.tofixed(1.6))
+  }
+}
+
+function handlePasswordLockSuccessEvent(source: string, actor: unknown, data: unknown): void {
+  const role = passwordLockLastRole
+  print(
+    `[Stage12][PasswordLock] unlock success event` +
+      ` source=${source}` +
+      ` event=${PASSWORD_LOCK_SUCCESS_EVENT}` +
+      ` role=${role === undefined ? "unknown" : tostring(roleIdOf(role))}` +
+      ` actor=${tostring(actor)}` +
+      ` data=${tostring(data)}`
+  )
+  openMechWall3ByPasswordUnlock(`custom_event:${PASSWORD_LOCK_SUCCESS_EVENT}:${source}`, role)
 }
 
 function setupWall32Hint(): void {
@@ -609,7 +622,6 @@ function registerPasswordLockMonitor(): void {
     passwordLockInteracted = true
     passwordLockLastRole = role
     resetPasswordLockInvalidConfirm("interacted")
-    resetPasswordLockTouchableGate("interacted")
     print(
       `[Stage12][PasswordLock] interacted` +
         ` role=${role === undefined ? "unknown" : tostring(roleIdOf(role))}` +
@@ -628,6 +640,24 @@ function registerPasswordLockMonitor(): void {
   )
 }
 
+function registerPasswordLockCustomEvents(): void {
+  passwordLockSuccessEventId = safeCall(() => LuaAPI.global_register_custom_event(PASSWORD_LOCK_SUCCESS_EVENT, (_eventName: string, actor: unknown, data: unknown) => {
+    handlePasswordLockSuccessEvent("global_custom", actor, data)
+  }), { tag: "Stage12 password lock success custom event", fallback: undefined, logger: (msg: string) => print(msg) })
+
+  passwordLockSuccessTriggerEventId = safeCall(() => LuaAPI.global_register_trigger_event([EVENT.CUSTOM_EVENT, PASSWORD_LOCK_SUCCESS_EVENT], (_eventName: string, actor: unknown, data: unknown) => {
+    handlePasswordLockSuccessEvent("event_custom", actor, data)
+  }), { tag: "Stage12 password lock success trigger event", fallback: undefined, logger: (msg: string) => print(msg) })
+
+  print(
+    `[Stage12][PasswordLock] custom event ready` +
+      ` success=${PASSWORD_LOCK_SUCCESS_EVENT}` +
+      ` disable=${PASSWORD_LOCK_DISABLE_EVENT}` +
+      ` successEvent=${tostring(passwordLockSuccessEventId)}` +
+      ` successTrigger=${tostring(passwordLockSuccessTriggerEventId)}`
+  )
+}
+
 export function Init(): void {
   if (initialized) {
     return
@@ -636,6 +666,7 @@ export function Init(): void {
 
   initInitialVisibility()
   registerPasswordLockMonitor()
+  registerPasswordLockCustomEvents()
   MonsterManager.OnMonsterKilled(handleTargetMonsterKilled)
   updateEventId = LuaAPI.global_register_trigger_event([EVENT.REPEAT_TIMEOUT, UPDATE_SECONDS], () => {
     updateAll()
