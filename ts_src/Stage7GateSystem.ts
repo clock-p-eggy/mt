@@ -12,6 +12,7 @@ interface KillGateRule {
   preserveTargets?: GateTarget[]
   requiredMonsterIds: number[]
   actionText: string
+  visibleWhenComplete?: boolean
 }
 
 const KILL_GATE_RULES: KillGateRule[] = [
@@ -39,6 +40,20 @@ const KILL_GATE_RULES: KillGateRule[] = [
     ],
     requiredMonsterIds: [1101855552, 2115675148, 1502667218, 2105425904],
     actionText: "消失",
+  },
+  {
+    name: "显现组件1548549609",
+    targets: [{ id: 1548549609 as UnitID, name: "显现组件1548549609" }],
+    requiredMonsterIds: [1115853218, 1643323093, 1743679626],
+    actionText: "显现",
+    visibleWhenComplete: true,
+  },
+  {
+    name: "显现组件1435881969",
+    targets: [{ id: 1435881969 as UnitID, name: "显现组件1435881969" }],
+    requiredMonsterIds: [1881048733, 1881048733, 1080764999, 1760381794],
+    actionText: "显现",
+    visibleWhenComplete: true,
   },
 ]
 
@@ -92,8 +107,9 @@ function setGateTargetVisible(target: GateTarget, visible: boolean, reason: stri
 }
 
 function resetRule(rule: KillGateRule): void {
+  const initialVisible = rule.visibleWhenComplete === true ? false : true
   for (const target of rule.targets) {
-    setGateTargetVisible(target, true, "init locked")
+    setGateTargetVisible(target, initialVisible, "init locked")
   }
 
   if (rule.preserveTargets !== undefined) {
@@ -109,8 +125,9 @@ function openGate(rule: KillGateRule, role: Role | undefined): void {
   }
 
   let openedAny = false
+  const targetVisible = rule.visibleWhenComplete === true
   for (const target of rule.targets) {
-    if (setGateTargetVisible(target, false, "required monsters killed")) {
+    if (setGateTargetVisible(target, targetVisible, "required monsters killed")) {
       openedAny = true
     }
   }
