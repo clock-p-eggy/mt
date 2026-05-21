@@ -72,6 +72,7 @@ function setGateTargetVisible(target: GateTarget, visible: boolean, reason: stri
 
   const ok = safeVoid(
     () => {
+      unit.set_model_visible(visible)
       unit.set_physics_active(visible)
       for (const role of GameAPI.get_all_valid_roles()) {
         role.set_unit_visible(unit, visible, false)

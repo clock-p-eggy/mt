@@ -73,6 +73,22 @@ const VICTORY_ZONE1: StageUnitTarget = {
   name: "胜利区域1",
   pos: math.Vector3(math.tofixed(-95.5), math.tofixed(5.0), math.tofixed(-10.1)),
 }
+const TRAIL_CURRENT1: StageUnitTarget = {
+  id: 1994453219 as UnitID,
+  name: "拖尾电流",
+  pos: math.Vector3(0, 0, 0),
+}
+const VISUAL_ONLY_HIDDEN_TARGETS: StageUnitTarget[] = [
+  TRAIL_CURRENT1,
+  { id: 1570439517 as UnitID, name: "隐身功能组件1570439517", pos: math.Vector3(0, 0, 0) },
+  { id: 2034104046 as UnitID, name: "隐身功能组件2034104046", pos: math.Vector3(0, 0, 0) },
+  { id: 1706126085 as UnitID, name: "隐身功能组件1706126085", pos: math.Vector3(0, 0, 0) },
+  { id: 1850114966 as UnitID, name: "隐身功能组件1850114966", pos: math.Vector3(0, 0, 0) },
+  { id: 1085615249 as UnitID, name: "隐身功能组件1085615249", pos: math.Vector3(0, 0, 0) },
+  { id: 1887047585 as UnitID, name: "隐身功能组件1887047585", pos: math.Vector3(0, 0, 0) },
+  { id: 1430735542 as UnitID, name: "隐身功能组件1430735542", pos: math.Vector3(0, 0, 0) },
+  { id: 1422072101 as UnitID, name: "隐身功能组件1422072101", pos: math.Vector3(0, 0, 0) },
+]
 
 const TARGET_A_MONSTER_IDS: Record<number, string> = {
   [1303708057]: "变异蛋A7",
@@ -206,6 +222,26 @@ function setUnitVisibleForAll(unit: Unit, visible: boolean, affectChildren: bool
       role.set_unit_visible(unit, visible, affectChildren)
     }
   }, { tag: `Stage8To12 visible ${unit.get_name()}`, logger: (msg: string) => print(msg) })
+}
+
+function setUnitVisualOnlyVisibleForAll(unit: Unit, visible: boolean, affectChildren: boolean = true): void {
+  safeVoid(() => {
+    unit.set_model_visible(visible)
+    for (const role of GameAPI.get_all_valid_roles()) {
+      role.set_unit_visible(unit, visible, affectChildren)
+    }
+  }, { tag: `Stage8To12 visual only ${unit.get_name()}`, logger: (msg: string) => print(msg) })
+}
+
+function hideVisualOnlyTarget(target: StageUnitTarget, reason: string): boolean {
+  const unit = queryUnit(target)
+  if (unit === undefined) {
+    return false
+  }
+
+  setUnitVisualOnlyVisibleForAll(unit, false, true)
+  print(`[Stage8To12] visual hide ${target.name} id=${tostring(target.id)} reason=${reason} physics=keep`)
+  return true
 }
 
 function hideTarget(target: StageUnitTarget, reason: string): boolean {
@@ -574,6 +610,9 @@ function initInitialVisibility(): void {
   hideTarget(BOX1_REVEAL_ENTITY, "stage10 init hidden")
   hideTarget(BOX2_REVEAL_ENTITY, "stage11 init hidden")
   showTarget(PASSWORD_LOCK1, "stage12 init")
+  for (const target of VISUAL_ONLY_HIDDEN_TARGETS) {
+    hideVisualOnlyTarget(target, "init keep function")
+  }
   print(`[Stage12] victory zone ready name=${VICTORY_ZONE1.name} id=${tostring(VICTORY_ZONE1.id)}`)
 }
 

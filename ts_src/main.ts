@@ -67,7 +67,7 @@ const RotatingUnitManager = loadGameModule<RotatingUnitManagerModule>("project/t
 const Stage7GateSystem = loadGameModule<Stage7GateSystemModule>("project/ts_out/game/Stage7GateSystem")
 const Stage8To12System = loadGameModule<Stage8To12SystemModule>("project/ts_out/game/Stage8To12System")
 
-log("[mt] TypeScript entry loaded build=20260520_ai_wall_sight_v2")
+log("[mt] TypeScript entry loaded build=20260521_rotating_107_speed10_v1")
 
 function initStage0Bgm(): void {
   log("[Stage0] bgm init begin")

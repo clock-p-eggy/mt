@@ -404,6 +404,14 @@ function isBlockingObstacle(unit: Unit | undefined): boolean {
     return false
   }
 
+  const physicsActive = safeCall(
+    () => unit.is_physics_active(),
+    { tag: `Monster sight obstacle physics ${unit.get_name()}`, fallback: true, logger: (msg: string) => print(msg) }
+  )
+  if (physicsActive === false) {
+    return false
+  }
+
   const name = unit.get_name()
   for (const prefix of BLOCKING_OBSTACLE_PREFIXES) {
     if (name.indexOf(prefix) === 0) {
