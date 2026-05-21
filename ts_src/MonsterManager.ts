@@ -1,7 +1,7 @@
 import { safeCall, safeDestroySceneUi, safeVoid } from "@common/engine_safe"
 import * as PlayerStats from "./PlayerStats"
 
-type MonsterKind = "A" | "B" | "C"
+type MonsterKind = "A" | "B" | "C" | "S"
 
 interface MonsterConfig {
   kind: MonsterKind
@@ -28,10 +28,12 @@ interface MonsterData {
   returnMoveBlocked: boolean
   engineEventSeq: number
   lastEngineDamageEventSeq?: number
+  damageBeforeEventId?: integer
   damageEventId?: integer
   dieEventId?: integer
   contactEventId?: integer
   abcHpbarSceneUi?: E3DLayer
+  lastSightBlockedLogTime?: Fixed
 }
 
 interface MonsterSpec {
@@ -50,6 +52,12 @@ interface DamageResult {
 
 type EngineDamageInterceptor = (monster: MonsterData, eventData: unknown) => boolean
 type MonsterKilledListener = (name: string, unitId: UnitID, role: Role | undefined) => void
+type DamageApi = {
+  get_damage_value?: (damage: Damage) => Fixed
+  set_damage_value?: (damage: Damage, value: Fixed) => void
+  get_damage_source?: (damage: Damage) => Unit
+  get_damage_target?: (damage: Damage) => LifeEntity
+}
 
 const MONSTER_CONFIG: Record<MonsterKind, MonsterConfig> = {
   C: {
@@ -72,6 +80,13 @@ const MONSTER_CONFIG: Record<MonsterKind, MonsterConfig> = {
     attack: 6,
     moveSpeed: math.tofixed(5),
     killExp: 14,
+  },
+  S: {
+    kind: "S",
+    maxHp: math.tofixed(100),
+    attack: 6,
+    moveSpeed: math.tofixed(5),
+    killExp: 20,
   },
 }
 
@@ -164,6 +179,7 @@ const MONSTER_KINDS: MonsterKind[] = [
 
 const EXTRA_MONSTER_SPECS: MonsterSpec[] = [
   { unitId: 1518591746, kind: "A" },
+  { unitId: 1491798607, kind: "S" },
 ]
 
 const MONSTER_SPECS: MonsterSpec[] = []
@@ -189,8 +205,8 @@ let aiTickEventId: integer | undefined
 let aiClock: Fixed = math.tofixed(0)
 
 const AI_TICK_SECONDS = math.tofixed(0.4)
-const AI_DETECT_RANGE = math.tofixed(28)
-const AI_LOST_RANGE = math.tofixed(36)
+const AI_DETECT_RANGE = math.tofixed(16)
+const AI_LOST_RANGE = math.tofixed(30)
 const AI_ATTACK_RANGE = math.tofixed(3)
 const AI_ATTACK_COOLDOWN = math.tofixed(2.4)
 const AI_SCRIPT_STOP_RANGE = math.tofixed(0.6)
@@ -205,11 +221,12 @@ const KNOCK_MIN_MOVE_SQ = math.tofixed(0.12)
 const KNOCK_MIN_SPEED_SQ = math.tofixed(4)
 const KNOCK_MIN_UP_DELTA = math.tofixed(0.08)
 const BLOCKING_OBSTACLE_RADIUS = math.tofixed(4.6)
-const BLOCKING_OBSTACLE_PREFIXES = ["方墙"]
+const BLOCKING_OBSTACLE_PREFIXES = ["方墙", "机械墙", "欧式方形窄门", "穿梭电门"]
+const AI_SIGHT_BLOCK_LOG_COOLDOWN = math.tofixed(2)
 const HP_PER_TICK_C = 2
 const HP_PER_TICK_B = 6
 const HP_PER_TICK_A = 12
-const ENGINE_GUARD_HP = math.tofixed(999999)
+const HP_PER_TICK_S = 20
 const ABC_C_HPBAR_LAYER_KEY = 1073741933 as E3DLayerKey
 const ABC_C_HPBAR_OFFSET = math.Vector3(0, math.tofixed(0.65), 0)
 const ABC_C_HPBAR_DURATION = math.tofixed(3600)
@@ -242,6 +259,9 @@ function hpText(data: MonsterData): string {
 }
 
 function hpPerTick(data: MonsterData): number {
+  if (data.config.kind === "S") {
+    return HP_PER_TICK_S
+  }
   if (data.config.kind === "A") {
     return HP_PER_TICK_A
   }
@@ -376,6 +396,14 @@ function isBlockingObstacle(unit: Unit | undefined): boolean {
     return false
   }
 
+  const visible = safeCall(
+    () => unit.is_model_visible(),
+    { tag: `Monster sight obstacle visible ${unit.get_name()}`, fallback: true, logger: (msg: string) => print(msg) }
+  )
+  if (visible === false) {
+    return false
+  }
+
   const name = unit.get_name()
   for (const prefix of BLOCKING_OBSTACLE_PREFIXES) {
     if (name.indexOf(prefix) === 0) {
@@ -388,11 +416,13 @@ function isBlockingObstacle(unit: Unit | undefined): boolean {
 
 function isBlockingObstacleInRaycast(from: Vector3, to: Vector3): boolean {
   let blocked = false
-  GameAPI.raycast_unit(sightPoint(from), sightPoint(to), [Enums.UnitType.OBSTACLE], (unit: Unit) => {
-    if (isBlockingObstacle(unit)) {
-      blocked = true
-    }
-  })
+  safeVoid(() => {
+    GameAPI.raycast_unit(sightPoint(from), sightPoint(to), [Enums.UnitType.OBSTACLE], (unit: Unit) => {
+      if (isBlockingObstacle(unit)) {
+        blocked = true
+      }
+    })
+  }, { tag: "Monster sight raycast_unit", logger: (msg: string) => print(msg) })
   return blocked
 }
 
@@ -417,7 +447,13 @@ function distSqPointToSegmentXZ(px: Fixed, pz: Fixed, ax: Fixed, az: Fixed, bx: 
 
 function isNearBlockingObstacleBetween(from: Vector3, to: Vector3): boolean {
   const radiusSq = BLOCKING_OBSTACLE_RADIUS * BLOCKING_OBSTACLE_RADIUS
-  const obstacles = GameAPI.get_all_obstacles()
+  let obstacles = safeCall(
+    () => GameAPI.get_all_obstacles(),
+    { tag: "Monster sight get_all_obstacles", fallback: [] as Obstacle[], logger: (msg: string) => print(msg) }
+  )
+  if (obstacles === undefined) {
+    obstacles = []
+  }
   for (const obstacle of obstacles) {
     if (!isBlockingObstacle(obstacle)) {
       continue
@@ -438,12 +474,21 @@ function isLineBlockedBySceneObstacle(from: Vector3, to: Vector3): boolean {
     return true
   }
 
-  const firstObstacle = GameAPI.get_obstacle_by_raycast(sightPoint(from), sightPoint(to))
+  const firstObstacle = safeCall(
+    () => GameAPI.get_obstacle_by_raycast(sightPoint(from), sightPoint(to)),
+    { tag: "Monster sight get_obstacle_by_raycast", fallback: undefined, logger: (msg: string) => print(msg) }
+  )
   if (isBlockingObstacle(firstObstacle)) {
     return true
   }
 
-  const obstacles = GameAPI.get_obstacles_by_raycast(sightPoint(from), sightPoint(to))
+  let obstacles = safeCall(
+    () => GameAPI.get_obstacles_by_raycast(sightPoint(from), sightPoint(to)),
+    { tag: "Monster sight get_obstacles_by_raycast", fallback: [] as Obstacle[], logger: (msg: string) => print(msg) }
+  )
+  if (obstacles === undefined) {
+    obstacles = []
+  }
   for (const obstacle of obstacles) {
     if (isBlockingObstacle(obstacle)) {
       return true
@@ -556,10 +601,11 @@ function roleFromUnit(unit: Unit | undefined): Role | undefined {
   return undefined
 }
 
-function nearestRoleInRange(position: Vector3, maxRange: Fixed): Role | undefined {
+function nearestVisibleRoleInRange(data: MonsterData, maxRange: Fixed): Role | undefined {
   const maxRangeSq = maxRange * maxRange
   let bestRole: Role | undefined
   let bestDistSq = maxRangeSq
+  const monsterPos = data.unit.get_position()
 
   for (const role of GameAPI.get_all_valid_roles()) {
     if (role.is_lost()) {
@@ -572,8 +618,8 @@ function nearestRoleInRange(position: Vector3, maxRange: Fixed): Role | undefine
     }
 
     const characterPos = character.get_position()
-    const currentDistSq = distSq(position, characterPos)
-    if (currentDistSq <= bestDistSq) {
+    const currentDistSq = distSq(monsterPos, characterPos)
+    if (currentDistSq <= bestDistSq && canMonsterSeeRole(data, role, maxRange)) {
       bestRole = role
       bestDistSq = currentDistSq
     }
@@ -612,7 +658,24 @@ function canMonsterSeeRole(data: MonsterData, role: Role, maxRange: Fixed): bool
 
   const monsterPos = data.unit.get_position()
   const characterPos = character.get_position()
-  return distSq(monsterPos, characterPos) <= maxRange * maxRange
+  if (distSq(monsterPos, characterPos) > maxRange * maxRange) {
+    return false
+  }
+
+  if (!isLineBlockedBySceneObstacle(characterPos, monsterPos)) {
+    return true
+  }
+
+  const lastLogTime = data.lastSightBlockedLogTime
+  if (lastLogTime === undefined || aiClock - lastLogTime >= AI_SIGHT_BLOCK_LOG_COOLDOWN) {
+    print(
+      `[Stage6][MonsterManager] sight blocked ${data.name}` +
+        ` role=${tostring(role.get_roleid())}` +
+        ` range=${tostring(maxRange)}`
+    )
+    data.lastSightBlockedLogTime = aiClock
+  }
+  return false
 }
 
 function configureStage6Ai(data: MonsterData): void {
@@ -717,7 +780,7 @@ function updateMonsterAi(data: MonsterData): void {
   }
 
   if (targetRole === undefined) {
-    targetRole = nearestRoleInRange(data.unit.get_position(), AI_DETECT_RANGE)
+    targetRole = nearestVisibleRoleInRange(data, AI_DETECT_RANGE)
   }
 
   if (targetRole !== undefined) {
@@ -850,13 +913,85 @@ function roleFromDeathEvent(eventData: unknown): Role | undefined {
   return onlyValidRole()
 }
 
+function roleFromDamageEvent(eventData: unknown): Role | undefined {
+  const data = eventData as {
+    _src?: unknown
+    src?: unknown
+    source?: unknown
+    unit?: unknown
+    ability?: unknown
+    equipment?: unknown
+    _dmg?: Damage
+  }
+  const candidates = [data._src, data.src, data.source, data.unit, data.ability, data.equipment]
+  for (const candidate of candidates) {
+    const role = roleFromAny(candidate)
+    if (role !== undefined) {
+      return role
+    }
+  }
+
+  if (data._dmg !== undefined) {
+    const damageApi = GameAPI as unknown as DamageApi
+    const getDamageSource = damageApi.get_damage_source
+    if (type(getDamageSource) === "function") {
+      const role = roleFromAny((getDamageSource as (damage: Damage) => Unit)(data._dmg))
+      if (role !== undefined) {
+        return role
+      }
+    }
+  }
+
+  return onlyValidRole()
+}
+
+function clampNativeDamageToPlayerAttack(data: MonsterData, eventData: unknown): void {
+  if (data.dead) {
+    return
+  }
+
+  const damageData = eventData as { _dmg?: Damage }
+  if (damageData._dmg === undefined) {
+    return
+  }
+
+  const role = roleFromDamageEvent(eventData)
+  if (role === undefined) {
+    return
+  }
+
+  const damageApi = GameAPI as unknown as DamageApi
+  const setDamageValue = damageApi.set_damage_value
+  if (type(setDamageValue) !== "function") {
+    print(`[Stage2][MonsterManager] native damage clamp unavailable ${data.name}`)
+    return
+  }
+
+  const getDamageValue = damageApi.get_damage_value
+  const originalDamage = type(getDamageValue) === "function"
+    ? (getDamageValue as (damage: Damage) => Fixed)(damageData._dmg)
+    : math.tofixed(-1)
+  const attackDamage = math.tofixed(PlayerStats.GetAttack(role))
+  const nativeDamage = clamp(attackDamage, math.tofixed(0), data.hp)
+  ;(setDamageValue as (damage: Damage, value: Fixed) => void)(damageData._dmg, nativeDamage)
+  print(
+    `[Stage2][MonsterManager] native damage clamped` +
+      ` name=${data.name}` +
+      ` role=${tostring(role.get_roleid())}` +
+      ` original=${tostring(originalDamage)}` +
+      ` atk=${tostring(attackDamage)}` +
+      ` native=${tostring(nativeDamage)}` +
+      ` hp=${hpText(data)}`
+  )
+}
+
 function syncEngineStats(data: MonsterData): void {
   const unit = data.unit
   safeVoid(() => {
-    unit.set_hp_max(ENGINE_GUARD_HP)
+    unit.set_hp_max(data.config.maxHp)
   }, { tag: `Monster set_hp_max ${data.name}`, logger: (msg: string) => print(msg) })
   safeVoid(() => {
-    unit.set_attr_by_type(Enums.ValueType.Fixed, "hp_max", ENGINE_GUARD_HP)
+    unit.set_attr_by_type(Enums.ValueType.Fixed, "hp_max", data.config.maxHp)
   }, { tag: `Monster set hp_max attr ${data.name}`, logger: (msg: string) => print(msg) })
   safeVoid(() => {
     unit.set_attr_ratio_fixed("move_speed", data.config.moveSpeed - math.tofixed(1))
@@ -868,7 +1003,7 @@ function syncEngineStats(data: MonsterData): void {
 
 function syncEngineHp(data: MonsterData): void {
   const unit = data.unit
-  const targetHp = data.dead ? math.tofixed(0) : ENGINE_GUARD_HP
+  const targetHp = data.dead ? math.tofixed(0) : data.hp
   const currentHp = safeCall(
     () => unit.get_hp(),
     { tag: `Monster get_hp ${data.name}`, fallback: undefined, logger: (msg: string) => print(msg) }
@@ -1093,6 +1228,9 @@ function initMonsterUnit(unit: Creature, editorUnitId: UnitID, specName?: string
   configureStage6Ai(data)
   refreshDisplay(data)
 
+  data.damageBeforeEventId = LuaAPI.unit_register_trigger_event(unit, [EVENT.SPEC_LIFEENTITY_DMGED_BEFORE], (_: string, __: unknown, eventData: unknown) => {
+    clampNativeDamageToPlayerAttack(data, eventData)
+  })
   data.damageEventId = LuaAPI.unit_register_trigger_event(unit, [EVENT.SPEC_LIFEENTITY_DMGED_AFTER], (_: string, __: unknown, eventData: unknown) => {
     handleEngineDamage(data, eventData)
   })

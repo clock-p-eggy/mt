@@ -1,3 +1,4 @@
+import { safeCall } from "@common/engine_safe"
 import * as MonsterManager from "./MonsterManager"
 import * as PlayerStats from "./PlayerStats"
 
@@ -9,7 +10,6 @@ interface AttackItemConfig {
   kind: AttackItemKind
   name: string
   maxEffectiveHits?: number
-  range?: Fixed
 }
 
 interface AttackItemState {
@@ -19,6 +19,11 @@ interface AttackItemState {
   role: Role
   equipment: Equipment
   effectiveHits: number
+}
+
+type DamageApi = {
+  get_damage_value?: (damage: Damage) => Fixed
+  set_damage_value?: (damage: Damage, value: Fixed) => void
 }
 
 const ATTACK_ITEMS: AttackItemConfig[] = [
@@ -43,13 +48,10 @@ const ITEM_BOX_NAMES = [
 const itemByKey: Record<number, AttackItemConfig> = {}
 const trackedItems: Record<string, AttackItemState> = {}
 const latestItemByRoleId: Record<number, string> = {}
-const lastSwordAttackTimeByRoleId: Record<number, Fixed> = {}
+const equipmentHitRegistered: Record<string, boolean> = {}
+const abilityHitRegistered: Record<string, boolean> = {}
+const recentHitTokens: Record<string, boolean> = {}
 let initialized = false
-let attackClockEventId: integer | undefined
-let attackClock: Fixed = math.tofixed(0)
-
-const ATTACK_CLOCK_TICK = math.tofixed(0.02)
-const SWORD_ATTACK_INTERVAL = math.tofixed(0.2)
 
 for (const config of ATTACK_ITEMS) {
   itemByKey[config.key] = config
@@ -57,6 +59,10 @@ for (const config of ATTACK_ITEMS) {
 
 function equipmentToken(equipment: Equipment): string {
   return tostring(equipment)
+}
+
+function abilityToken(ability: Ability): string {
+  return tostring(ability)
 }
 
 function roleIdOf(role: Role): RoleID {
@@ -204,25 +210,25 @@ function attackItemName(key: EquipmentKey): string {
   return config === undefined ? tostring(key) : config.name
 }
 
-function ensureAttackClock(): void {
-  if (attackClockEventId !== undefined) {
-    return
-  }
-
-  attackClockEventId = LuaAPI.global_register_trigger_event([EVENT.REPEAT_TIMEOUT, ATTACK_CLOCK_TICK], () => {
-    attackClock = attackClock + ATTACK_CLOCK_TICK
-  })
+function hitToken(role: Role, target: Unit): string {
+  return `${tostring(role.get_roleid())}:${tostring(target.get_id())}`
 }
 
-function canApplySwordAttack(role: Role): boolean {
-  const roleId = roleIdOf(role)
-  const lastAttackTime = lastSwordAttackTimeByRoleId[roleId]
-  if (lastAttackTime !== undefined && attackClock - lastAttackTime < SWORD_ATTACK_INTERVAL) {
+function markHitThisFrame(role: Role, target: Unit): boolean {
+  const token = hitToken(role, target)
+  if (recentHitTokens[token] === true) {
     return false
   }
 
-  lastSwordAttackTimeByRoleId[roleId] = attackClock
+  recentHitTokens[token] = true
+  LuaAPI.call_delay_frame(1, () => {
+    delete recentHitTokens[token]
+  })
   return true
+}
+
+function minFixed(a: Fixed, b: Fixed): Fixed {
+  return a < b ? a : b
 }
 
 function maxEffectiveHits(state: AttackItemState): number {
@@ -247,6 +253,7 @@ function destroyTrackedItem(token: string, reason: string): void {
   }
 
   delete trackedItems[token]
+  delete equipmentHitRegistered[token]
   state.equipment.destroy_equipment()
   print(
     `[Stage3][ItemAttack] destroy item=${attackItemName(state.key)}` +
@@ -260,6 +267,257 @@ function noteItemUsed(state: AttackItemState): void {
     `[Stage3][ItemAttack] use item=${attackItemName(state.key)}` +
       ` key=${tostring(state.key)}` +
       ` role=${tostring(state.roleId)}`
+  )
+}
+
+function applyHitTargetUnit(target: Unit | undefined, role: Role | undefined, sourceName: string): "applied" | "duplicate" | "no_role" | "no_target" {
+  if (role === undefined) {
+    return "no_role"
+  }
+  const typedMonster = MonsterManager.GetMonsterByUnit(target) as unknown as { name: string; unit: Creature; dead?: boolean } | undefined
+  if (typedMonster === undefined || typedMonster.dead === true) {
+    return "no_target"
+  }
+
+  if (!markHitThisFrame(role, typedMonster.unit)) {
+    print(
+      `[Stage3][ItemAttack] duplicate hit ignored` +
+        ` source=${sourceName}` +
+        ` monster=${typedMonster.name}` +
+        ` role=${tostring(role.get_roleid())}`
+    )
+    return "duplicate"
+  }
+
+  const attack = PlayerStats.GetAttack(role)
+  MonsterManager.ApplyDamageFromRoleByUnit(typedMonster.unit, role, math.tofixed(attack))
+  print(
+    `[Stage3][ItemAttack] hit-event damage` +
+      ` source=${sourceName}` +
+      ` monster=${typedMonster.name}` +
+      ` role=${tostring(role.get_roleid())}` +
+      ` attack=${tostring(attack)}`
+  )
+  return "applied"
+}
+
+function abilityFromAny(value: unknown): Ability | undefined {
+  if (value === undefined) {
+    return undefined
+  }
+
+  const obj = value as {
+    ability?: Ability
+    get_ability_slot?: () => AbilitySlot
+    get_key?: () => AbilityKey
+  }
+  if (obj.ability !== undefined) {
+    return obj.ability
+  }
+  if (type(obj.get_ability_slot) === "function" && type(obj.get_key) === "function") {
+    return value as Ability
+  }
+
+  return undefined
+}
+
+function abilityFromCreationArgs(abilityArg: unknown, ownerArg: unknown, dataArg: unknown): Ability | undefined {
+  let ability = abilityFromAny(abilityArg)
+  if (ability !== undefined) {
+    return ability
+  }
+
+  ability = abilityFromAny(ownerArg)
+  if (ability !== undefined) {
+    return ability
+  }
+
+  return abilityFromAny(dataArg)
+}
+
+function roleForAbility(ability: Ability | undefined): Role | undefined {
+  const role = roleFromAny(ability)
+  if (role !== undefined) {
+    return role
+  }
+
+  return onlyValidRole()
+}
+
+function registerAbilityHitEvents(ability: Ability | undefined, role: Role | undefined, reason: string): void {
+  if (ability === undefined || role === undefined) {
+    return
+  }
+
+  const token = abilityToken(ability)
+  if (abilityHitRegistered[token] === true) {
+    return
+  }
+
+  const eventId = safeCall(() => LuaAPI.unit_register_trigger_event(ability as unknown as Unit, [EVENT.ABILITY_BULLET_HIT], (_: string, actor: unknown, eventData: unknown) => {
+    const data = eventData as { ability?: Ability; unit?: Unit; target_unit?: Unit; dmg?: Fixed }
+    const unitRole = roleFromAny(data.unit)
+    const eventRole = unitRole === undefined ? role : unitRole
+    const target = data.target_unit
+    const state = eventTrackedItem(eventRole, eventData)
+    const result = applyHitTargetUnit(
+      target,
+      eventRole,
+      `ability_bullet:${tostring(ability.get_key())}`
+    )
+
+    print(
+      `[Stage3][Probe] ability bullet hit` +
+        ` reason=${reason}` +
+        ` actor=${compactDescribe(actor)}` +
+        ` ability=${compactDescribe(data.ability)}` +
+        ` owner=${compactDescribe(data.unit)}` +
+        ` target=${compactDescribe(target)}` +
+        ` dmg=${data.dmg === undefined ? "nil" : tostring(data.dmg)}` +
+        ` result=${result}`
+    )
+
+    if (result === "applied" && state !== undefined) {
+      consumeEffectiveHit(state)
+    }
+  }), { tag: `ItemAttack register ability hit key=${tostring(ability.get_key())}`, fallback: undefined, logger: (msg: string) => print(msg) })
+
+  if (eventId === undefined) {
+    print(
+      `[Stage3][ItemAttack] register ability hit skipped` +
+        ` key=${tostring(ability.get_key())}` +
+        ` role=${tostring(role.get_roleid())}` +
+        ` reason=${reason}`
+    )
+    return
+  }
+
+  abilityHitRegistered[token] = true
+
+  print(
+    `[Stage3][ItemAttack] register ability hit` +
+      ` key=${tostring(ability.get_key())}` +
+      ` role=${tostring(role.get_roleid())}` +
+      ` reason=${reason}`
+  )
+}
+
+function registerCharacterAbilities(role: Role, reason: string): void {
+  const character = role.get_ctrl_unit()
+  if (character === undefined) {
+    return
+  }
+
+  const abilities = character.get_ability_list()
+  for (const ability of abilities) {
+    registerAbilityHitEvents(ability, role, reason)
+  }
+
+  const propAbility = character.get_prop_ability()
+  if (propAbility !== undefined) {
+    registerAbilityHitEvents(propAbility, role, `${reason}:prop`)
+  }
+}
+
+function registerEquipmentHitEvents(equipment: Equipment, role: Role, state: AttackItemState | undefined, reason: string): void {
+  const token = equipmentToken(equipment)
+  if (equipmentHitRegistered[token] === true) {
+    return
+  }
+
+  const obstacle = safeCall(
+    () => equipment.get_unit(),
+    { tag: `ItemAttack get equipment unit key=${tostring(equipment.get_key())}`, fallback: undefined, logger: (msg: string) => print(msg) }
+  )
+  if (obstacle === undefined) {
+    print(
+      `[Stage3][ItemAttack] register equipment hit skipped` +
+        ` item=${attackItemName(equipment.get_key())}` +
+        ` key=${tostring(equipment.get_key())}` +
+        ` reason=${reason}` +
+        " noUnit=true"
+    )
+    return
+  }
+
+  const eventId = safeCall(() => LuaAPI.unit_register_trigger_event(obstacle as unknown as Unit, [EVENT.SPEC_OBSTACLE_CONTACT_BEGIN], (_: string, actor: unknown, eventData: unknown) => {
+    const data = eventData as { unit1?: Obstacle; unit2?: Unit; contact_pos?: Vector3 }
+    const result = applyHitTargetUnit(
+      data.unit2,
+      role,
+      `equipment_contact:${attackItemName(equipment.get_key())}`
+    )
+
+    print(
+      `[Stage3][Probe] equipment contact` +
+        ` reason=${reason}` +
+        ` actor=${compactDescribe(actor)}` +
+        ` item=${attackItemName(equipment.get_key())}` +
+        ` key=${tostring(equipment.get_key())}` +
+        ` target=${compactDescribe(data.unit2)}` +
+        ` result=${result}`
+    )
+
+    if (result === "applied" && state !== undefined) {
+      consumeEffectiveHit(state)
+    }
+  }), { tag: `ItemAttack register equipment contact key=${tostring(equipment.get_key())}`, fallback: undefined, logger: (msg: string) => print(msg) })
+  if (eventId === undefined) {
+    print(
+      `[Stage3][ItemAttack] register equipment hit skipped` +
+        ` item=${attackItemName(equipment.get_key())}` +
+        ` key=${tostring(equipment.get_key())}` +
+        ` role=${tostring(role.get_roleid())}` +
+        ` reason=${reason}`
+    )
+    return
+  }
+
+  equipmentHitRegistered[token] = true
+
+  const propAbility = (equipment as unknown as { get_prop_ability?: () => Ability }).get_prop_ability
+  if (type(propAbility) === "function") {
+    registerAbilityHitEvents((propAbility as () => Ability)(), role, `${reason}:equipment_prop`)
+  }
+
+  print(
+    `[Stage3][ItemAttack] register equipment hit` +
+      ` item=${attackItemName(equipment.get_key())}` +
+      ` key=${tostring(equipment.get_key())}` +
+      ` role=${tostring(role.get_roleid())}` +
+      ` reason=${reason}`
+  )
+}
+
+function clampOutgoingNativeDamage(role: Role, eventData: unknown, sourceName: string): void {
+  const data = eventData as { _dst?: Unit; _dmg?: Damage }
+  const typedMonster = MonsterManager.GetMonsterByUnit(data._dst) as unknown as { name: string; hp: Fixed; dead?: boolean } | undefined
+  if (typedMonster === undefined || typedMonster.dead === true || data._dmg === undefined) {
+    return
+  }
+
+  const damageApi = GameAPI as unknown as DamageApi
+  const setDamageValue = damageApi.set_damage_value
+  if (type(setDamageValue) !== "function") {
+    print(`[Stage3][ItemAttack] outgoing native damage clamp unavailable monster=${typedMonster.name}`)
+    return
+  }
+
+  const getDamageValue = damageApi.get_damage_value
+  const originalDamage = type(getDamageValue) === "function"
+    ? (getDamageValue as (damage: Damage) => Fixed)(data._dmg)
+    : math.tofixed(-1)
+  const attackDamage = math.tofixed(PlayerStats.GetAttack(role))
+  const nativeDamage = minFixed(attackDamage, typedMonster.hp)
+  ;(setDamageValue as (damage: Damage, value: Fixed) => void)(data._dmg, nativeDamage)
+  print(
+    `[Stage3][ItemAttack] outgoing native damage clamped` +
+      ` source=${sourceName}` +
+      ` monster=${typedMonster.name}` +
+      ` role=${tostring(role.get_roleid())}` +
+      ` original=${tostring(originalDamage)}` +
+      ` atk=${tostring(attackDamage)}` +
+      ` native=${tostring(nativeDamage)}`
   )
 }
 
@@ -290,6 +548,7 @@ function registerEquipment(equipment: Equipment, role: Role): void {
   equipment.set_name(config.name)
   equipment.set_current_stack_num(maxEffectiveHits(state))
   equipment.set_max_stack_num(maxEffectiveHits(state))
+  registerEquipmentHitEvents(equipment, role, state, "tracked_item")
 
   const equipmentUnit = equipment as unknown as Unit
   LuaAPI.unit_register_trigger_event(equipmentUnit, [EVENT.SPEC_EQUIPMENT_USE_BEFORE], (_: string, actor: unknown, eventData: unknown) => {
@@ -303,15 +562,17 @@ function registerEquipment(equipment: Equipment, role: Role): void {
   LuaAPI.unit_register_trigger_event(equipmentUnit, [EVENT.SPEC_EQUIPMENT_USE], (_: string, actor: unknown, eventData: unknown) => {
     print(
       `[Stage3][Probe] equipment use key=${tostring(state.key)}` +
-        ` actor=${compactDescribe(actor)}` +
+      ` actor=${compactDescribe(actor)}` +
         ` equipment=${compactDescribe((eventData as { equipment?: unknown }).equipment)}`
     )
   })
   LuaAPI.unit_register_trigger_event(equipmentUnit, [EVENT.SPEC_EQUIPMENT_LOST], () => {
     delete trackedItems[token]
+    delete equipmentHitRegistered[token]
   })
   LuaAPI.unit_register_trigger_event(equipmentUnit, [EVENT.SPEC_EQUIPMENT_DESTROY], () => {
     delete trackedItems[token]
+    delete equipmentHitRegistered[token]
   })
 
   role.show_tips(`获得${config.name}`, math.tofixed(1.5))
@@ -354,9 +615,47 @@ function registerRole(role: Role): void {
         ` name=${data.equipment === undefined ? "nil" : data.equipment.get_name()}`
     )
     if (data.equipment !== undefined) {
-      registerEquipment(data.equipment, role)
+      if (itemByKey[data.equipment.get_key()] !== undefined) {
+        registerEquipment(data.equipment, role)
+      } else {
+        registerEquipmentHitEvents(data.equipment, role, undefined, "character_get_equipment")
+      }
     }
   })
+
+  LuaAPI.unit_register_trigger_event(character, [EVENT.SPEC_LIFEENTITY_DMG_BEFORE], (_: string, __: unknown, eventData: unknown) => {
+    clampOutgoingNativeDamage(role, eventData, "role_damage_before")
+  })
+
+  LuaAPI.unit_register_trigger_event(character, [EVENT.SPEC_LIFEENTITY_DMG_AFTER], (_: string, actor: unknown, eventData: unknown) => {
+    const data = eventData as { _src?: unknown; _dst?: Unit; ability?: Ability; equipment?: Equipment; _dmg?: unknown }
+    const state = eventTrackedItem(role, eventData)
+    const result = applyHitTargetUnit(data._dst, role, "role_damage_after")
+    print(
+      `[Stage3][Probe] role damage after` +
+        ` actor=${compactDescribe(actor)}` +
+        ` src=${compactDescribe(data._src)}` +
+        ` dst=${compactDescribe(data._dst)}` +
+        ` ability=${compactDescribe(data.ability)}` +
+        ` equipment=${compactDescribe(data.equipment)}` +
+        ` result=${result}`
+    )
+    if (result === "applied" && state !== undefined) {
+      consumeEffectiveHit(state)
+    }
+  })
+
+  LuaAPI.unit_register_trigger_event(character, [EVENT.SPEC_LIFEENTITY_ABILITY_OBTAIN], (_: string, actor: unknown, eventData: unknown) => {
+    const ability = abilityFromAny(eventData)
+    print(
+      `[Stage3][Probe] role ability obtain` +
+        ` actor=${compactDescribe(actor)}` +
+        ` ability=${compactDescribe(ability)}`
+    )
+    registerAbilityHitEvents(ability, role, "role_ability_obtain")
+  })
+
+  registerCharacterAbilities(role, "role_init")
 }
 
 function configureItemBoxes(): void {
@@ -364,10 +663,9 @@ function configureItemBoxes(): void {
     const itemBox = LuaAPI.query_unit(name) as unknown as ItemBox | undefined
     if (itemBox === undefined) {
       print(`[Stage3][ItemAttack] item box missing name=${name}`)
-      continue
+    } else {
+      print(`[Stage3][ItemAttack] item box ready name=${name}`)
     }
-
-    print(`[Stage3][ItemAttack] item box ready name=${name}`)
   }
 }
 
@@ -433,17 +731,6 @@ function consumeEffectiveHit(state: AttackItemState): void {
   }
 }
 
-function applyRoleAttackToMonster(typedMonster: { name: string; unit: Creature }, role: Role, sourceName: string): void {
-  const attack = PlayerStats.GetAttack(role)
-  MonsterManager.ApplyDamageFromRoleByUnit(typedMonster.unit, role, math.tofixed(attack))
-  print(
-    `[Stage3][ItemAttack] scripted ${sourceName} damage` +
-      ` monster=${typedMonster.name}` +
-      ` role=${tostring(role.get_roleid())}` +
-      ` attack=${tostring(attack)}`
-  )
-}
-
 function handleMonsterEngineHit(monster: unknown, eventData: unknown, reason: string): boolean {
   const typedMonster = monster as { name: string; unit: Creature }
   const data = eventData as { _src?: unknown; _dst?: unknown; ability?: unknown; equipment?: Equipment }
@@ -478,17 +765,8 @@ function handleMonsterEngineHit(monster: unknown, eventData: unknown, reason: st
   }
 
   if (state === undefined) {
-    if (!canApplySwordAttack(role)) {
-      print(
-        `[Stage3][ItemAttack] weapon hit interval blocked` +
-          ` role=${tostring(role.get_roleid())}` +
-          ` interval=${tostring(SWORD_ATTACK_INTERVAL)}`
-      )
-      return true
-    }
-
-    applyRoleAttackToMonster(typedMonster, role, "weapon")
-    return true
+    const result = applyHitTargetUnit(typedMonster.unit, role, `monster_${reason}:weapon`)
+    return result === "applied" || result === "duplicate"
   }
 
   print(
@@ -497,9 +775,11 @@ function handleMonsterEngineHit(monster: unknown, eventData: unknown, reason: st
       ` kind=${state.kind}` +
       ` monster=${typedMonster.name}`
   )
-  applyRoleAttackToMonster(typedMonster, role, attackItemName(state.key))
-  consumeEffectiveHit(state)
-  return true
+  const result = applyHitTargetUnit(typedMonster.unit, role, `monster_${reason}:${attackItemName(state.key)}`)
+  if (result === "applied") {
+    consumeEffectiveHit(state)
+  }
+  return result === "applied" || result === "duplicate"
 }
 
 function handleMonsterEngineDamage(monster: unknown, eventData: unknown): boolean {
@@ -551,11 +831,26 @@ export function Init(): void {
   }
   initialized = true
 
-  ensureAttackClock()
   configureItemBoxes()
   for (const role of GameAPI.get_all_valid_roles()) {
     registerRole(role)
   }
+
+  for (const config of ATTACK_ITEMS) {
+    if (config.abilityKey !== undefined) {
+      LuaAPI.ability_register_creation_handler(config.abilityKey, (abilityArg: unknown, ownerArg: unknown, dataArg: unknown) => {
+        const ability = abilityFromCreationArgs(abilityArg, ownerArg, dataArg)
+        const role = roleForAbility(ability)
+        registerAbilityHitEvents(ability, role, "attack_item_ability_create")
+      })
+    }
+  }
+
+  LuaAPI.ability_register_creation_handler(10040, (abilityArg: unknown, ownerArg: unknown, dataArg: unknown) => {
+    const ability = abilityFromCreationArgs(abilityArg, ownerArg, dataArg)
+    const role = roleForAbility(ability)
+    registerAbilityHitEvents(ability, role, "preset_skill_create")
+  })
 
   MonsterManager.SetEngineDamageInterceptor(handleMonsterEngineDamage)
   MonsterManager.SetEngineDeathInterceptor(handleMonsterEngineDeath)
