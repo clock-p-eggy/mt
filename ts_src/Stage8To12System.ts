@@ -17,6 +17,7 @@ const TRAMPOLINE1: StageUnitTarget = {
   name: "蹦床1",
   pos: math.Vector3(math.tofixed(3.117), math.tofixed(2.315), math.tofixed(9.37)),
 }
+const TRAMPOLINE1_HIDDEN_POS = math.Vector3(math.tofixed(3.117), math.tofixed(-80), math.tofixed(9.37))
 const BUTTON1: StageUnitTarget = {
   id: 1855557960 as UnitID,
   name: "按钮开关1",
@@ -263,8 +264,6 @@ function setFunctionalVisualTarget(target: StageUnitTarget, visible: boolean, re
 
   safeVoid(() => {
     unit.set_position(target.pos)
-    unit.set_linear_velocity(math.Vector3(0, 0, 0))
-    unit.set_angular_velocity(math.Vector3(0, 0, 0))
     unit.set_model_visible(visible)
     unit.set_physics_active(true)
     for (const role of GameAPI.get_all_valid_roles()) {
@@ -280,6 +279,46 @@ function setFunctionalVisualTarget(target: StageUnitTarget, visible: boolean, re
       ` physics=keep_active`
   )
   return true
+}
+
+function setTrampolineDormant(reason: string): boolean {
+  const unit = queryUnit(TRAMPOLINE1)
+  if (unit === undefined) {
+    return false
+  }
+
+  safeVoid(() => {
+    unit.set_position(TRAMPOLINE1_HIDDEN_POS)
+    unit.set_model_visible(false)
+    unit.set_physics_active(true)
+    for (const role of GameAPI.get_all_valid_roles()) {
+      role.set_unit_visible(unit, false, false)
+    }
+  }, { tag: "Stage8 trampoline dormant", logger: (msg: string) => print(msg) })
+
+  print(
+    `[Stage8To12] trampoline dormant` +
+      ` id=${tostring(TRAMPOLINE1.id)}` +
+      ` reason=${reason}` +
+      ` hiddenPos=(${tostring(TRAMPOLINE1_HIDDEN_POS.x)},${tostring(TRAMPOLINE1_HIDDEN_POS.y)},${tostring(TRAMPOLINE1_HIDDEN_POS.z)})` +
+      ` physics=keep_active`
+  )
+  return true
+}
+
+function showTrampoline(reason: string): boolean {
+  const shown = setFunctionalVisualTarget(TRAMPOLINE1, true, reason)
+  if (shown) {
+    const unit = queryUnit(TRAMPOLINE1)
+    if (unit !== undefined) {
+      safeVoid(() => {
+        unit.set_position(TRAMPOLINE1.pos)
+        unit.set_physics_active(true)
+        unit.set_model_visible(true)
+      }, { tag: "Stage8 trampoline show reapply", logger: (msg: string) => print(msg) })
+    }
+  }
+  return shown
 }
 
 function hideTarget(target: StageUnitTarget, reason: string): boolean {
@@ -536,7 +575,7 @@ function handleTargetMonsterKilled(name: string, unitId: UnitID, role: Role | un
       }
     }
     if (complete) {
-      trampolineShown = setFunctionalVisualTarget(TRAMPOLINE1, true, "stage8 target monsters killed")
+      trampolineShown = showTrampoline("stage8 target monsters killed")
       print(`[Stage8] trampoline show=${tostring(trampolineShown)}`)
     }
   }
@@ -598,7 +637,7 @@ function cleanupLegacyPasswordUi(): void {
 function initInitialVisibility(): void {
   setupWall32Hint()
   cleanupLegacyPasswordUi()
-  hideTarget(TRAMPOLINE1, "stage8 init hidden no bounce")
+  setTrampolineDormant("stage8 init hidden no bounce")
   showTarget(BUTTON1, "stage9 init")
   showTarget(TILE1, "stage10 init")
   hideTarget(BOX1_REVEAL_ENTITY, "stage10 init hidden")
